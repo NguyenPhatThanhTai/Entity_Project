@@ -51,9 +51,9 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.Btn_ReFresh = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -307,32 +307,35 @@
             this.Btn_ReFresh.Text = "Làm mới dữ liệu";
             this.Btn_ReFresh.Click += new System.EventHandler(this.Btn_ReFresh_Click);
             // 
-            // simpleButton3
+            // btnDelete
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(640, 188);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(202, 58);
-            this.simpleButton3.TabIndex = 4;
-            this.simpleButton3.Text = "Xóa khách hàng";
+            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(640, 188);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(202, 58);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Xóa khách hàng";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // simpleButton2
+            // btnUpdate
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(359, 188);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(202, 57);
-            this.simpleButton2.TabIndex = 3;
-            this.simpleButton2.Text = "Cập nhật khách hàng";
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnUpdate.Location = new System.Drawing.Point(359, 188);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(202, 57);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Cập nhật khách hàng";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // simpleButton1
+            // btnThem
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(84, 187);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(202, 60);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Thêm mới khách hàng";
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThem.Location = new System.Drawing.Point(84, 187);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(202, 60);
+            this.btnThem.TabIndex = 2;
+            this.btnThem.Text = "Thêm mới khách hàng";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // Time
             // 
@@ -450,9 +453,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.Btn_ReFresh);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.Data);
             this.Name = "ThongTinKhachHang";
             this.Text = "ThongTinKhachHang";
@@ -470,9 +473,9 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnThem;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton Btn_ReFresh;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.PictureBox pictureBox5;

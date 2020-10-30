@@ -68,10 +68,32 @@ namespace Entity_Project
         {
             DKH = new Data_KH();
             Load_KH(DKH.Inf_KH());
+            Clear();
+        }
+
+        private void Clear()
+        {
+            openButton(true);
+            txtMaKhachHang.Text = "Chưa thiết lập";
+            txtHoTen.Text = "";
+            txtGioiTinh.Text = "Nam";
+            txtBirth.Value = DateTime.Now;
+            txtEmail.Text = "";
+            txtSDT.Text = "";
+            txtThoiGian.Text = "";
+        }
+
+        private void openButton(bool a)
+        {
+            btnThem.Enabled = a;
+            btnUpdate.Enabled = !a;
+            btnDelete.Enabled = !a;
+            Data.Enabled = a;
         }
 
         private void Data_Click(object sender, EventArgs e)
         {
+            openButton(false);
             txtMaKhachHang.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
             txtHoTen.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
             txtGioiTinh.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
@@ -79,6 +101,82 @@ namespace Entity_Project
             txtEmail.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
             txtSDT.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
             txtThoiGian.Text = Data.SelectedRows[0].Cells[7].Value.ToString();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (txtHoTen.Text != "" && txtEmail.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtBirth.Text != "" && txtEmail.Text != ""
+                                && txtSDT.Text != "")
+            {
+                DialogResult dialog = MessageBox.Show("Xác nhận thêm khách hàng " + txtHoTen.Text + " ?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    if (!DKH.check_KH(txtMaKhachHang.Text))
+                    {
+                        if(DKH.Add_KH(txtHoTen.Text, txtGioiTinh.Text, txtBirth.Value, txtEmail.Text, txtSDT.Text))
+                        {
+                            MessageBox.Show("Thêm thành công");
+                            Load_KH(DKH.Inf_KH());
+                            openButton(true);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại");
+                            Load_KH(DKH.Inf_KH());
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtHoTen.Text != "" && txtEmail.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtBirth.Text != "" && txtEmail.Text != ""
+                    && txtSDT.Text != "")
+            {
+                DialogResult dialog = MessageBox.Show("Xác nhận cập nhật ?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    if (DKH.Update_KH(txtHoTen.Text, txtGioiTinh.Text, txtBirth.Value, txtEmail.Text, txtSDT.Text, txtMaKhachHang.Text))
+                    {
+                        MessageBox.Show("Cập nhật thành công");
+                        Load_KH(DKH.Inf_KH());
+                        openButton(true);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thất bại");
+                        Load_KH(DKH.Inf_KH());
+                    }
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtHoTen.Text != "" && txtEmail.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtBirth.Text != "" && txtEmail.Text != ""
+        && txtSDT.Text != "")
+            {
+                DialogResult dialog = MessageBox.Show("Xác nhận xóa ?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    if (DKH.Delete_KH(txtMaKhachHang.Text))
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        Load_KH(DKH.Inf_KH());
+                        openButton(true);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại");
+                        Load_KH(DKH.Inf_KH());
+                    }
+                }
+            }
         }
     }
 }
