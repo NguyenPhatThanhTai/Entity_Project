@@ -33,9 +33,8 @@
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ThongTinKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NhanMayBaoGia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.DiSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.LapPhieuHen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TinhTrangSua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.DiSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LichSuSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.MayTinhDeBan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -91,10 +90,10 @@
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ThongTinKhachHang,
             this.NhanMayBaoGia,
-            this.DiSuaChua,
-            this.LapPhieuHen,
             this.TinhTrangSua,
+            this.DiSuaChua,
             this.LichSuSuaChua});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Dịch Vụ";
             // 
@@ -117,24 +116,6 @@
             this.NhanMayBaoGia.Text = "Nhận máy - báo giá";
             this.NhanMayBaoGia.Click += new System.EventHandler(this.NhanMayBaoGia_Click);
             // 
-            // DiSuaChua
-            // 
-            this.DiSuaChua.Name = "DiSuaChua";
-            this.DiSuaChua.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.DiSuaChua.Text = "Đi sửa chửa";
-            this.DiSuaChua.Click += new System.EventHandler(this.DiSuaChua_Click);
-            // 
-            // LapPhieuHen
-            // 
-            this.LapPhieuHen.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons)});
-            this.LapPhieuHen.Name = "LapPhieuHen";
-            this.LapPhieuHen.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.LapPhieuHen.Text = "Lập phiếu hẹn";
-            // 
             // TinhTrangSua
             // 
             this.TinhTrangSua.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
@@ -145,6 +126,13 @@
             this.TinhTrangSua.Name = "TinhTrangSua";
             this.TinhTrangSua.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.TinhTrangSua.Text = "Tình trạng sửa";
+            // 
+            // DiSuaChua
+            // 
+            this.DiSuaChua.Name = "DiSuaChua";
+            this.DiSuaChua.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.DiSuaChua.Text = "Đi sửa chửa";
+            this.DiSuaChua.Click += new System.EventHandler(this.DiSuaChua_Click);
             // 
             // LichSuSuaChua
             // 
@@ -346,7 +334,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement NhanMayBaoGia;
         private DevExpress.XtraBars.Navigation.AccordionControlElement DiSuaChua;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement LapPhieuHen;
         private DevExpress.XtraBars.Navigation.AccordionControlElement TinhTrangSua;
         private DevExpress.XtraBars.Navigation.AccordionControlElement LichSuSuaChua;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
