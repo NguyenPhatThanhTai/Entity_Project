@@ -14,11 +14,12 @@ namespace Entity_Project.Entity
 
         public virtual DbSet<Inf_Customers> Inf_Customers { get; set; }
         public virtual DbSet<Inf_LichSu> Inf_LichSu { get; set; }
+        public virtual DbSet<Inf_LK> Inf_LK { get; set; }
         public virtual DbSet<Inf_Repair> Inf_Repair { get; set; }
         public virtual DbSet<Inf_Staff> Inf_Staff { get; set; }
+        public virtual DbSet<Inf_WareHouse> Inf_WareHouse { get; set; }
         public virtual DbSet<Account_Staff> Account_Staff { get; set; }
         public virtual DbSet<Detail_Inf_Repair> Detail_Inf_Repair { get; set; }
-        public virtual DbSet<Inf_LK> Inf_LK { get; set; }
         public virtual DbSet<Salary_Staff> Salary_Staff { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -60,6 +61,22 @@ namespace Entity_Project.Entity
                 .Property(e => e.Repair_Money)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Inf_LK>()
+                .Property(e => e.LK_Id)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Inf_LK>()
+                .Property(e => e.WareHouse_Id)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Inf_LK>()
+                .Property(e => e.LK_Number)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Inf_LK>()
+                .Property(e => e.LK_Price)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Inf_Repair>()
                 .Property(e => e.Repair_Id)
                 .IsUnicode(false);
@@ -96,6 +113,23 @@ namespace Entity_Project.Entity
                 .HasOptional(e => e.Salary_Staff)
                 .WithRequired(e => e.Inf_Staff);
 
+            modelBuilder.Entity<Inf_WareHouse>()
+                .Property(e => e.WareHouse_Id)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Inf_WareHouse>()
+                .Property(e => e.WareHouse_Capacity)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Inf_WareHouse>()
+                .Property(e => e.Ware_House_Total)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Inf_WareHouse>()
+                .HasMany(e => e.Inf_LK)
+                .WithRequired(e => e.Inf_WareHouse)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Account_Staff>()
                 .Property(e => e.Staff_Id)
                 .IsUnicode(false);
@@ -110,18 +144,6 @@ namespace Entity_Project.Entity
 
             modelBuilder.Entity<Detail_Inf_Repair>()
                 .Property(e => e.Repair_Money)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Inf_LK>()
-                .Property(e => e.LK_Id)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Inf_LK>()
-                .Property(e => e.LK_Number)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Inf_LK>()
-                .Property(e => e.LK_Price)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Salary_Staff>()

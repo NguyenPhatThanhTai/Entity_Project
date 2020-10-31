@@ -95,7 +95,8 @@ namespace Entity_Project
 
         private void DanhSachKhoHang_Click(object sender, EventArgs e)
         {
-
+            DanhSachKhoHang frm = new DanhSachKhoHang();
+            viewForm(frm);
         }
 
         private void ThongTinTrongKho_Click(object sender, EventArgs e)
@@ -159,6 +160,11 @@ namespace Entity_Project
         }
 
         private void YeuCauTroGiup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement6_Click(object sender, EventArgs e)
         {
 
         }

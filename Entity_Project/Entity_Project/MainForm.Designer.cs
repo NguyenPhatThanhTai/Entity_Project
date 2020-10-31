@@ -37,20 +37,22 @@
             this.DiSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LichSuSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.LinhKien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.MayTinhDeBan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LapTop = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.LinhKien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TheoCombo = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.KhuyenMai = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DanhSachKhoHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ThongTinTrongKho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DanhSachNhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.BangChamCong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TongKetTaiChinh = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.HangTonKho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.PhanQuyen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ThietLapKetNoiSQL = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -93,7 +95,6 @@
             this.TinhTrangSua,
             this.DiSuaChua,
             this.LichSuSuaChua});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Dịch Vụ";
             // 
@@ -144,13 +145,20 @@
             // accordionControlElement6
             // 
             this.accordionControlElement6.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.LinhKien,
             this.MayTinhDeBan,
             this.LapTop,
-            this.LinhKien,
             this.TheoCombo,
             this.KhuyenMai});
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Text = "Mặt hàng";
+            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
+            // 
+            // LinhKien
+            // 
+            this.LinhKien.Name = "LinhKien";
+            this.LinhKien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.LinhKien.Text = "Linh kiện";
             // 
             // MayTinhDeBan
             // 
@@ -163,12 +171,6 @@
             this.LapTop.Name = "LapTop";
             this.LapTop.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.LapTop.Text = "Laptop";
-            // 
-            // LinhKien
-            // 
-            this.LinhKien.Name = "LinhKien";
-            this.LinhKien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.LinhKien.Text = "Linh kiện";
             // 
             // TheoCombo
             // 
@@ -185,8 +187,8 @@
             // accordionControlElement7
             // 
             this.accordionControlElement7.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.DanhSachKhoHang,
-            this.ThongTinTrongKho});
+            this.DanhSachKhoHang});
+            this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "Kho hàng";
             // 
@@ -194,13 +196,8 @@
             // 
             this.DanhSachKhoHang.Name = "DanhSachKhoHang";
             this.DanhSachKhoHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.DanhSachKhoHang.Text = "Danh sách các kho hàng";
-            // 
-            // ThongTinTrongKho
-            // 
-            this.ThongTinTrongKho.Name = "ThongTinTrongKho";
-            this.ThongTinTrongKho.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ThongTinTrongKho.Text = "Thông tin trong kho";
+            this.DanhSachKhoHang.Text = "Kiểm tra kho hàng";
+            this.DanhSachKhoHang.Click += new System.EventHandler(this.DanhSachKhoHang_Click);
             // 
             // accordionControlElement8
             // 
@@ -226,7 +223,10 @@
             // 
             this.accordionControlElement9.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.TongKetTaiChinh,
-            this.HangTonKho});
+            this.HangTonKho,
+            this.accordionControlElement2,
+            this.accordionControlElement4,
+            this.accordionControlElement3});
             this.accordionControlElement9.Name = "accordionControlElement9";
             this.accordionControlElement9.Text = "Báo cáo - thống kê";
             // 
@@ -241,6 +241,24 @@
             this.HangTonKho.Name = "HangTonKho";
             this.HangTonKho.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.HangTonKho.Text = "Hàng tồn kho";
+            // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement2.Text = "Báo cáo nhập hàng";
+            // 
+            // accordionControlElement4
+            // 
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "Báo cáo xuất hàng";
+            // 
+            // accordionControlElement3
+            // 
+            this.accordionControlElement3.Name = "accordionControlElement3";
+            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement3.Text = "Báo cáo chuyển kho hàng";
             // 
             // accordionControlElement10
             // 
@@ -345,7 +363,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement KhuyenMai;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
         private DevExpress.XtraBars.Navigation.AccordionControlElement DanhSachKhoHang;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ThongTinTrongKho;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
         private DevExpress.XtraBars.Navigation.AccordionControlElement DanhSachNhanVien;
         private DevExpress.XtraBars.Navigation.AccordionControlElement BangChamCong;
@@ -364,5 +381,8 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement YeuCauTroGiup;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager LuuTru;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ThongTinKhachHang;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
     }
 }

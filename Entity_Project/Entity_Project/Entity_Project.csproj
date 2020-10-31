@@ -88,7 +88,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanhSachKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachKhoHang.Designer.cs">
+      <DependentUpon>DanhSachKhoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data_KH.cs" />
+    <Compile Include="Data_LK.cs" />
     <Compile Include="Data_RP.cs" />
     <Compile Include="DiSuaChua.cs">
       <SubType>Form</SubType>
@@ -104,12 +111,19 @@
     <Compile Include="Entity\Inf_LK.cs" />
     <Compile Include="Entity\Inf_Repair.cs" />
     <Compile Include="Entity\Inf_Staff.cs" />
+    <Compile Include="Entity\Inf_WareHouse.cs" />
     <Compile Include="Entity\Salary_Staff.cs" />
     <Compile Include="LichSuSuaChua.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LichSuSuaChua.Designer.cs">
       <DependentUpon>LichSuSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinhKien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinhKien.Designer.cs">
+      <DependentUpon>LinhKien.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -137,11 +151,17 @@
     <Compile Include="TinhTrangSua.Designer.cs">
       <DependentUpon>TinhTrangSua.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DanhSachKhoHang.resx">
+      <DependentUpon>DanhSachKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DiSuaChua.resx">
       <DependentUpon>DiSuaChua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LichSuSuaChua.resx">
       <DependentUpon>LichSuSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinhKien.resx">
+      <DependentUpon>LinhKien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -204,6 +224,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dollar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shrink %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
