@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,7 +16,7 @@ namespace Entity_Project
         int i = 0;
         string Name;
         Data data = new Data();
-
+        string time = DateTime.Now.ToString("yyyy/MM/dd");
         public List<Inf_Repair> Inf_Repair()
         {
             List<Inf_Repair> repair = data.Inf_Repair.ToList();
@@ -51,13 +52,43 @@ namespace Entity_Project
             return false;
         }
 
-        public bool Done_RP(string Repair_Id, string Laptop_Name, string Repair_Reason, string Repair_Money, string Repair_Appoinment)
+        public List<Inf_Repair> FindBy_ID(string id)
+        {
+            List<Inf_Repair> repair = data.Inf_Repair.Where(p => p.Repair_Id == id).ToList();
+            return repair;
+        }
+
+        public bool Done_RP(string Repair_Id)
         {
             Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
             if(repair != null)
             {
-                
+                if (repair.Detail_Inf_Repair.Repair_Note == "Hẹn ngày lấy")
+                {
+                    var thread = new Thread(() => sendMail(repair.Inf_Customers.Customer_Name, repair.Inf_Customers.Customer_Email, repair.Inf_Customers.Customer_Phone, repair.Laptop_Name, repair.Detail_Inf_Repair.Repair_Reason, repair.Detail_Inf_Repair.Repair_Money));
+                    thread.Start();
+                }
+                Inf_LichSu ls = new Inf_LichSu()
+                {
+                    Customer_Name = repair.Inf_Customers.Customer_Name,
+                    Customer_Id = repair.Inf_Customers.Customer_Id,
+                    Customer_Sex = repair.Inf_Customers.Customer_Sex,
+                    Customer_Birth = repair.Inf_Customers.Customer_Birth,
+                    Customer_Email = repair.Inf_Customers.Customer_Email,
+                    Customer_Phone = repair.Inf_Customers.Customer_Phone,
+                    Customer_TimeAdd = repair.Inf_Customers.Customer_TimeAdd,
+                    Repair_Id = repair.Repair_Id,
+                    Repair_Appointment = repair.Detail_Inf_Repair.Repair_Appointment,
+                    Repair_Money = repair.Detail_Inf_Repair.Repair_Money,
+                    Repair_Note = repair.Detail_Inf_Repair.Repair_Note,
+                    Repair_Reason = repair.Detail_Inf_Repair.Repair_Reason,
+                    Repair_Time_End = DateTime.Parse(time)
+                };
+                data.Inf_LichSu.Add(ls);
+                data.SaveChanges();
+                return true;
             }
+            return false;
         }
 
         private static void sendMail(string NameTo, string EmailTo, string SDTTo, string Laptop_Name, string Repair_Reason, string Repair_Money)
@@ -72,7 +103,7 @@ namespace Entity_Project
                 message.Body = "<h3><b>Trân trọng gửi đến quý khách hàng : </b>" + NameTo + "</h3>" +
                     "           <h5><b>Số điện thoại</b>: " + SDTTo + "</h5>" +
                     "           <h5><b>Tên laptop</b>: " + Laptop_Name + "</h5>" +
-                    "           <h5><b>Chi tiết sửa</b>: " + Repair_Reason + "</h5>" +
+                    "           <h5><b>Ghi chú</b>: " + Repair_Reason + "</h5>" +
                     "           <h5><b>Số tiền</b>: " + String.Format("{0:#,###} VND", int.Parse(Repair_Money)) + "</h5>" +
                     "           <h5><strong>Lưu ý: </strong> <i>Khi đến quý khách vui lòng đem đúng số tiền là <b>" + String.Format("{0:#,###} VND", int.Parse(Repair_Money)) + "</b> và phiếu hẹn để thanh toán</i><h5> <br>" +
                     "           <h3><b>Trân trọng thông báo cho quý khách !<b><h3>";
@@ -85,6 +116,12 @@ namespace Entity_Project
             {
                 MessageBox.Show("Lỗi gửi mail");
             }
+        }
+
+        public List<Inf_LichSu> LichSu()
+        {
+            List<Inf_LichSu> LS = data.Inf_LichSu.ToList();
+            return LS;
         }
     }
 }

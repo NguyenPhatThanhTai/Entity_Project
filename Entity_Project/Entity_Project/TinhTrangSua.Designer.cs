@@ -61,6 +61,7 @@
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Data.Size = new System.Drawing.Size(1194, 599);
             this.Data.TabIndex = 3;
+            this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
             // STT
             // 
@@ -112,6 +113,7 @@
             // 
             // btnHoanThanh
             // 
+            this.btnHoanThanh.Enabled = false;
             this.btnHoanThanh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHoanThanh.ImageOptions.SvgImage")));
             this.btnHoanThanh.Location = new System.Drawing.Point(29, 30);
             this.btnHoanThanh.Name = "btnHoanThanh";

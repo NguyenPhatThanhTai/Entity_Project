@@ -100,6 +100,7 @@
     <Compile Include="Entity\Data.cs" />
     <Compile Include="Entity\Detail_Inf_Repair.cs" />
     <Compile Include="Entity\Inf_Customers.cs" />
+    <Compile Include="Entity\Inf_LichSu.cs" />
     <Compile Include="Entity\Inf_LK.cs" />
     <Compile Include="Entity\Inf_Repair.cs" />
     <Compile Include="Entity\Inf_Staff.cs" />

@@ -20,6 +20,7 @@ namespace Entity_Project
         }
 
         Data_RP DRP;
+        string id;
 
         private void TinhTrangSua_Load(object sender, EventArgs e)
         {
@@ -49,12 +50,34 @@ namespace Entity_Project
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Xác nhận hoàn thành đơn này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.No)
+            if (dialog == DialogResult.Yes)
             {
-                
+                List<Inf_Repair> Inf_Repair = DRP.FindBy_ID(id);
+                //string Repair_Id, string Laptop_Name, string Repair_Reason, string Repair_Money, string Repair_Appoinment
+                foreach (var item in Inf_Repair)
+                {
+                    if (DRP.Done_RP(item.Repair_Id))
+                    {
+                        MessageBox.Show("Thành công");
+                        Load_TinhTrang(DRP.Inf_Repair());
+                        btnHoanThanh.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thành công");
+                    }
+                }
+            }
+            else
+            {
+                Load_TinhTrang(DRP.Inf_Repair());
             }
         }
 
-
+        private void Data_Click(object sender, EventArgs e)
+        {
+            btnHoanThanh.Enabled = true;
+            id = Data.SelectedRows[0].Cells[1].Value.ToString();
+        }
     }
 }

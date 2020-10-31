@@ -13,6 +13,7 @@ namespace Entity_Project.Entity
         }
 
         public virtual DbSet<Inf_Customers> Inf_Customers { get; set; }
+        public virtual DbSet<Inf_LichSu> Inf_LichSu { get; set; }
         public virtual DbSet<Inf_Repair> Inf_Repair { get; set; }
         public virtual DbSet<Inf_Staff> Inf_Staff { get; set; }
         public virtual DbSet<Account_Staff> Account_Staff { get; set; }
@@ -38,6 +39,26 @@ namespace Entity_Project.Entity
                 .HasMany(e => e.Inf_Repair)
                 .WithRequired(e => e.Inf_Customers)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Inf_LichSu>()
+                .Property(e => e.Customer_Id)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Inf_LichSu>()
+                .Property(e => e.Customer_Sex)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Inf_LichSu>()
+                .Property(e => e.Customer_Phone)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Inf_LichSu>()
+                .Property(e => e.Repair_Id)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Inf_LichSu>()
+                .Property(e => e.Repair_Money)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Inf_Repair>()
                 .Property(e => e.Repair_Id)
