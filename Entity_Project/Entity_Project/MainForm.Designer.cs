@@ -93,6 +93,7 @@
             this.TinhTrangSua,
             this.DiSuaChua,
             this.LichSuSuaChua});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Dịch Vụ";
             // 
@@ -138,6 +139,7 @@
             this.LichSuSuaChua.Name = "LichSuSuaChua";
             this.LichSuSuaChua.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.LichSuSuaChua.Text = "Lịch sử sữa chữa";
+            this.LichSuSuaChua.Click += new System.EventHandler(this.LichSuSuaChua_Click);
             // 
             // accordionControlElement6
             // 

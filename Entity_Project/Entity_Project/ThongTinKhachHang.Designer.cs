@@ -309,6 +309,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Enabled = false;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.Location = new System.Drawing.Point(640, 188);
             this.btnDelete.Name = "btnDelete";
@@ -319,6 +320,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
             this.btnUpdate.Location = new System.Drawing.Point(359, 188);
             this.btnUpdate.Name = "btnUpdate";

@@ -64,7 +64,8 @@ namespace Entity_Project
 
         private void LichSuSuaChua_Click(object sender, EventArgs e)
         {
-
+            LichSuSuaChua frm = new LichSuSuaChua();
+            viewForm(frm);
         }
 
         private void MayTinhDeBan_Click(object sender, EventArgs e)

@@ -105,6 +105,12 @@
     <Compile Include="Entity\Inf_Repair.cs" />
     <Compile Include="Entity\Inf_Staff.cs" />
     <Compile Include="Entity\Salary_Staff.cs" />
+    <Compile Include="LichSuSuaChua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LichSuSuaChua.Designer.cs">
+      <DependentUpon>LichSuSuaChua.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </Compile>
     <EmbeddedResource Include="DiSuaChua.resx">
       <DependentUpon>DiSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LichSuSuaChua.resx">
+      <DependentUpon>LichSuSuaChua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
