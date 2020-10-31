@@ -85,7 +85,10 @@ namespace Entity_Project
                             txtNVTN.Text = Name;
                         }
                     }
-                    openButton(true);
+                    else
+                    {
+                        openButton(true);
+                    }
                 }
             }
         }

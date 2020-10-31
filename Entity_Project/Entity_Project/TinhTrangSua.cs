@@ -56,7 +56,7 @@ namespace Entity_Project
                 //string Repair_Id, string Laptop_Name, string Repair_Reason, string Repair_Money, string Repair_Appoinment
                 foreach (var item in Inf_Repair)
                 {
-                    if (DRP.Done_RP(item.Repair_Id))
+                    if (DRP.Done_RP(item.Repair_Id) && DRP.Delete_KH(item.Customer_Id))
                     {
                         MessageBox.Show("Thành công");
                         Load_TinhTrang(DRP.Inf_Repair());

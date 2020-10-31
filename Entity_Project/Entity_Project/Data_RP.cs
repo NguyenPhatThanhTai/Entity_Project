@@ -78,6 +78,9 @@ namespace Entity_Project
                     Customer_Phone = repair.Inf_Customers.Customer_Phone,
                     Customer_TimeAdd = repair.Inf_Customers.Customer_TimeAdd,
                     Repair_Id = repair.Repair_Id,
+                    Laptop_Name = repair.Laptop_Name,
+                    Laptop_Status = repair.Laptop_Status,
+                    Staff_Id = repair.Staff_Id,
                     Repair_Appointment = repair.Detail_Inf_Repair.Repair_Appointment,
                     Repair_Money = repair.Detail_Inf_Repair.Repair_Money,
                     Repair_Note = repair.Detail_Inf_Repair.Repair_Note,
@@ -122,6 +125,40 @@ namespace Entity_Project
         {
             List<Inf_LichSu> LS = data.Inf_LichSu.ToList();
             return LS;
+        }
+
+        public bool Delete_KH(string Customer_Id)
+        {
+            string repair = (String)Customer_Id;
+            string repairID = repair.Substring(2);
+            try
+            {
+                Detail_Inf_Repair Detail = data.Detail_Inf_Repair.FirstOrDefault(p => p.Repair_Id == "RP" + repairID);
+                if (Detail != null)
+                {
+                    data.Detail_Inf_Repair.Remove(Detail);
+                    data.SaveChanges();
+                }
+
+                Inf_Repair Repair = data.Inf_Repair.FirstOrDefault(p => p.Customer_Id == Customer_Id);
+                if (Repair != null)
+                {
+                    data.Inf_Repair.Remove(Repair);
+                    data.SaveChanges();
+                }
+
+                Inf_Customers Customer = data.Inf_Customers.FirstOrDefault(p => p.Customer_Id == Customer_Id);
+                if (Customer != null)
+                {
+                    data.Inf_Customers.Remove(Customer);
+                    data.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
