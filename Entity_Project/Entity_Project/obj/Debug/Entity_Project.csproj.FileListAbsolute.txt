@@ -196,3 +196,4 @@ D:\Entity_Project\Entity_Project\bin\Debug\EntityFramework.dll
 D:\Entity_Project\Entity_Project\bin\Debug\EntityFramework.SqlServer.dll
 D:\Entity_Project\Entity_Project\bin\Debug\EntityFramework.xml
 D:\Entity_Project\Entity_Project\bin\Debug\EntityFramework.SqlServer.xml
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.TinhTrangSua.resources

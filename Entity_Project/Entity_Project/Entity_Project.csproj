@@ -124,6 +124,12 @@
     <Compile Include="ThongTinKhachHang.Designer.cs">
       <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="TinhTrangSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TinhTrangSua.Designer.cs">
+      <DependentUpon>TinhTrangSua.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DiSuaChua.resx">
       <DependentUpon>DiSuaChua.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +152,9 @@
     </Compile>
     <EmbeddedResource Include="ThongTinKhachHang.resx">
       <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TinhTrangSua.resx">
+      <DependentUpon>TinhTrangSua.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

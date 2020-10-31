@@ -56,9 +56,9 @@ namespace Entity_Project
             viewForm(frm);
         }
 
-        private void DiSuaChua_Click(object sender, EventArgs e)
+        private void TinhTrangSua_Click(object sender, EventArgs e)
         {
-            DiSuaChua frm = new DiSuaChua();
+            TinhTrangSua frm = new TinhTrangSua();
             viewForm(frm);
         }
 
