@@ -44,6 +44,12 @@ namespace Entity_Project
             }
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            MainFormLoad frm = new MainFormLoad();
+            viewForm(frm);
+        }
+
         private void ThongTinKhachHang_Click(object sender, EventArgs e)
         {
             ThongTinKhachHang frm = new ThongTinKhachHang();
@@ -80,7 +86,8 @@ namespace Entity_Project
 
         private void LinhKien_Click(object sender, EventArgs e)
         {
-
+            LinhKien frm = new LinhKien();
+            viewForm(frm);
         }
 
         private void TheoCombo_Click(object sender, EventArgs e)

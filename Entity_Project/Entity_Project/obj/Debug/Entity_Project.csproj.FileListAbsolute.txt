@@ -200,3 +200,4 @@ D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.TinhTrangSua.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.LichSuSuaChua.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.DanhSachKhoHang.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.LinhKien.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.MainFormLoad.resources

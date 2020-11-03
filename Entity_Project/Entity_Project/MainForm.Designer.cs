@@ -150,6 +150,7 @@
             this.LapTop,
             this.TheoCombo,
             this.KhuyenMai});
+            this.accordionControlElement6.Expanded = true;
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Text = "Mặt hàng";
             this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
@@ -159,6 +160,7 @@
             this.LinhKien.Name = "LinhKien";
             this.LinhKien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.LinhKien.Text = "Linh kiện";
+            this.LinhKien.Click += new System.EventHandler(this.LinhKien_Click);
             // 
             // MayTinhDeBan
             // 
@@ -340,6 +342,7 @@
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).EndInit();
             this.ResumeLayout(false);

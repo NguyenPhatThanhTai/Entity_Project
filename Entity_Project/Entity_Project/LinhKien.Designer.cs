@@ -70,7 +70,7 @@
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
-            this.STT.Width = 125;
+            this.STT.Width = 50;
             // 
             // MaLinhKien
             // 
@@ -94,7 +94,7 @@
             this.TenLinhKien.MinimumWidth = 6;
             this.TenLinhKien.Name = "TenLinhKien";
             this.TenLinhKien.ReadOnly = true;
-            this.TenLinhKien.Width = 125;
+            this.TenLinhKien.Width = 200;
             // 
             // SoLuongNhapVe
             // 
@@ -102,7 +102,7 @@
             this.SoLuongNhapVe.MinimumWidth = 6;
             this.SoLuongNhapVe.Name = "SoLuongNhapVe";
             this.SoLuongNhapVe.ReadOnly = true;
-            this.SoLuongNhapVe.Width = 125;
+            this.SoLuongNhapVe.Width = 160;
             // 
             // NhaSanXuat
             // 
@@ -110,7 +110,7 @@
             this.NhaSanXuat.MinimumWidth = 6;
             this.NhaSanXuat.Name = "NhaSanXuat";
             this.NhaSanXuat.ReadOnly = true;
-            this.NhaSanXuat.Width = 125;
+            this.NhaSanXuat.Width = 200;
             // 
             // GiaTien
             // 
@@ -118,7 +118,6 @@
             this.GiaTien.MinimumWidth = 6;
             this.GiaTien.Name = "GiaTien";
             this.GiaTien.ReadOnly = true;
-            this.GiaTien.Width = 125;
             // 
             // ThoiGianThem
             // 
@@ -136,6 +135,7 @@
             this.Controls.Add(this.Data);
             this.Name = "LinhKien";
             this.Text = "LinhKien";
+            this.Load += new System.EventHandler(this.LinhKien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             this.ResumeLayout(false);
 

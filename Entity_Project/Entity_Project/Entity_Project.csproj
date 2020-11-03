@@ -131,6 +131,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainFormLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormLoad.Designer.cs">
+      <DependentUpon>MainFormLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanMayBaoGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormLoad.resx">
+      <DependentUpon>MainFormLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanMayBaoGia.resx">
       <DependentUpon>NhanMayBaoGia.cs</DependentUpon>
@@ -233,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wrench2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\the-moment-when-you-get-your-code-to-work.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

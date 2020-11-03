@@ -37,6 +37,7 @@
             this.HenNhanMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhanVienTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHoanThanh = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,18 +116,29 @@
             // 
             this.btnHoanThanh.Enabled = false;
             this.btnHoanThanh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHoanThanh.ImageOptions.SvgImage")));
-            this.btnHoanThanh.Location = new System.Drawing.Point(29, 30);
+            this.btnHoanThanh.Location = new System.Drawing.Point(203, 30);
             this.btnHoanThanh.Name = "btnHoanThanh";
-            this.btnHoanThanh.Size = new System.Drawing.Size(200, 46);
+            this.btnHoanThanh.Size = new System.Drawing.Size(182, 46);
             this.btnHoanThanh.TabIndex = 4;
             this.btnHoanThanh.Text = "Hoàn thành đơn này";
             this.btnHoanThanh.Click += new System.EventHandler(this.btnHoanThanh_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnRefresh.Location = new System.Drawing.Point(29, 30);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(168, 46);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Làm mới dữ liệu";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // TinhTrangSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 704);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnHoanThanh);
             this.Controls.Add(this.Data);
             this.Name = "TinhTrangSua";
@@ -147,5 +159,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HenNhanMay;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienTiepNhan;
         private DevExpress.XtraEditors.SimpleButton btnHoanThanh;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
     }
 }

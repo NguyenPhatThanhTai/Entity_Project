@@ -76,8 +76,21 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
-            btnHoanThanh.Enabled = true;
-            id = Data.SelectedRows[0].Cells[1].Value.ToString();
+            if (Data.SelectedRows[0].Cells[5].Value.ToString() != "Chưa biết")
+            {
+                btnHoanThanh.Enabled = true;
+                id = Data.SelectedRows[0].Cells[1].Value.ToString();
+            }
+            else
+            {
+                btnHoanThanh.Enabled = false;
+                id = "";
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Load_TinhTrang(DRP.Inf_Repair());
         }
     }
 }
