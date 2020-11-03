@@ -45,5 +45,35 @@ namespace Entity_Project
                 i++;
             }
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            Load_LK(DLK.Inf_LK());
+            string tlk = txtTlk.Text.ToLower();
+            string nsx = txtNsx.Text.ToLower();
+
+            if (tlk == "" || nsx == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+            }
+            else
+            {
+                Data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
+                {
+                    foreach (DataGridViewRow row in Data.Rows)
+                    {
+                        if (row.Cells[3].Value.ToString().ToLower().Equals(tlk) && row.Cells[5].Value.ToString().ToLower().Equals(nsx))
+                        {
+                            row.Selected = true;
+                        }
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
+        }
     }
 }
