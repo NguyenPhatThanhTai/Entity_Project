@@ -47,7 +47,7 @@
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DanhSachNhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.BangChamCong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.BangLuong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TongKetTaiChinh = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.HangTonKho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -205,8 +205,7 @@
             this.accordionControlElement8.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.DanhSachNhanVien,
             this.BangChamCong,
-            this.accordionControlElement5});
-            this.accordionControlElement8.Expanded = true;
+            this.BangLuong});
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Text = "Nhân viên";
             // 
@@ -223,11 +222,12 @@
             this.BangChamCong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.BangChamCong.Text = "Bảng chấm công";
             // 
-            // accordionControlElement5
+            // BangLuong
             // 
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "Bảng lương";
+            this.BangLuong.Name = "BangLuong";
+            this.BangLuong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.BangLuong.Text = "Bảng lương";
+            this.BangLuong.Click += new System.EventHandler(this.BangLuong_Click);
             // 
             // accordionControlElement9
             // 
@@ -395,6 +395,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement BangLuong;
     }
 }

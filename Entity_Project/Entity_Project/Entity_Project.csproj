@@ -94,6 +94,12 @@
     <Compile Include="DanhSachKhoHang.Designer.cs">
       <DependentUpon>DanhSachKhoHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinLuongNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinLuongNhanVien.Designer.cs">
+      <DependentUpon>ThongTinLuongNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
     <EmbeddedResource Include="DanhSachKhoHang.resx">
       <DependentUpon>DanhSachKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinLuongNhanVien.resx">
+      <DependentUpon>ThongTinLuongNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTinNhanVien.resx">
       <DependentUpon>ThongTinNhanVien.cs</DependentUpon>

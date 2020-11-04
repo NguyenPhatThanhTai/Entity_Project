@@ -202,3 +202,4 @@ D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.DanhSachKhoHang.resour
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.LinhKien.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.MainFormLoad.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.ThongTinNhanVien.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.ThongTinLuongNhanVien.resources

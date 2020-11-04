@@ -178,7 +178,7 @@ namespace Entity_Project
             txtDate.Value = DateTime.Now;
             txtSDT.Text = "";
             txtDiaChi.Text = "";
-            txtDepartment.Text = "";
+            txtDepartment.Text = "Quản Lý";
         }
 
         private void Btn_ReFresh_Click(object sender, EventArgs e)

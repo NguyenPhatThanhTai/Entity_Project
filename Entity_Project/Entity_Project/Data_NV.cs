@@ -1,6 +1,7 @@
 ﻿using Entity_Project.Entity;
 using System;
 using System.Collections.Generic;
+using System.Deployment.Application;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -153,6 +154,7 @@ namespace Entity_Project
                     Staff.Staff_Address = Staff_Address;
                     Staff.Staff_Phone = Staff_Phone;
                     Staff.Staff_Deparment = PhongBan;
+                    Staff.Account_Staff.Staff_Role = PhongBan;
                     data.SaveChanges();
                 }
                 catch (Exception ex)
@@ -191,6 +193,33 @@ namespace Entity_Project
             catch (Exception ex)
             {
                 return false;
+            }
+            return true;
+        }
+
+        public List<Salary_Staff> Salary_Staff()
+        {
+            List<Salary_Staff> staff = data.Salary_Staff.ToList();
+            return staff;
+        }
+
+        public bool Update_Salary(string Staff_Default_Salary, string Staff_Salary_Per_Hour, string Staff_OT, string Staff_Reward, string Staff_Id)
+        {
+            Salary_Staff salary = data.Salary_Staff.FirstOrDefault(p => p.Staff_Id == Staff_Id);
+            if (salary != null)
+            {
+                try
+                {
+                    salary.Staff_Default_Salary = Staff_Default_Salary;
+                    salary.Staff_OT = Staff_OT;
+                    salary.Staff_Reward = Staff_Reward;
+                    salary.Staff_Salary_Per_Hour = Staff_Salary_Per_Hour;
+                    data.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
             }
             return true;
         }

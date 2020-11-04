@@ -117,6 +117,12 @@ namespace Entity_Project
             viewForm(frm);
         }
 
+        private void BangLuong_Click(object sender, EventArgs e)
+        {
+            ThongTinLuongNhanVien frm = new ThongTinLuongNhanVien();
+            viewForm(frm);
+        }
+
         private void BangChamCong_Click(object sender, EventArgs e)
         {
 
