@@ -113,7 +113,8 @@ namespace Entity_Project
 
         private void DanhSachNhanVien_Click(object sender, EventArgs e)
         {
-
+            ThongTinNhanVien frm = new ThongTinNhanVien();
+            viewForm(frm);
         }
 
         private void BangChamCong_Click(object sender, EventArgs e)

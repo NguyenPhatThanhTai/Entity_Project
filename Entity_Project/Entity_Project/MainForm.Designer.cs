@@ -47,6 +47,7 @@
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DanhSachNhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.BangChamCong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TongKetTaiChinh = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.HangTonKho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -150,7 +151,6 @@
             this.LapTop,
             this.TheoCombo,
             this.KhuyenMai});
-            this.accordionControlElement6.Expanded = true;
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Text = "Mặt hàng";
             this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
@@ -204,7 +204,9 @@
             // 
             this.accordionControlElement8.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.DanhSachNhanVien,
-            this.BangChamCong});
+            this.BangChamCong,
+            this.accordionControlElement5});
+            this.accordionControlElement8.Expanded = true;
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Text = "Nhân viên";
             // 
@@ -213,12 +215,19 @@
             this.DanhSachNhanVien.Name = "DanhSachNhanVien";
             this.DanhSachNhanVien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.DanhSachNhanVien.Text = "Dan sách nhân viên";
+            this.DanhSachNhanVien.Click += new System.EventHandler(this.DanhSachNhanVien_Click);
             // 
             // BangChamCong
             // 
             this.BangChamCong.Name = "BangChamCong";
             this.BangChamCong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.BangChamCong.Text = "Bảng chấm công";
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "Bảng lương";
             // 
             // accordionControlElement9
             // 
@@ -386,5 +395,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
     }
 }
