@@ -14,13 +14,20 @@ namespace Entity_Project
 {
     public partial class ThongTinNhanVien : DevExpress.XtraEditors.XtraForm
     {
+        Data_NV DNV;
+        string Sex, PhongBan, Role, Name, Id;
+
         public ThongTinNhanVien()
         {
             InitializeComponent();
         }
 
-        Data_NV DNV;
-        string Sex, PhongBan;
+        public ThongTinNhanVien(string Role, string Name, string Id):this()
+        {
+            this.Role = Role;
+            this.Name = Name;
+            this.Id = Id;
+        }
 
         private void DanhSachNhanVien_Load(object sender, EventArgs e)
         {
@@ -160,6 +167,14 @@ namespace Entity_Project
         private void Data_Click(object sender, EventArgs e)
         {
             openButton(false);
+            if (Id == Data.SelectedRows[0].Cells[1].Value.ToString())
+            {
+                btnDelete.Enabled = false;
+            }
+            else
+            {
+                btnDelete.Enabled = true;
+            }
             txtMaNv.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
             txtHoTen.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
             txtGioiTinh.Text = Data.SelectedRows[0].Cells[3].Value.ToString();

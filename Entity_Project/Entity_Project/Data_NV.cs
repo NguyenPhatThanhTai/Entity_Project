@@ -15,7 +15,7 @@ namespace Entity_Project
         string Min = DateTime.Now.ToString("mm");
         string sec = DateTime.Now.ToString("ss");
 
-        string Sex, PhongBan;
+        string Sex, PhongBan, Quyen;
 
         Data data = new Data();
 
@@ -58,7 +58,7 @@ namespace Entity_Project
             {
                 PhongBan = "2";
             }
-            else if(Staff_Department == "Kế Toán")
+            else if (Staff_Department == "Kế Toán")
             {
                 PhongBan = "3";
             }
@@ -121,7 +121,7 @@ namespace Entity_Project
             {
                 Sex = "1";
             }
-            else if(Staff_Sex == "Nữ")
+            else if (Staff_Sex == "Nữ")
             {
                 Sex = "2";
             }
@@ -222,6 +222,65 @@ namespace Entity_Project
                 }
             }
             return true;
+        }
+
+        public List<Account_Staff> Account_Staff()
+        {
+            List<Account_Staff> Account = data.Account_Staff.ToList();
+            return Account;
+        }
+
+        public bool Update_Account(string Staff_Password, string Staff_Role, string Staff_Id)
+        {
+            if (Staff_Role == "Admin")
+            {
+                Quyen = "1";
+            }
+            else
+            {
+                Quyen = "2";
+            }
+
+            Account_Staff account = data.Account_Staff.FirstOrDefault(p => p.Staff_Id == Staff_Id);
+            if (account != null)
+            {
+                try
+                {
+                    account.Staff_Password = Staff_Password;
+                    account.Staff_Role = Quyen;
+
+                    data.SaveChanges();
+                } catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool Login(string username, string password)
+        {
+            Account_Staff account = data.Account_Staff.FirstOrDefault(p => p.Staff_Id == username);
+            if (account != null)
+            {
+                if (account.Staff_Password == password)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public string getRole(string Staff_Id)
+        {
+            Account_Staff account = data.Account_Staff.FirstOrDefault(p => p.Staff_Id == Staff_Id);
+            return account.Staff_Role;
+        }
+
+        public string getName(string Staff_Id)
+        {
+            Account_Staff account = data.Account_Staff.FirstOrDefault(p => p.Staff_Id == Staff_Id);
+            return account.Inf_Staff.Staff_Name;
         }
     }
 }

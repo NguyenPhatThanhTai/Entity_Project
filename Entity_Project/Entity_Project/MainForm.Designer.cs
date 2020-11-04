@@ -44,7 +44,7 @@
             this.KhuyenMai = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DanhSachKhoHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.NhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DanhSachNhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.BangChamCong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.BangLuong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -55,6 +55,7 @@
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.PhanQuyen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ThietLapKetNoiSQL = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.SaoLuuSQL = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -76,7 +77,7 @@
             this.accordionControlElement1,
             this.accordionControlElement6,
             this.accordionControlElement7,
-            this.accordionControlElement8,
+            this.NhanVien,
             this.accordionControlElement9,
             this.accordionControlElement10,
             this.accordionControlElement11});
@@ -153,7 +154,6 @@
             this.KhuyenMai});
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Text = "Mặt hàng";
-            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
             // 
             // LinhKien
             // 
@@ -200,14 +200,14 @@
             this.DanhSachKhoHang.Text = "Kiểm tra kho hàng";
             this.DanhSachKhoHang.Click += new System.EventHandler(this.DanhSachKhoHang_Click);
             // 
-            // accordionControlElement8
+            // NhanVien
             // 
-            this.accordionControlElement8.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.NhanVien.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.DanhSachNhanVien,
             this.BangChamCong,
             this.BangLuong});
-            this.accordionControlElement8.Name = "accordionControlElement8";
-            this.accordionControlElement8.Text = "Nhân viên";
+            this.NhanVien.Name = "NhanVien";
+            this.NhanVien.Text = "Nhân viên";
             // 
             // DanhSachNhanVien
             // 
@@ -273,20 +273,33 @@
             // accordionControlElement10
             // 
             this.accordionControlElement10.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement5,
             this.PhanQuyen,
             this.ThietLapKetNoiSQL,
             this.SaoLuuSQL,
             this.PhucHoiSQL,
             this.DangXuat,
             this.Thoat});
+            this.accordionControlElement10.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl),
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons)});
             this.accordionControlElement10.Name = "accordionControlElement10";
             this.accordionControlElement10.Text = "Hệ thống";
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "Đổi mật khẩu";
             // 
             // PhanQuyen
             // 
             this.PhanQuyen.Name = "PhanQuyen";
             this.PhanQuyen.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.PhanQuyen.Text = "Phân quyền";
+            this.PhanQuyen.Text = "Phân quyền và Tài khoản";
+            this.PhanQuyen.Click += new System.EventHandler(this.PhanQuyen_Click);
             // 
             // ThietLapKetNoiSQL
             // 
@@ -311,12 +324,14 @@
             this.DangXuat.Name = "DangXuat";
             this.DangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.DangXuat.Text = "Đăng xuất";
+            this.DangXuat.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // Thoat
             // 
             this.Thoat.Name = "Thoat";
             this.Thoat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.Thoat.Text = "Thoát";
+            this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
             // accordionControlElement11
             // 
@@ -351,6 +366,7 @@
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).EndInit();
@@ -374,7 +390,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement KhuyenMai;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
         private DevExpress.XtraBars.Navigation.AccordionControlElement DanhSachKhoHang;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement NhanVien;
         private DevExpress.XtraBars.Navigation.AccordionControlElement DanhSachNhanVien;
         private DevExpress.XtraBars.Navigation.AccordionControlElement BangChamCong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
@@ -396,5 +412,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement BangLuong;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
     }
 }

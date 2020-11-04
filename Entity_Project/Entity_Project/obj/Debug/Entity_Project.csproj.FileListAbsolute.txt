@@ -203,3 +203,6 @@ D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.LinhKien.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.MainFormLoad.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.ThongTinNhanVien.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.ThongTinLuongNhanVien.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.PhanQuyenVaTaiKhoan.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.DangNhap.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.Loadding.resources

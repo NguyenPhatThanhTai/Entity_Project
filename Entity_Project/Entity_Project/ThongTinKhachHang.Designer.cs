@@ -56,13 +56,13 @@
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.Data = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MakhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoVaTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeAdd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayThem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -346,82 +346,90 @@
             this.Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.MaKhachHang,
+            this.MakhachHang,
             this.HoVaTen,
             this.GioiTinh,
             this.NgaySinh,
             this.Email,
             this.SDT,
-            this.TimeAdd});
-            this.Data.Location = new System.Drawing.Point(52, 275);
-            this.Data.MultiSelect = false;
+            this.NgayThem});
+            this.Data.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Data.Location = new System.Drawing.Point(20, 288);
             this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(1155, 409);
+            this.Data.Size = new System.Drawing.Size(1197, 407);
             this.Data.TabIndex = 79;
-            this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
             // STT
             // 
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
-            this.STT.Width = 125;
+            this.STT.ReadOnly = true;
+            this.STT.Width = 50;
             // 
-            // MaKhachHang
+            // MakhachHang
             // 
-            this.MaKhachHang.HeaderText = "Mã khách hàng";
-            this.MaKhachHang.MinimumWidth = 6;
-            this.MaKhachHang.Name = "MaKhachHang";
-            this.MaKhachHang.Width = 125;
+            this.MakhachHang.HeaderText = "Mã Khách Hàng";
+            this.MakhachHang.MinimumWidth = 6;
+            this.MakhachHang.Name = "MakhachHang";
+            this.MakhachHang.ReadOnly = true;
+            this.MakhachHang.Width = 125;
             // 
             // HoVaTen
             // 
             this.HoVaTen.HeaderText = "Họ và Tên";
             this.HoVaTen.MinimumWidth = 6;
             this.HoVaTen.Name = "HoVaTen";
-            this.HoVaTen.Width = 125;
+            this.HoVaTen.ReadOnly = true;
+            this.HoVaTen.Width = 170;
             // 
             // GioiTinh
             // 
             this.GioiTinh.HeaderText = "Giới Tính";
             this.GioiTinh.MinimumWidth = 6;
             this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.Width = 125;
+            this.GioiTinh.ReadOnly = true;
+            this.GioiTinh.Width = 150;
             // 
             // NgaySinh
             // 
             this.NgaySinh.HeaderText = "Ngày Sinh";
             this.NgaySinh.MinimumWidth = 6;
             this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 125;
+            this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.Width = 130;
             // 
             // Email
             // 
             this.Email.HeaderText = "Email";
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             this.Email.Width = 125;
             // 
             // SDT
             // 
-            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.HeaderText = "Số Điện Thoại";
             this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
             this.SDT.Width = 125;
             // 
-            // TimeAdd
+            // NgayThem
             // 
-            this.TimeAdd.HeaderText = "Ngày thêm";
-            this.TimeAdd.MinimumWidth = 6;
-            this.TimeAdd.Name = "TimeAdd";
-            this.TimeAdd.Width = 125;
+            this.NgayThem.HeaderText = "Ngày Thêm";
+            this.NgayThem.MinimumWidth = 6;
+            this.NgayThem.Name = "NgayThem";
+            this.NgayThem.ReadOnly = true;
+            this.NgayThem.Width = 125;
             // 
             // ThongTinKhachHang
             // 
-            this.Appearance.ForeColor = System.Drawing.Color.White;
+            this.Appearance.ForeColor = System.Drawing.Color.Black;
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -496,12 +504,12 @@
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.DataGridView Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MakhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoVaTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThem;
     }
 }

@@ -13,9 +13,18 @@ namespace Entity_Project
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
+        string role, name, Id;
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public MainForm(string role, string name, string Id) : this()
+        {
+            this.role = role;
+            this.name = name;
+            this.Id = Id;
         }
 
         private bool checkForm(Form frm)
@@ -48,6 +57,14 @@ namespace Entity_Project
         {
             MainFormLoad frm = new MainFormLoad();
             viewForm(frm);
+            if (role != "1")
+            {
+                PhanQuyen.Visible = false;
+                ThietLapKetNoiSQL.Visible = false;
+                PhucHoiSQL.Visible = false;
+                SaoLuuSQL.Visible = false;
+                NhanVien.Visible = false;
+            }
         }
 
         private void ThongTinKhachHang_Click(object sender, EventArgs e)
@@ -113,7 +130,7 @@ namespace Entity_Project
 
         private void DanhSachNhanVien_Click(object sender, EventArgs e)
         {
-            ThongTinNhanVien frm = new ThongTinNhanVien();
+            ThongTinNhanVien frm = new ThongTinNhanVien(role, name, Id);
             viewForm(frm);
         }
 
@@ -140,7 +157,8 @@ namespace Entity_Project
 
         private void PhanQuyen_Click(object sender, EventArgs e)
         {
-
+            PhanQuyenVaTaiKhoan frm = new PhanQuyenVaTaiKhoan();
+            viewForm(frm);
         }
 
         private void ThietLapKetNoiSQL_Click(object sender, EventArgs e)
@@ -160,12 +178,21 @@ namespace Entity_Project
 
         private void DangXuat_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialog = MessageBox.Show("Bạn muốn đăng xuất à?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Properties.Settings.Default.UserName = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Save();
+                this.Hide();
+                DangNhap dn = new DangNhap();
+                dn.Show();
+            }
         }
 
         private void Thoat_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void HuongDan_Click(object sender, EventArgs e)
@@ -178,9 +205,17 @@ namespace Entity_Project
 
         }
 
-        private void accordionControlElement6_Click(object sender, EventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            DialogResult dialog = MessageBox.Show("Bạn muốn thoát à?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Environment.Exit(1);
+            }
         }
     }
 }
