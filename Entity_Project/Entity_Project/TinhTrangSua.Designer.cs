@@ -194,6 +194,7 @@
             this.Name = "TinhTrangSua";
             this.Text = "TinhTrangSua";
             this.Load += new System.EventHandler(this.TinhTrangSua_Load);
+            this.Enter += new System.EventHandler(this.TinhTrangSua_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.l1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.d1)).EndInit();

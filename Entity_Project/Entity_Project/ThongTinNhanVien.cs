@@ -170,6 +170,12 @@ namespace Entity_Project
             }
         }
 
+        private void ThongTinNhanVien_Enter(object sender, EventArgs e)
+        {
+            DNV = new Data_NV();
+            Load_NV(DNV.Inf_Staff());
+        }
+
         private void Data_Click(object sender, EventArgs e)
         {
             openButton(false);

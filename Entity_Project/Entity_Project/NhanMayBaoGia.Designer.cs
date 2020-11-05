@@ -397,7 +397,7 @@
             // btnTiepNhan
             // 
             this.btnTiepNhan.Enabled = false;
-            this.btnTiepNhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnTiepNhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTiepNhan.ImageOptions.Image")));
             this.btnTiepNhan.Location = new System.Drawing.Point(244, 256);
             this.btnTiepNhan.Name = "btnTiepNhan";
             this.btnTiepNhan.Size = new System.Drawing.Size(202, 60);
@@ -534,6 +534,7 @@
             this.Name = "NhanMayBaoGia";
             this.Text = "NhanMayBaoGia";
             this.Load += new System.EventHandler(this.NhanMayBaoGia_Load);
+            this.Enter += new System.EventHandler(this.NhanMayBaoGia_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

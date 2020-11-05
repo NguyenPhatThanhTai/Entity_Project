@@ -117,5 +117,11 @@ namespace Entity_Project
             txtLamNgoaiGio.Enabled = !a;
             txtTienThuong.Enabled = !a;
         }
+
+        private void ThongTinLuongNhanVien_Enter(object sender, EventArgs e)
+        {
+            Data_NV DNV = new Data_NV();
+            Load_Salary(DNV.Salary_Staff());
+        }
     }
 }

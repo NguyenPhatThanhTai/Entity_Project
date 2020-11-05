@@ -396,6 +396,7 @@
             this.Name = "ThongTinLuongNhanVien";
             this.Text = "ThongTinLuongNhanVien";
             this.Load += new System.EventHandler(this.ThongTinLuongNhanVien_Load);
+            this.Enter += new System.EventHandler(this.ThongTinLuongNhanVien_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

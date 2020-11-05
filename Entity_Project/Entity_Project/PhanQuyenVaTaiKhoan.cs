@@ -114,5 +114,11 @@ namespace Entity_Project
             txtPassword.Text = Data.SelectedRows[0].Cells[4].Value.ToString();
             txtRole.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
         }
+
+        private void PhanQuyenVaTaiKhoan_Enter(object sender, EventArgs e)
+        {
+            Data_NV DNV = new Data_NV();
+            Load_Account(DNV.Account_Staff());
+        }
     }
 }

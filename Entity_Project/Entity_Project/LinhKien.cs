@@ -75,5 +75,11 @@ namespace Entity_Project
                 }
             }
         }
+
+        private void LinhKien_Enter(object sender, EventArgs e)
+        {
+            DLK = new Data_LK();
+            Load_LK(DLK.Inf_LK());
+        }
     }
 }

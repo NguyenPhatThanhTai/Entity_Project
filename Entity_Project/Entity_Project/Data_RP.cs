@@ -67,7 +67,7 @@ namespace Entity_Project
             {
                 if (note.ToString() == "Hẹn ngày lấy")
                 {
-                    //MessageBox.Show(repair.Detail_Inf_Repair.Repair_Note.ToString());
+                    MessageBox.Show(repair.Detail_Inf_Repair.Repair_Note.ToString());
                     var thread = new Thread(() => sendMail(repair.Inf_Customers.Customer_Name, repair.Inf_Customers.Customer_Email, repair.Inf_Customers.Customer_Phone, repair.Laptop_Name, repair.Detail_Inf_Repair.Repair_Reason, repair.Detail_Inf_Repair.Repair_Money));
                     thread.Start();
                 }

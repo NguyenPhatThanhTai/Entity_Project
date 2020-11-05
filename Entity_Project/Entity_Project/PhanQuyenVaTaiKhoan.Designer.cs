@@ -340,6 +340,7 @@
             this.Name = "PhanQuyenVaTaiKhoan";
             this.Text = "PhanQuyenVaTaiKhoan";
             this.Load += new System.EventHandler(this.PhanQuyenVaTaiKhoan_Load);
+            this.Enter += new System.EventHandler(this.PhanQuyenVaTaiKhoan_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();

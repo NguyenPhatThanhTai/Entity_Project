@@ -209,6 +209,7 @@
             this.Name = "LinhKien";
             this.Text = "LinhKien";
             this.Load += new System.EventHandler(this.LinhKien_Load);
+            this.Enter += new System.EventHandler(this.LinhKien_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

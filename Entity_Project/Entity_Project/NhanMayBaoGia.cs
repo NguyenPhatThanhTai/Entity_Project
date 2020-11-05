@@ -135,6 +135,12 @@ namespace Entity_Project
             txtNVTN.Text = Data.SelectedRows[0].Cells[9].Value.ToString();
         }
 
+        private void NhanMayBaoGia_Enter(object sender, EventArgs e)
+        {
+            Data_RP DRP = new Data_RP();
+            Load_RP(DRP.Inf_Repair());
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtTenMay.Text != "" && txtTinhTrang.Text != "" && txtHenSua.Text != "" && txtDateHen.Text != "" && txtSoTien.Text != "" && txtSoTien.Text != "" && txtCanSua.Text != "")
@@ -144,7 +150,6 @@ namespace Entity_Project
                 {
                     if (DRP.Update_RP(txtTenMay.Text, txtTinhTrang.Text, txtCanSua.Text, txtHenSua.Text, txtDateHen.Value, txtSoTien.Text, txtMaSuaChua.Text))
                     {
-                        TinhTrangSua tts = new TinhTrangSua();
                         MessageBox.Show("Cập nhật thành công");
                         DRP = new Data_RP();
                         Load_RP(DRP.Inf_Repair());

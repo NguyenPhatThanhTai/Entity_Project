@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.txtXinChao = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.txtChucVu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ThongTinKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NhanMayBaoGia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -66,8 +68,6 @@
             this.HuongDan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.YeuCauTroGiup = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LuuTru = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.txtXinChao = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.txtChucVu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,18 @@
             this.accordionControl1.Size = new System.Drawing.Size(286, 736);
             this.accordionControl1.TabIndex = 2;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
+            // 
+            // txtXinChao
+            // 
+            this.txtXinChao.Name = "txtXinChao";
+            this.txtXinChao.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.txtXinChao.Text = "Xin chào";
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.txtChucVu.Text = "Element8";
             // 
             // accordionControlElement1
             // 
@@ -360,18 +372,6 @@
             // LuuTru
             // 
             this.LuuTru.MdiParent = this;
-            // 
-            // txtXinChao
-            // 
-            this.txtXinChao.Name = "txtXinChao";
-            this.txtXinChao.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.txtXinChao.Text = "Xin chào";
-            // 
-            // txtChucVu
-            // 
-            this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.txtChucVu.Text = "Element8";
             // 
             // MainForm
             // 

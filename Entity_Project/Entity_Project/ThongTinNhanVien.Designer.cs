@@ -475,6 +475,7 @@
             this.Name = "ThongTinNhanVien";
             this.Text = "DanhSachNhanVien";
             this.Load += new System.EventHandler(this.DanhSachNhanVien_Load);
+            this.Enter += new System.EventHandler(this.ThongTinNhanVien_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

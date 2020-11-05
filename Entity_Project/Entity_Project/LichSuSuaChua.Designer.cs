@@ -222,7 +222,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefresh.ImageOptions.SvgImage")));
             this.btnRefresh.Location = new System.Drawing.Point(26, 26);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(162, 41);
@@ -240,6 +240,7 @@
             this.Name = "LichSuSuaChua";
             this.Text = "LichSuSuaChua";
             this.Load += new System.EventHandler(this.LichSuSuaChua_Load);
+            this.Enter += new System.EventHandler(this.LichSuSuaChua_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             this.ResumeLayout(false);
 
