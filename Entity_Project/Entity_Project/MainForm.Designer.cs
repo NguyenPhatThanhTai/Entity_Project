@@ -66,6 +66,8 @@
             this.HuongDan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.YeuCauTroGiup = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LuuTru = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.txtXinChao = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.txtChucVu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +76,8 @@
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.txtXinChao,
+            this.txtChucVu,
             this.accordionControlElement1,
             this.accordionControlElement6,
             this.accordionControlElement7,
@@ -85,7 +89,7 @@
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(277, 736);
+            this.accordionControl1.Size = new System.Drawing.Size(286, 736);
             this.accordionControl1.TabIndex = 2;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -357,6 +361,18 @@
             // 
             this.LuuTru.MdiParent = this;
             // 
+            // txtXinChao
+            // 
+            this.txtXinChao.Name = "txtXinChao";
+            this.txtXinChao.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.txtXinChao.Text = "Xin chào";
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.txtChucVu.Text = "Element8";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -413,5 +429,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement BangLuong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement txtXinChao;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement txtChucVu;
     }
 }

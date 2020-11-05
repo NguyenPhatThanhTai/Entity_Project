@@ -14,6 +14,7 @@ namespace Entity_Project
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
         string role, name, Id;
+        string ChucVu;
 
         public MainForm()
         {
@@ -59,12 +60,19 @@ namespace Entity_Project
             viewForm(frm);
             if (role != "1")
             {
+                ChucVu = "Nhân Viên";
                 PhanQuyen.Visible = false;
                 ThietLapKetNoiSQL.Visible = false;
                 PhucHoiSQL.Visible = false;
                 SaoLuuSQL.Visible = false;
                 NhanVien.Visible = false;
             }
+            else
+            {
+                ChucVu = "Quản Lý";
+            }
+            txtXinChao.Text = "Xin chào: " + name;
+            txtChucVu.Text = "Chức vụ: " + ChucVu;
         }
 
         private void ThongTinKhachHang_Click(object sender, EventArgs e)
@@ -75,7 +83,7 @@ namespace Entity_Project
 
         private void NhanMayBaoGia_Click(object sender, EventArgs e)
         {
-            NhanMayBaoGia frm = new NhanMayBaoGia();
+            NhanMayBaoGia frm = new NhanMayBaoGia(role, name);
             viewForm(frm);
         }
 

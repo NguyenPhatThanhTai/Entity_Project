@@ -38,7 +38,13 @@
             this.NhanVienTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHoanThanh = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.l2 = new System.Windows.Forms.Label();
+            this.l1 = new System.Windows.Forms.PictureBox();
+            this.d2 = new System.Windows.Forms.Label();
+            this.d1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.l1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d1)).BeginInit();
             this.SuspendLayout();
             // 
             // Data
@@ -125,7 +131,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefresh.ImageOptions.SvgImage")));
             this.btnRefresh.Location = new System.Drawing.Point(29, 30);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(168, 46);
@@ -133,11 +139,55 @@
             this.btnRefresh.Text = "Làm mới dữ liệu";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // l2
+            // 
+            this.l2.AutoSize = true;
+            this.l2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2.Location = new System.Drawing.Point(907, 42);
+            this.l2.Name = "l2";
+            this.l2.Size = new System.Drawing.Size(224, 20);
+            this.l2.TabIndex = 78;
+            this.l2.Text = "Đang hoàn thành đơn, xin đợi";
+            // 
+            // l1
+            // 
+            this.l1.Image = global::Entity_Project.Properties.Resources.loaddonegif;
+            this.l1.Location = new System.Drawing.Point(808, 23);
+            this.l1.Name = "l1";
+            this.l1.Size = new System.Drawing.Size(97, 50);
+            this.l1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.l1.TabIndex = 77;
+            this.l1.TabStop = false;
+            // 
+            // d2
+            // 
+            this.d2.AutoSize = true;
+            this.d2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.d2.Location = new System.Drawing.Point(911, 42);
+            this.d2.Name = "d2";
+            this.d2.Size = new System.Drawing.Size(159, 20);
+            this.d2.TabIndex = 78;
+            this.d2.Text = "Đã hoàn thành đơn !";
+            // 
+            // d1
+            // 
+            this.d1.Image = global::Entity_Project.Properties.Resources.check;
+            this.d1.Location = new System.Drawing.Point(808, 23);
+            this.d1.Name = "d1";
+            this.d1.Size = new System.Drawing.Size(97, 50);
+            this.d1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.d1.TabIndex = 77;
+            this.d1.TabStop = false;
+            // 
             // TinhTrangSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 704);
+            this.Controls.Add(this.d2);
+            this.Controls.Add(this.d1);
+            this.Controls.Add(this.l2);
+            this.Controls.Add(this.l1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnHoanThanh);
             this.Controls.Add(this.Data);
@@ -145,7 +195,10 @@
             this.Text = "TinhTrangSua";
             this.Load += new System.EventHandler(this.TinhTrangSua_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.l1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -160,5 +213,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienTiepNhan;
         private DevExpress.XtraEditors.SimpleButton btnHoanThanh;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private System.Windows.Forms.Label l2;
+        private System.Windows.Forms.PictureBox l1;
+        private System.Windows.Forms.Label d2;
+        private System.Windows.Forms.PictureBox d1;
     }
 }

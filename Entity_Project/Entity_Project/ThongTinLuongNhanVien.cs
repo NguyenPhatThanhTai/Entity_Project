@@ -103,6 +103,7 @@ namespace Entity_Project
 
         private void Btn_ReFresh_Click(object sender, EventArgs e)
         {
+            Data_NV DNV = new Data_NV();
             Load_Salary(DNV.Salary_Staff());
             Clear();
         }

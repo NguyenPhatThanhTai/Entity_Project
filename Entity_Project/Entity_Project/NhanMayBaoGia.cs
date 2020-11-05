@@ -20,8 +20,13 @@ namespace Entity_Project
         }
 
         Data_RP DRP;
-        int role;
-        string Name;
+        string role, Name;
+
+        public NhanMayBaoGia(string role, string Name):this()
+        {
+            this.role = role;
+            this.Name = Name;
+        }
 
         private void NhanMayBaoGia_Load(object sender, EventArgs e)
         {
@@ -55,7 +60,7 @@ namespace Entity_Project
         private void Btn_ReFresh_Click(object sender, EventArgs e)
         {
             openButton(true);
-            DRP = new Data_RP();
+            Data_RP DRP = new Data_RP();
             Load_RP(DRP.Inf_Repair());
         }
 
@@ -70,7 +75,8 @@ namespace Entity_Project
             {
                 if (Data.SelectedRows[0].Cells[9].Value.ToString() != "Chưa biết")
                 {
-                    MessageBox.Show("Đơn này đã có nhân viên " + Data.SelectedRows[0].Cells[9].Value.ToString() + " nhận rồi, vui lòng chọn đơn khác");
+                    MessageBox.Show("Đơn này đã có nhân viên " + Data.SelectedRows[0].Cells[9].Value.ToString() + " tiếp nhận rồi, vui lòng chọn đơn khác");
+                    DRP = new Data_RP();
                     Load_RP(DRP.Inf_Repair());
                 }
                 else
@@ -81,6 +87,7 @@ namespace Entity_Project
                         openButton(false);
                         if(DRP.Update_NhanDon(Name, txtMaSuaChua.Text))
                         {
+                            DRP = new Data_RP();
                             Load_RP(DRP.Inf_Repair());
                             txtNVTN.Text = Name;
                         }
@@ -137,7 +144,9 @@ namespace Entity_Project
                 {
                     if (DRP.Update_RP(txtTenMay.Text, txtTinhTrang.Text, txtCanSua.Text, txtHenSua.Text, txtDateHen.Value, txtSoTien.Text, txtMaSuaChua.Text))
                     {
+                        TinhTrangSua tts = new TinhTrangSua();
                         MessageBox.Show("Cập nhật thành công");
+                        DRP = new Data_RP();
                         Load_RP(DRP.Inf_Repair());
                         openButton(true);
                     }

@@ -43,7 +43,7 @@ namespace Entity_Project
                 {
                     Sex = "Nữ";
                 }
-                else
+                else if(item.Customer_Sex.ToString() == "3")
                 {
                     Sex = "Khác";
                 }
@@ -66,7 +66,7 @@ namespace Entity_Project
 
         private void Btn_ReFresh_Click(object sender, EventArgs e)
         {
-            DKH = new Data_KH();
+            Data_KH DKH = new Data_KH();
             Load_KH(DKH.Inf_KH());
             Clear();
         }
@@ -116,12 +116,14 @@ namespace Entity_Project
                         if(DKH.Add_KH(txtHoTen.Text, txtGioiTinh.Text, txtBirth.Value, txtEmail.Text, txtSDT.Text))
                         {
                             MessageBox.Show("Thêm thành công");
+                            DKH = new Data_KH();
                             Load_KH(DKH.Inf_KH());
                             openButton(true);
                         }
                         else
                         {
                             MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại");
+                            DKH = new Data_KH();
                             Load_KH(DKH.Inf_KH());
                         }
                     }
@@ -144,12 +146,14 @@ namespace Entity_Project
                     if (DKH.Update_KH(txtHoTen.Text, txtGioiTinh.Text, txtBirth.Value, txtEmail.Text, txtSDT.Text, txtMaKhachHang.Text))
                     {
                         MessageBox.Show("Cập nhật thành công");
+                        DKH = new Data_KH();
                         Load_KH(DKH.Inf_KH());
                         openButton(true);
                     }
                     else
                     {
                         MessageBox.Show("Cập nhật thất bại");
+                        DKH = new Data_KH();
                         Load_KH(DKH.Inf_KH());
                     }
                 }

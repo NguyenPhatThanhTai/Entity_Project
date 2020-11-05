@@ -362,6 +362,7 @@
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Data.Size = new System.Drawing.Size(1197, 407);
             this.Data.TabIndex = 79;
+            this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
             // STT
             // 

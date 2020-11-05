@@ -97,12 +97,14 @@ namespace Entity_Project
                         if (DNV.Add_NV(txtHoTen.Text, txtGioiTinh.Text, txtDate.Value, txtDiaChi.Text, txtSDT.Text, txtDepartment.Text))
                         {
                             MessageBox.Show("Thêm thành công");
+                            DNV = new Data_NV();
                             Load_NV(DNV.Inf_Staff());
                             openButton(true);
                         }
                         else
                         {
                             MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại");
+                            DNV = new Data_NV();
                             Load_NV(DNV.Inf_Staff());
                         }
                     }
@@ -125,12 +127,14 @@ namespace Entity_Project
                     if (DNV.Update_NV(txtHoTen.Text, txtGioiTinh.Text, txtDate.Value, txtDiaChi.Text, txtSDT.Text, txtDepartment.Text, txtMaNv.Text))
                     {
                         MessageBox.Show("Cập nhật thành công");
+                        DNV = new Data_NV();
                         Load_NV(DNV.Inf_Staff());
                         openButton(true);
                     }
                     else
                     {
                         MessageBox.Show("Cập nhật thất bại");
+                        DNV = new Data_NV();
                         Load_NV(DNV.Inf_Staff());
                     }
                 }
@@ -152,12 +156,14 @@ namespace Entity_Project
                     if (DNV.Delete_NV(txtMaNv.Text))
                     {
                         MessageBox.Show("Xóa thành công");
+                        DNV = new Data_NV();
                         Load_NV(DNV.Inf_Staff());
                         openButton(true);
                     }
                     else
                     {
                         MessageBox.Show("Xóa thất bại");
+                        DNV = new Data_NV();
                         Load_NV(DNV.Inf_Staff());
                     }
                 }
@@ -198,6 +204,8 @@ namespace Entity_Project
 
         private void Btn_ReFresh_Click(object sender, EventArgs e)
         {
+            Data_NV DNV = new Data_NV();
+            Load_NV(DNV.Inf_Staff());
             Clear();
         }
 
