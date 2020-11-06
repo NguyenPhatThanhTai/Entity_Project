@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinKhachHang));
             this.Btn_ReFresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -63,6 +64,7 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayThem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -71,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_ReFresh
@@ -172,25 +175,27 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(982, 78);
+            this.txtSDT.Location = new System.Drawing.Point(952, 78);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(216, 23);
             this.txtSDT.TabIndex = 62;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(573, 137);
+            this.txtEmail.Location = new System.Drawing.Point(556, 137);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(216, 23);
             this.txtEmail.TabIndex = 61;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(840, 78);
+            this.pictureBox7.Location = new System.Drawing.Point(825, 78);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(22, 19);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -202,7 +207,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(869, 140);
+            this.label7.Location = new System.Drawing.Point(854, 139);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 17);
@@ -214,7 +219,7 @@
             this.NumPhone.AutoSize = true;
             this.NumPhone.BackColor = System.Drawing.Color.Transparent;
             this.NumPhone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.NumPhone.Location = new System.Drawing.Point(875, 81);
+            this.NumPhone.Location = new System.Drawing.Point(860, 81);
             this.NumPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NumPhone.Name = "NumPhone";
             this.NumPhone.Size = new System.Drawing.Size(34, 17);
@@ -224,7 +229,7 @@
             // txtThoiGian
             // 
             this.txtThoiGian.Enabled = false;
-            this.txtThoiGian.Location = new System.Drawing.Point(982, 137);
+            this.txtThoiGian.Location = new System.Drawing.Point(952, 135);
             this.txtThoiGian.Margin = new System.Windows.Forms.Padding(4);
             this.txtThoiGian.Name = "txtThoiGian";
             this.txtThoiGian.Size = new System.Drawing.Size(216, 23);
@@ -270,7 +275,7 @@
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.Image = global::Entity_Project.Properties.Resources.time;
-            this.pictureBox13.Location = new System.Drawing.Point(840, 140);
+            this.pictureBox13.Location = new System.Drawing.Point(825, 139);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(22, 19);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -302,7 +307,7 @@
             // 
             // txtBirth
             // 
-            this.txtBirth.Location = new System.Drawing.Point(573, 76);
+            this.txtBirth.Location = new System.Drawing.Point(556, 76);
             this.txtBirth.Name = "txtBirth";
             this.txtBirth.Size = new System.Drawing.Size(216, 23);
             this.txtBirth.TabIndex = 78;
@@ -354,13 +359,13 @@
             this.SDT,
             this.NgayThem});
             this.Data.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Data.Location = new System.Drawing.Point(20, 288);
+            this.Data.Location = new System.Drawing.Point(20, 271);
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(1197, 407);
+            this.Data.Size = new System.Drawing.Size(1148, 424);
             this.Data.TabIndex = 79;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
@@ -428,6 +433,10 @@
             this.NgayThem.ReadOnly = true;
             this.NgayThem.Width = 125;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ThongTinKhachHang
             // 
             this.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -464,6 +473,7 @@
             this.Name = "ThongTinKhachHang";
             this.Text = "ThongTinKhachHang";
             this.Load += new System.EventHandler(this.ThongTinKhachHang_Load);
+            this.Enter += new System.EventHandler(this.ThongTinKhachHang_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -472,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,5 +523,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayThem;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

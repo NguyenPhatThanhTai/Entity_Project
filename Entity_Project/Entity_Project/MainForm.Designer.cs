@@ -68,8 +68,10 @@
             this.HuongDan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.YeuCauTroGiup = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LuuTru = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.pb1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.SuspendLayout();
             // 
             // accordionControl1
@@ -372,20 +374,34 @@
             // LuuTru
             // 
             this.LuuTru.MdiParent = this;
+            this.LuuTru.PageRemoved += new DevExpress.XtraTabbedMdi.MdiTabPageEventHandler(this.LuuTru_PageRemoved);
+            // 
+            // pb1
+            // 
+            this.pb1.Image = global::Entity_Project.Properties.Resources.wp2301577_anime_4k_wallpapers;
+            this.pb1.Location = new System.Drawing.Point(284, 0);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(1212, 736);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb1.TabIndex = 3;
+            this.pb1.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1495, 736);
+            this.Controls.Add(this.pb1);
             this.Controls.Add(this.accordionControl1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -431,5 +447,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement txtXinChao;
         private DevExpress.XtraBars.Navigation.AccordionControlElement txtChucVu;
+        private System.Windows.Forms.PictureBox pb1;
     }
 }

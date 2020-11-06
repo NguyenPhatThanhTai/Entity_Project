@@ -146,6 +146,7 @@
             this.txtRole.Name = "txtRole";
             this.txtRole.Size = new System.Drawing.Size(216, 24);
             this.txtRole.TabIndex = 79;
+            this.txtRole.Text = "Nhân Viên";
             // 
             // pictureBox10
             // 
@@ -229,7 +230,6 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(216, 23);
-            this.txtPassword.TabIndex = 73;
             // 
             // label5
             // 

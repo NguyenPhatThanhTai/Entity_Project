@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinLuongNhanVien));
             this.Data = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTongLuong = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -66,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Data
@@ -88,7 +91,7 @@
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(1197, 407);
+            this.Data.Size = new System.Drawing.Size(1137, 407);
             this.Data.TabIndex = 4;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
@@ -183,6 +186,7 @@
             this.txtLuongCoBan.Name = "txtLuongCoBan";
             this.txtLuongCoBan.Size = new System.Drawing.Size(208, 23);
             this.txtLuongCoBan.TabIndex = 77;
+            this.txtLuongCoBan.TextChanged += new System.EventHandler(this.txtLuongCoBan_TextChanged);
             // 
             // txtLamNgoaiGio
             // 
@@ -191,6 +195,7 @@
             this.txtLamNgoaiGio.Name = "txtLamNgoaiGio";
             this.txtLamNgoaiGio.Size = new System.Drawing.Size(208, 23);
             this.txtLamNgoaiGio.TabIndex = 64;
+            this.txtLamNgoaiGio.TextChanged += new System.EventHandler(this.txtLamNgoaiGio_TextChanged);
             // 
             // txtLuongTheoGio
             // 
@@ -199,6 +204,7 @@
             this.txtLuongTheoGio.Name = "txtLuongTheoGio";
             this.txtLuongTheoGio.Size = new System.Drawing.Size(208, 23);
             this.txtLuongTheoGio.TabIndex = 62;
+            this.txtLuongTheoGio.TextChanged += new System.EventHandler(this.txtLuongTheoGio_TextChanged);
             // 
             // label4
             // 
@@ -248,6 +254,7 @@
             this.txtTienThuong.Name = "txtTienThuong";
             this.txtTienThuong.Size = new System.Drawing.Size(208, 23);
             this.txtTienThuong.TabIndex = 63;
+            this.txtTienThuong.TextChanged += new System.EventHandler(this.txtTienThuong_TextChanged);
             // 
             // pictureBox5
             // 
@@ -307,7 +314,7 @@
             // Btn_ReFresh
             // 
             this.Btn_ReFresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReFresh.ImageOptions.Image")));
-            this.Btn_ReFresh.Location = new System.Drawing.Point(1020, 191);
+            this.Btn_ReFresh.Location = new System.Drawing.Point(960, 191);
             this.Btn_ReFresh.Name = "Btn_ReFresh";
             this.Btn_ReFresh.Size = new System.Drawing.Size(202, 58);
             this.Btn_ReFresh.TabIndex = 83;
@@ -365,6 +372,10 @@
             this.txtTongLuong.TabIndex = 65;
             this.txtTongLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ThongTinLuongNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -404,6 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,5 +453,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtTongLuong;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

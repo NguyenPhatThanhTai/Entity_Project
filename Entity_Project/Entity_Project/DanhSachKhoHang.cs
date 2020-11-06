@@ -197,5 +197,37 @@ namespace Entity_Project
             txtNhaSanXuat.Text = Data1.SelectedRows[0].Cells[5].Value.ToString();
             txtPrice.Text = Data1.SelectedRows[0].Cells[6].Value.ToString();
         }
+
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSoLuong.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtSoLuong, "Không được phép có chữ");
+                btnUpdate.Enabled = false;
+                btnThem.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnThem.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPrice.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtPrice, "Không được phép có chữ");
+                btnUpdate.Enabled = false;
+                btnThem.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnThem.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
+        }
     }
 }

@@ -52,12 +52,15 @@ namespace Entity_Project
                 frm.MdiParent = this;
                 frm.Show();
             }
+
+            if (MdiChildren.Count() > 0)
+            {
+                pb1.Hide();
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            MainFormLoad frm = new MainFormLoad();
-            viewForm(frm);
             if (role != "1")
             {
                 ChucVu = "Nhân Viên";
@@ -73,6 +76,14 @@ namespace Entity_Project
             }
             txtXinChao.Text = "Xin chào: " + name;
             txtChucVu.Text = "Chức vụ: " + ChucVu;
+        }
+
+        private void LuuTru_PageRemoved(object sender, DevExpress.XtraTabbedMdi.MdiTabPageEventArgs e)
+        {
+            if (MdiChildren.Count() == 0)
+            {
+                pb1.Show();
+            }
         }
 
         private void ThongTinKhachHang_Click(object sender, EventArgs e)

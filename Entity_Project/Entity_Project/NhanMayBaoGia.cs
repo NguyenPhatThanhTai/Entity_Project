@@ -141,6 +141,20 @@ namespace Entity_Project
             Load_RP(DRP.Inf_Repair());
         }
 
+        private void txtSoTien_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSoTien.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtSoTien, "Không được phép có chữ");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+            }
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtTenMay.Text != "" && txtTinhTrang.Text != "" && txtHenSua.Text != "" && txtDateHen.Text != "" && txtSoTien.Text != "" && txtSoTien.Text != "" && txtCanSua.Text != "")

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Entity_Project.Entity;
+using System.Net.Mail;
 
 namespace Entity_Project
 {
@@ -171,15 +172,77 @@ namespace Entity_Project
                     if (DKH.Delete_KH(txtMaKhachHang.Text))
                     {
                         MessageBox.Show("Xóa thành công");
+                        DKH = new Data_KH();
                         Load_KH(DKH.Inf_KH());
                         openButton(true);
                     }
                     else
                     {
                         MessageBox.Show("Xóa thất bại");
-                        Load_KH(DKH.Inf_KH());
                     }
                 }
+            }
+        }
+
+        private void ThongTinKhachHang_Enter(object sender, EventArgs e)
+        {
+            DKH = new Data_KH();
+            Load_KH(DKH.Inf_KH());
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            if(txtSDT.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtSDT, "Không được phép có chữ");
+                btnThem.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+                btnThem.Enabled = true;
+            }
+        }
+
+        private bool checkEmail(string Email)
+        {
+            bool isChecked;
+            try
+            {
+                string email = Email;
+                var mail = new MailAddress(email);
+                bool isValidEmail = mail.Host.Contains(".");
+                if (!isValidEmail)
+                {
+                    isChecked = false;
+                }
+                else
+                {
+                    isChecked = true;
+                }
+            }
+            catch (Exception)
+            {
+                isChecked = false;
+            }
+            return isChecked;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (checkEmail(txtEmail.Text) == false)
+            {
+                errorProvider1.SetError(txtEmail, "Sai định dạng");
+                btnThem.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+                btnThem.Enabled = true;
             }
         }
     }

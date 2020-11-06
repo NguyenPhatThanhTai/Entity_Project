@@ -176,6 +176,22 @@ namespace Entity_Project
             Load_NV(DNV.Inf_Staff());
         }
 
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+                if (txtSDT.Text.All(char.IsDigit) == false)
+                {
+                    errorProvider1.SetError(txtSDT, "Không được phép có chữ");
+                    btnThem.Enabled = false;
+                    btnUpdate.Enabled = false;
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    btnThem.Enabled = true;
+                    btnUpdate.Enabled = true;
+            }
+        }
+
         private void Data_Click(object sender, EventArgs e)
         {
             openButton(false);

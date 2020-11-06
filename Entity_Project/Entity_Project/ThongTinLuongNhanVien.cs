@@ -123,5 +123,61 @@ namespace Entity_Project
             Data_NV DNV = new Data_NV();
             Load_Salary(DNV.Salary_Staff());
         }
+
+        private void txtLuongCoBan_TextChanged(object sender, EventArgs e)
+        {
+            if (txtLuongCoBan.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtLuongCoBan, "Không được phép có chữ");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        private void txtLuongTheoGio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtLuongTheoGio.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtLuongTheoGio, "Không được phép có chữ");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        private void txtTienThuong_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTienThuong.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtTienThuong, "Không được phép có chữ");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        private void txtLamNgoaiGio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtLamNgoaiGio.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtLamNgoaiGio, "Không được phép có chữ");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+            }
+        }
     }
 }
