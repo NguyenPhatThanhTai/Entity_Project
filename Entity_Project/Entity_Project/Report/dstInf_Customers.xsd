@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstInf_Customers" targetNamespace="http://tempuri.org/dstInf_Customers.xsd" xmlns:mstns="http://tempuri.org/dstInf_Customers.xsd" xmlns="http://tempuri.org/dstInf_Customers.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjectOneConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjectOneConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Entity_Project.Properties.Settings.GlobalReference.Default.ProjectOneConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjectOneConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Detail_Inf_Repair.*, Inf_Customers.*, Inf_Repair.*
+FROM     Detail_Inf_Repair INNER JOIN
+                  Inf_Repair ON Detail_Inf_Repair.Repair_Id = Inf_Repair.Repair_Id INNER JOIN
+                  Inf_Customers ON Inf_Repair.Customer_Id = Inf_Customers.Customer_Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Repair_Id" DataSetColumn="Repair_Id" />
+              <Mapping SourceColumn="Repair_Reason" DataSetColumn="Repair_Reason" />
+              <Mapping SourceColumn="Repair_Note" DataSetColumn="Repair_Note" />
+              <Mapping SourceColumn="Repair_Appointment" DataSetColumn="Repair_Appointment" />
+              <Mapping SourceColumn="Repair_Money" DataSetColumn="Repair_Money" />
+              <Mapping SourceColumn="Customer_Id" DataSetColumn="Customer_Id" />
+              <Mapping SourceColumn="Customer_Name" DataSetColumn="Customer_Name" />
+              <Mapping SourceColumn="Customer_Sex" DataSetColumn="Customer_Sex" />
+              <Mapping SourceColumn="Customer_Birth" DataSetColumn="Customer_Birth" />
+              <Mapping SourceColumn="Customer_Email" DataSetColumn="Customer_Email" />
+              <Mapping SourceColumn="Customer_Phone" DataSetColumn="Customer_Phone" />
+              <Mapping SourceColumn="Customer_TimeAdd" DataSetColumn="Customer_TimeAdd" />
+              <Mapping SourceColumn="Repair_Id1" DataSetColumn="Repair_Id1" />
+              <Mapping SourceColumn="Customer_Id1" DataSetColumn="Customer_Id1" />
+              <Mapping SourceColumn="Laptop_Name" DataSetColumn="Laptop_Name" />
+              <Mapping SourceColumn="Laptop_Status" DataSetColumn="Laptop_Status" />
+              <Mapping SourceColumn="Staff_Id" DataSetColumn="Staff_Id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstInf_Customers" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dstInf_Customers" msprop:Generator_UserDSName="dstInf_Customers">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Repair_Id" msprop:Generator_ColumnVarNameInTable="columnRepair_Id" msprop:Generator_ColumnPropNameInRow="Repair_Id" msprop:Generator_ColumnPropNameInTable="Repair_IdColumn" msprop:Generator_UserColumnName="Repair_Id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Repair_Reason" msprop:Generator_ColumnVarNameInTable="columnRepair_Reason" msprop:Generator_ColumnPropNameInRow="Repair_Reason" msprop:Generator_ColumnPropNameInTable="Repair_ReasonColumn" msprop:Generator_UserColumnName="Repair_Reason" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Repair_Note" msprop:Generator_ColumnVarNameInTable="columnRepair_Note" msprop:Generator_ColumnPropNameInRow="Repair_Note" msprop:Generator_ColumnPropNameInTable="Repair_NoteColumn" msprop:Generator_UserColumnName="Repair_Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Repair_Appointment" msprop:Generator_ColumnVarNameInTable="columnRepair_Appointment" msprop:Generator_ColumnPropNameInRow="Repair_Appointment" msprop:Generator_ColumnPropNameInTable="Repair_AppointmentColumn" msprop:Generator_UserColumnName="Repair_Appointment" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Repair_Money" msprop:Generator_ColumnVarNameInTable="columnRepair_Money" msprop:Generator_ColumnPropNameInRow="Repair_Money" msprop:Generator_ColumnPropNameInTable="Repair_MoneyColumn" msprop:Generator_UserColumnName="Repair_Money" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Id" msprop:Generator_ColumnVarNameInTable="columnCustomer_Id" msprop:Generator_ColumnPropNameInRow="Customer_Id" msprop:Generator_ColumnPropNameInTable="Customer_IdColumn" msprop:Generator_UserColumnName="Customer_Id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Name" msprop:Generator_ColumnVarNameInTable="columnCustomer_Name" msprop:Generator_ColumnPropNameInRow="Customer_Name" msprop:Generator_ColumnPropNameInTable="Customer_NameColumn" msprop:Generator_UserColumnName="Customer_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Sex" msprop:Generator_ColumnVarNameInTable="columnCustomer_Sex" msprop:Generator_ColumnPropNameInRow="Customer_Sex" msprop:Generator_ColumnPropNameInTable="Customer_SexColumn" msprop:Generator_UserColumnName="Customer_Sex" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Birth" msprop:Generator_ColumnVarNameInTable="columnCustomer_Birth" msprop:Generator_ColumnPropNameInRow="Customer_Birth" msprop:Generator_ColumnPropNameInTable="Customer_BirthColumn" msprop:Generator_UserColumnName="Customer_Birth" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Customer_Email" msprop:Generator_ColumnVarNameInTable="columnCustomer_Email" msprop:Generator_ColumnPropNameInRow="Customer_Email" msprop:Generator_ColumnPropNameInTable="Customer_EmailColumn" msprop:Generator_UserColumnName="Customer_Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Phone" msprop:Generator_ColumnVarNameInTable="columnCustomer_Phone" msprop:Generator_ColumnPropNameInRow="Customer_Phone" msprop:Generator_ColumnPropNameInTable="Customer_PhoneColumn" msprop:Generator_UserColumnName="Customer_Phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_TimeAdd" msprop:Generator_ColumnVarNameInTable="columnCustomer_TimeAdd" msprop:Generator_ColumnPropNameInRow="Customer_TimeAdd" msprop:Generator_ColumnPropNameInTable="Customer_TimeAddColumn" msprop:Generator_UserColumnName="Customer_TimeAdd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Repair_Id1" msprop:Generator_ColumnVarNameInTable="columnRepair_Id1" msprop:Generator_ColumnPropNameInRow="Repair_Id1" msprop:Generator_ColumnPropNameInTable="Repair_Id1Column" msprop:Generator_UserColumnName="Repair_Id1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Id1" msprop:Generator_ColumnVarNameInTable="columnCustomer_Id1" msprop:Generator_ColumnPropNameInRow="Customer_Id1" msprop:Generator_ColumnPropNameInTable="Customer_Id1Column" msprop:Generator_UserColumnName="Customer_Id1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Laptop_Name" msprop:Generator_ColumnVarNameInTable="columnLaptop_Name" msprop:Generator_ColumnPropNameInRow="Laptop_Name" msprop:Generator_ColumnPropNameInTable="Laptop_NameColumn" msprop:Generator_UserColumnName="Laptop_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Laptop_Status" msprop:Generator_ColumnVarNameInTable="columnLaptop_Status" msprop:Generator_ColumnPropNameInRow="Laptop_Status" msprop:Generator_ColumnPropNameInTable="Laptop_StatusColumn" msprop:Generator_UserColumnName="Laptop_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Staff_Id" msprop:Generator_ColumnVarNameInTable="columnStaff_Id" msprop:Generator_ColumnPropNameInRow="Staff_Id" msprop:Generator_ColumnPropNameInTable="Staff_IdColumn" msprop:Generator_UserColumnName="Staff_Id" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:Customer_Id" />
+      <xs:field xpath="mstns:Repair_Id1" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

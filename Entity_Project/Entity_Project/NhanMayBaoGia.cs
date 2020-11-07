@@ -164,7 +164,13 @@ namespace Entity_Project
                 {
                     if (DRP.Update_RP(txtTenMay.Text, txtTinhTrang.Text, txtCanSua.Text, txtHenSua.Text, txtDateHen.Value, txtSoTien.Text, txtMaSuaChua.Text))
                     {
-                        MessageBox.Show("Cập nhật thành công");
+                        if (txtHenSua.Text == "Hẹn ngày lấy")
+                        {
+                            BaoCao bc = new BaoCao();
+                            bc.CreateReport(txtMaSuaChua.Text);
+                            bc.Show();
+                        }
+                        //MessageBox.Show("Cập nhật thành công");
                         DRP = new Data_RP();
                         Load_RP(DRP.Inf_Repair());
                         openButton(true);

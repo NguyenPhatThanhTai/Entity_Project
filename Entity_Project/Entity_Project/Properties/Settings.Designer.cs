@@ -46,5 +46,16 @@ namespace Entity_Project.Properties {
                 this["Password"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TAEITAEI\\SQLEXPRESS;Initial Catalog=ProjectOne;Integrated Security=Tr" +
+            "ue")]
+        public string ProjectOneConnectionString {
+            get {
+                return ((string)(this["ProjectOneConnectionString"]));
+            }
+        }
     }
 }
