@@ -8,7 +8,7 @@ namespace Entity_Project.Entity
     public partial class Data : DbContext
     {
         public Data()
-            : base("name=Data1")
+            : base("name=Data3")
         {
         }
 

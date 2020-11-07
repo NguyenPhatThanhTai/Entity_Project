@@ -17,8 +17,7 @@ namespace Entity_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loadding());
-            //Application.Run(new MainForm());
+            Application.Run(new BaoCaoHangTonKho());
         }
     }
 }

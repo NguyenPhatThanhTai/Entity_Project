@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dt2 = new System.Windows.Forms.DateTimePicker();
             this.dt1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // crystalReportViewer2
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(-1, 4);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1305, 632);
-            this.crystalReportViewer1.TabIndex = 6;
+            this.crystalReportViewer2.ActiveViewIndex = -1;
+            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer2.Location = new System.Drawing.Point(-1, 4);
+            this.crystalReportViewer2.Name = "crystalReportViewer2";
+            this.crystalReportViewer2.Size = new System.Drawing.Size(1305, 632);
+            this.crystalReportViewer2.TabIndex = 6;
             // 
             // label2
             // 
@@ -78,6 +78,7 @@
             this.dt1.Name = "dt1";
             this.dt1.Size = new System.Drawing.Size(190, 23);
             this.dt1.TabIndex = 7;
+            this.dt1.ValueChanged += new System.EventHandler(this.dt1_ValueChanged);
             // 
             // BaoCaoHangTonKho
             // 
@@ -88,7 +89,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dt2);
             this.Controls.Add(this.dt1);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.crystalReportViewer2);
             this.Name = "BaoCaoHangTonKho";
             this.Text = "BaoCaoHangTonKho";
             this.Load += new System.EventHandler(this.BaoCaoHangTonKho_Load);
@@ -99,7 +100,7 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dt2;

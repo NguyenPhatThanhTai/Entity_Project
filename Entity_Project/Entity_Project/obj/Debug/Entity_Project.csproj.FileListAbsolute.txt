@@ -225,3 +225,4 @@ D:\Entity_Project\Entity_Project\bin\Debug\CrystalDecisions.ReportAppServer.Obje
 D:\Entity_Project\Entity_Project\bin\Debug\stdole.dll
 D:\Entity_Project\Entity_Project\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.BaoCao.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.BaoCaoHangTonKho.resources
