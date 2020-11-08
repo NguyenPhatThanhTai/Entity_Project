@@ -115,6 +115,7 @@
             this.TinhTrangSua,
             this.DiSuaChua,
             this.LichSuSuaChua});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Dịch Vụ";
             // 
@@ -154,6 +155,7 @@
             this.DiSuaChua.Name = "DiSuaChua";
             this.DiSuaChua.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.DiSuaChua.Text = "Đi sửa chửa";
+            this.DiSuaChua.Click += new System.EventHandler(this.DiSuaChua_Click);
             // 
             // LichSuSuaChua
             // 

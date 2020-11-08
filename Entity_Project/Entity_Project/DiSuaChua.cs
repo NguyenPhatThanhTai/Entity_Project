@@ -17,5 +17,15 @@ namespace Entity_Project
         {
             InitializeComponent();
         }
+
+        private void DiSuaChua_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = label1.Text.Substring(1, label1.Text.Length - 1) + label1.Text.Substring(0, 1);
+        }
     }
 }

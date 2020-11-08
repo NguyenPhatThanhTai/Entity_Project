@@ -219,6 +219,12 @@ namespace Entity_Project
 
         }
 
+        private void DiSuaChua_Click(object sender, EventArgs e)
+        {
+            DiSuaChua frm = new DiSuaChua();
+            viewForm(frm);
+        }
+
         private void YeuCauTroGiup_Click(object sender, EventArgs e)
         {
 
