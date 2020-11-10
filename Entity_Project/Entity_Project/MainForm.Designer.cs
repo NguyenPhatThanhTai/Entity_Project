@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.txtXinChao = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.txtChucVu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -380,7 +381,7 @@
             // 
             // pb1
             // 
-            this.pb1.Image = global::Entity_Project.Properties.Resources.wp2301577_anime_4k_wallpapers;
+            this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
             this.pb1.Location = new System.Drawing.Point(284, 0);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(1212, 736);

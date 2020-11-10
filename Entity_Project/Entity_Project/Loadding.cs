@@ -23,7 +23,7 @@ namespace Entity_Project
             pb1.Hide();
             await Task.Delay(2000);
             pb1.Show();
-            await Task.Delay(1000);
+            await Task.Delay(1100);
             WhenStartedcs ws = new WhenStartedcs();
             ws.check();
             this.Hide();
