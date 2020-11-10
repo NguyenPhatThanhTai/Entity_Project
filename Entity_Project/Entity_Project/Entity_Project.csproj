@@ -166,7 +166,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\dstInf_Customers.cs">
       <DependentUpon>dstInf_Customers.xsd</DependentUpon>
@@ -410,6 +409,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-256x256.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laptop.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d0fee4efd20303b651fb1dd6dfff73b7.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light_ai_design_by_gleb.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7904424933cc535b666f2de669973530.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DearWellinformedDalmatian-size_restricted.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Curve-Loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_em5HcTFZIQw90qIgdbYjVg.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

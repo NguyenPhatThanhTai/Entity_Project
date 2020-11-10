@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Entity_Project.Entity;
 using Entity_Project.Report;
+using DevExpress.Utils.Extensions;
 
 namespace Entity_Project
 {
@@ -27,13 +28,10 @@ namespace Entity_Project
 
         private void CreateReport(string dt)
         {
-            DateTime startdate = DateTime.Parse(dt.ToString());
-
-            string date = startdate.ToString("dd/MM/yyyy");
             Data data = new Data();
             var result = (from supp in data.Inf_LK
-                          where supp.LK_Time_Add == date
-                          select new { supp.LK_Id, supp.LK_Name, supp.LK_Number, supp.LK_Price, supp.LK_Producer, supp.LK_Time_Add, supp.WareHouse_Id });
+                          where supp.LK_Time_Add >= dt1.Value && supp.LK_Time_Add <= dt2.Value
+                          select new { supp.LK_Id, supp.LK_Name, supp.LK_Number, supp.LK_Price, supp.LK_Producer, supp.WareHouse_Id });
             CrystalReport2 rp = new CrystalReport2();
             rp.SetDataSource(result);
             crystalReportViewer2.ReportSource = rp;

@@ -21,9 +21,9 @@ namespace Entity_Project
         private async void Loadding_Load(object sender, EventArgs e)
         {
             pb1.Hide();
-            await Task.Delay(2000);
-            pb1.Show();
             await Task.Delay(1000);
+            pb1.Show();
+            await Task.Delay(10000);
             WhenStartedcs ws = new WhenStartedcs();
             ws.check();
             this.Hide();
