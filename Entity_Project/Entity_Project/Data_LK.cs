@@ -10,7 +10,7 @@ namespace Entity_Project
     class Data_LK
     {
         Data data = new Data();
-        DateTime time = DateTime.Now;
+        string time = DateTime.Now.ToString("dd/MM/yyyy");
         string day = DateTime.Now.ToString("dd");
         string Min = DateTime.Now.ToString("mm");
         string sec = DateTime.Now.ToString("ss");
@@ -48,7 +48,7 @@ namespace Entity_Project
                 };
                 data.Inf_LK.Add(lk);
                 data.SaveChanges();
-                time = DateTime.Now;
+                time = DateTime.Now.ToString("dd/MM/yyyy");
                 day = DateTime.Now.ToString("dd");
                 Min = DateTime.Now.ToString("mm");
                 sec = DateTime.Now.ToString("ss");

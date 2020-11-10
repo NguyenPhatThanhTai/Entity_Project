@@ -56,7 +56,6 @@ namespace Entity_Project
             if (MdiChildren.Count() > 0)
             {
                 pb1.Hide();
-                WelcomeBack.Hide();
             }
         }
 
@@ -77,7 +76,6 @@ namespace Entity_Project
             }
             txtXinChao.Text = "Xin chào: " + name;
             txtChucVu.Text = "Chức vụ: " + ChucVu;
-            WelcomeBack.Text = "Chào mừng quay trở lại: " + name;
         }
 
         private void LuuTru_PageRemoved(object sender, DevExpress.XtraTabbedMdi.MdiTabPageEventArgs e)
@@ -85,7 +83,6 @@ namespace Entity_Project
             if (MdiChildren.Count() == 0)
             {
                 pb1.Show();
-                WelcomeBack.Show();
             }
         }
 
@@ -174,8 +171,7 @@ namespace Entity_Project
 
         private void HangTonKho_Click(object sender, EventArgs e)
         {
-            BaoCaoHangTonKho frm = new BaoCaoHangTonKho();
-            viewForm(frm);
+
         }
 
         private void PhanQuyen_Click(object sender, EventArgs e)
@@ -229,9 +225,20 @@ namespace Entity_Project
             viewForm(frm);
         }
 
-        private void YeuCauTroGiup_Click(object sender, EventArgs e)
+        private void pb1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void accordionControlElement11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void YeuCauTroGiup_Click(object sender, EventArgs e)
+        {
+            YeuCauTroGiup frm = new YeuCauTroGiup();
+            viewForm(frm);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

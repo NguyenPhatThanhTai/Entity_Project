@@ -69,7 +69,6 @@
             this.YeuCauTroGiup = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LuuTru = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.pb1 = new System.Windows.Forms.PictureBox();
-            this.WelcomeBack = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -116,6 +115,7 @@
             this.TinhTrangSua,
             this.DiSuaChua,
             this.LichSuSuaChua});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Dịch Vụ";
             // 
@@ -233,7 +233,7 @@
             // 
             this.DanhSachNhanVien.Name = "DanhSachNhanVien";
             this.DanhSachNhanVien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.DanhSachNhanVien.Text = "Danh sách nhân viên";
+            this.DanhSachNhanVien.Text = "Dan sách nhân viên";
             this.DanhSachNhanVien.Click += new System.EventHandler(this.DanhSachNhanVien_Click);
             // 
             // BangChamCong
@@ -271,7 +271,6 @@
             this.HangTonKho.Name = "HangTonKho";
             this.HangTonKho.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.HangTonKho.Text = "Hàng tồn kho";
-            this.HangTonKho.Click += new System.EventHandler(this.HangTonKho_Click);
             // 
             // accordionControlElement2
             // 
@@ -361,6 +360,7 @@
             this.YeuCauTroGiup});
             this.accordionControlElement11.Name = "accordionControlElement11";
             this.accordionControlElement11.Text = "Trợ giúp";
+            this.accordionControlElement11.Click += new System.EventHandler(this.accordionControlElement11_Click);
             // 
             // HuongDan
             // 
@@ -381,35 +381,22 @@
             // 
             // pb1
             // 
-            this.pb1.BackColor = System.Drawing.Color.White;
-            this.pb1.Image = global::Entity_Project.Properties.Resources._7904424933cc535b666f2de669973530;
-            this.pb1.Location = new System.Drawing.Point(682, 207);
+            this.pb1.Image = global::Entity_Project.Properties.Resources.wp2301577_anime_4k_wallpapers;
+            this.pb1.Location = new System.Drawing.Point(284, 0);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(420, 295);
-            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb1.Size = new System.Drawing.Size(1212, 736);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 3;
             this.pb1.TabStop = false;
-            // 
-            // WelcomeBack
-            // 
-            this.WelcomeBack.AutoSize = true;
-            this.WelcomeBack.Location = new System.Drawing.Point(746, 457);
-            this.WelcomeBack.Name = "WelcomeBack";
-            this.WelcomeBack.Size = new System.Drawing.Size(98, 17);
-            this.WelcomeBack.TabIndex = 4;
-            this.WelcomeBack.Text = "Welcome back";
-            this.WelcomeBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pb1.Click += new System.EventHandler(this.pb1_Click);
             // 
             // MainForm
             // 
-            this.Appearance.BackColor = System.Drawing.Color.White;
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1495, 736);
-            this.Controls.Add(this.WelcomeBack);
-            this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.pb1);
+            this.Controls.Add(this.accordionControl1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -420,7 +407,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -466,6 +452,5 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement txtXinChao;
         private DevExpress.XtraBars.Navigation.AccordionControlElement txtChucVu;
         private System.Windows.Forms.PictureBox pb1;
-        private System.Windows.Forms.Label WelcomeBack;
     }
 }
