@@ -20,8 +20,13 @@ namespace Entity_Project
         }
 
         Data_RP DRP;
-        int role;
-        string Name;
+        string role, Name;
+
+        public NhanMayBaoGia(string role, string Name):this()
+        {
+            this.role = role;
+            this.Name = Name;
+        }
 
         private void NhanMayBaoGia_Load(object sender, EventArgs e)
         {
@@ -55,7 +60,7 @@ namespace Entity_Project
         private void Btn_ReFresh_Click(object sender, EventArgs e)
         {
             openButton(true);
-            DRP = new Data_RP();
+            Data_RP DRP = new Data_RP();
             Load_RP(DRP.Inf_Repair());
         }
 
@@ -70,7 +75,8 @@ namespace Entity_Project
             {
                 if (Data.SelectedRows[0].Cells[9].Value.ToString() != "Chưa biết")
                 {
-                    MessageBox.Show("Đơn này đã có nhân viên " + Data.SelectedRows[0].Cells[9].Value.ToString() + " nhận rồi, vui lòng chọn đơn khác");
+                    MessageBox.Show("Đơn này đã có nhân viên " + Data.SelectedRows[0].Cells[9].Value.ToString() + " tiếp nhận rồi, vui lòng chọn đơn khác");
+                    DRP = new Data_RP();
                     Load_RP(DRP.Inf_Repair());
                 }
                 else
@@ -81,6 +87,7 @@ namespace Entity_Project
                         openButton(false);
                         if(DRP.Update_NhanDon(Name, txtMaSuaChua.Text))
                         {
+                            DRP = new Data_RP();
                             Load_RP(DRP.Inf_Repair());
                             txtNVTN.Text = Name;
                         }
@@ -128,6 +135,26 @@ namespace Entity_Project
             txtNVTN.Text = Data.SelectedRows[0].Cells[9].Value.ToString();
         }
 
+        private void NhanMayBaoGia_Enter(object sender, EventArgs e)
+        {
+            Data_RP DRP = new Data_RP();
+            Load_RP(DRP.Inf_Repair());
+        }
+
+        private void txtSoTien_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSoTien.Text.All(char.IsDigit) == false)
+            {
+                errorProvider1.SetError(txtSoTien, "Không được phép có chữ");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+            }
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtTenMay.Text != "" && txtTinhTrang.Text != "" && txtHenSua.Text != "" && txtDateHen.Text != "" && txtSoTien.Text != "" && txtSoTien.Text != "" && txtCanSua.Text != "")
@@ -137,7 +164,14 @@ namespace Entity_Project
                 {
                     if (DRP.Update_RP(txtTenMay.Text, txtTinhTrang.Text, txtCanSua.Text, txtHenSua.Text, txtDateHen.Value, txtSoTien.Text, txtMaSuaChua.Text))
                     {
-                        MessageBox.Show("Cập nhật thành công");
+                        if (txtHenSua.Text == "Hẹn ngày lấy")
+                        {
+                            BaoCao bc = new BaoCao();
+                            bc.CreateReport(txtMaSuaChua.Text);
+                            bc.Show();
+                        }
+                        //MessageBox.Show("Cập nhật thành công");
+                        DRP = new Data_RP();
                         Load_RP(DRP.Inf_Repair());
                         openButton(true);
                     }

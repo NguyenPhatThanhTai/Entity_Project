@@ -41,9 +41,13 @@ namespace Entity_Project
             {
                 Sex = "1";
             }
-            else
+            else if(Customer_Sex == "Nữ")
             {
                 Sex = "2";
+            }
+            else if (Customer_Sex == "Khác")
+            {
+                Sex = "3";
             }
             try
             {

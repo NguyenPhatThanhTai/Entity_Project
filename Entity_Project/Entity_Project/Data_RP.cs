@@ -54,17 +54,20 @@ namespace Entity_Project
 
         public List<Inf_Repair> FindBy_ID(string id)
         {
-            List<Inf_Repair> repair = data.Inf_Repair.Where(p => p.Repair_Id == id).ToList();
+            string repairid = (String)id;
+            List<Inf_Repair> repair = data.Inf_Repair.Where(p => p.Repair_Id == repairid).ToList();
             return repair;
         }
 
-        public bool Done_RP(string Repair_Id)
+        public bool Done_RP(string Repair_Id, string note)
         {
-            Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
+            string repairid = (String)Repair_Id;
+            Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == repairid);
             if(repair != null)
             {
-                if (repair.Detail_Inf_Repair.Repair_Note == "Hẹn ngày lấy")
+                if (note.ToString() == "Hẹn ngày lấy")
                 {
+                    MessageBox.Show(repair.Detail_Inf_Repair.Repair_Note.ToString());
                     var thread = new Thread(() => sendMail(repair.Inf_Customers.Customer_Name, repair.Inf_Customers.Customer_Email, repair.Inf_Customers.Customer_Phone, repair.Laptop_Name, repair.Detail_Inf_Repair.Repair_Reason, repair.Detail_Inf_Repair.Repair_Money));
                     thread.Start();
                 }
@@ -117,7 +120,7 @@ namespace Entity_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi gửi mail");
+                MessageBox.Show(ex.Message);
             }
         }
 

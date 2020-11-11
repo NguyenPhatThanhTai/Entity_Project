@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstInf_Customers" targetNamespace="http://tempuri.org/dstInf_Customers.xsd" xmlns:mstns="http://tempuri.org/dstInf_Customers.xsd" xmlns="http://tempuri.org/dstInf_Customers.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjectOneConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjectOneConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Entity_Project.Properties.Settings.GlobalReference.Default.ProjectOneConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjectOneConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Detail_Inf_Repair.*, Inf_Customers.*, Inf_Repair.*
+FROM     Detail_Inf_Repair INNER JOIN
+                  Inf_Repair ON Detail_Inf_Repair.Repair_Id = Inf_Repair.Repair_Id INNER JOIN
+                  Inf_Customers ON Inf_Repair.Customer_Id = Inf_Customers.Customer_Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Repair_Id" DataSetColumn="Repair_Id" />
+              <Mapping SourceColumn="Repair_Reason" DataSetColumn="Repair_Reason" />
+              <Mapping SourceColumn="Repair_Note" DataSetColumn="Repair_Note" />
+              <Mapping SourceColumn="Repair_Appointment" DataSetColumn="Repair_Appointment" />
+              <Mapping SourceColumn="Repair_Money" DataSetColumn="Repair_Money" />
+              <Mapping SourceColumn="Customer_Id" DataSetColumn="Customer_Id" />
+              <Mapping SourceColumn="Customer_Name" DataSetColumn="Customer_Name" />
+              <Mapping SourceColumn="Customer_Sex" DataSetColumn="Customer_Sex" />
+              <Mapping SourceColumn="Customer_Birth" DataSetColumn="Customer_Birth" />
+              <Mapping SourceColumn="Customer_Email" DataSetColumn="Customer_Email" />
+              <Mapping SourceColumn="Customer_Phone" DataSetColumn="Customer_Phone" />
+              <Mapping SourceColumn="Customer_TimeAdd" DataSetColumn="Customer_TimeAdd" />
+              <Mapping SourceColumn="Repair_Id1" DataSetColumn="Repair_Id1" />
+              <Mapping SourceColumn="Customer_Id1" DataSetColumn="Customer_Id1" />
+              <Mapping SourceColumn="Laptop_Name" DataSetColumn="Laptop_Name" />
+              <Mapping SourceColumn="Laptop_Status" DataSetColumn="Laptop_Status" />
+              <Mapping SourceColumn="Staff_Id" DataSetColumn="Staff_Id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Inf_LKTableAdapter" GeneratorDataComponentClassName="Inf_LKTableAdapter" Name="Inf_LK" UserDataComponentName="Inf_LKTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjectOneConnectionString (Settings)" DbObjectName="ProjectOne.dbo.Inf_LK" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Inf_LK] WHERE (([LK_Id] = @Original_LK_Id) AND ([WareHouse_Id] = @Original_WareHouse_Id) AND ((@IsNull_LK_Name = 1 AND [LK_Name] IS NULL) OR ([LK_Name] = @Original_LK_Name)) AND ((@IsNull_LK_Number = 1 AND [LK_Number] IS NULL) OR ([LK_Number] = @Original_LK_Number)) AND ((@IsNull_LK_Producer = 1 AND [LK_Producer] IS NULL) OR ([LK_Producer] = @Original_LK_Producer)) AND ((@IsNull_LK_Price = 1 AND [LK_Price] IS NULL) OR ([LK_Price] = @Original_LK_Price)) AND ((@IsNull_LK_Time_Add = 1 AND [LK_Time_Add] IS NULL) OR ([LK_Time_Add] = @Original_LK_Time_Add)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_LK_Id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_WareHouse_Id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WareHouse_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Name" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Name" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_LK_Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LK_Name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_LK_Number" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Producer" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Producer" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_LK_Producer" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LK_Producer" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Price" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_LK_Price" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Price" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Time_Add" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Time_Add" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_LK_Time_Add" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="LK_Time_Add" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Inf_LK] ([LK_Id], [WareHouse_Id], [LK_Name], [LK_Number], [LK_Producer], [LK_Price], [LK_Time_Add]) VALUES (@LK_Id, @WareHouse_Id, @LK_Name, @LK_Number, @LK_Producer, @LK_Price, @LK_Time_Add);
+SELECT LK_Id, WareHouse_Id, LK_Name, LK_Number, LK_Producer, LK_Price, LK_Time_Add FROM Inf_LK WHERE (LK_Id = @LK_Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LK_Id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@WareHouse_Id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WareHouse_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LK_Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LK_Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LK_Number" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LK_Producer" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LK_Producer" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LK_Price" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Price" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@LK_Time_Add" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="LK_Time_Add" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Inf_LK.*
+FROM     Inf_LK</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Inf_LK] SET [LK_Id] = @LK_Id, [WareHouse_Id] = @WareHouse_Id, [LK_Name] = @LK_Name, [LK_Number] = @LK_Number, [LK_Producer] = @LK_Producer, [LK_Price] = @LK_Price, [LK_Time_Add] = @LK_Time_Add WHERE (([LK_Id] = @Original_LK_Id) AND ([WareHouse_Id] = @Original_WareHouse_Id) AND ((@IsNull_LK_Name = 1 AND [LK_Name] IS NULL) OR ([LK_Name] = @Original_LK_Name)) AND ((@IsNull_LK_Number = 1 AND [LK_Number] IS NULL) OR ([LK_Number] = @Original_LK_Number)) AND ((@IsNull_LK_Producer = 1 AND [LK_Producer] IS NULL) OR ([LK_Producer] = @Original_LK_Producer)) AND ((@IsNull_LK_Price = 1 AND [LK_Price] IS NULL) OR ([LK_Price] = @Original_LK_Price)) AND ((@IsNull_LK_Time_Add = 1 AND [LK_Time_Add] IS NULL) OR ([LK_Time_Add] = @Original_LK_Time_Add)));
+SELECT LK_Id, WareHouse_Id, LK_Name, LK_Number, LK_Producer, LK_Price, LK_Time_Add FROM Inf_LK WHERE (LK_Id = @LK_Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LK_Id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@WareHouse_Id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WareHouse_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LK_Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LK_Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LK_Number" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LK_Producer" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LK_Producer" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LK_Price" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Price" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@LK_Time_Add" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="LK_Time_Add" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_LK_Id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_WareHouse_Id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WareHouse_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Name" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Name" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_LK_Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LK_Name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_LK_Number" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Producer" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Producer" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_LK_Producer" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LK_Producer" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Price" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_LK_Price" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LK_Price" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_LK_Time_Add" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LK_Time_Add" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_LK_Time_Add" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="LK_Time_Add" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LK_Id" DataSetColumn="LK_Id" />
+              <Mapping SourceColumn="WareHouse_Id" DataSetColumn="WareHouse_Id" />
+              <Mapping SourceColumn="LK_Name" DataSetColumn="LK_Name" />
+              <Mapping SourceColumn="LK_Number" DataSetColumn="LK_Number" />
+              <Mapping SourceColumn="LK_Producer" DataSetColumn="LK_Producer" />
+              <Mapping SourceColumn="LK_Price" DataSetColumn="LK_Price" />
+              <Mapping SourceColumn="LK_Time_Add" DataSetColumn="LK_Time_Add" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstInf_Customers" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dstInf_Customers" msprop:Generator_UserDSName="dstInf_Customers">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Repair_Id" msprop:Generator_ColumnVarNameInTable="columnRepair_Id" msprop:Generator_ColumnPropNameInRow="Repair_Id" msprop:Generator_ColumnPropNameInTable="Repair_IdColumn" msprop:Generator_UserColumnName="Repair_Id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Repair_Reason" msprop:Generator_ColumnVarNameInTable="columnRepair_Reason" msprop:Generator_ColumnPropNameInRow="Repair_Reason" msprop:Generator_ColumnPropNameInTable="Repair_ReasonColumn" msprop:Generator_UserColumnName="Repair_Reason" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Repair_Note" msprop:Generator_ColumnVarNameInTable="columnRepair_Note" msprop:Generator_ColumnPropNameInRow="Repair_Note" msprop:Generator_ColumnPropNameInTable="Repair_NoteColumn" msprop:Generator_UserColumnName="Repair_Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Repair_Appointment" msprop:Generator_ColumnVarNameInTable="columnRepair_Appointment" msprop:Generator_ColumnPropNameInRow="Repair_Appointment" msprop:Generator_ColumnPropNameInTable="Repair_AppointmentColumn" msprop:Generator_UserColumnName="Repair_Appointment" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Repair_Money" msprop:Generator_ColumnVarNameInTable="columnRepair_Money" msprop:Generator_ColumnPropNameInRow="Repair_Money" msprop:Generator_ColumnPropNameInTable="Repair_MoneyColumn" msprop:Generator_UserColumnName="Repair_Money" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Id" msprop:Generator_ColumnVarNameInTable="columnCustomer_Id" msprop:Generator_ColumnPropNameInRow="Customer_Id" msprop:Generator_ColumnPropNameInTable="Customer_IdColumn" msprop:Generator_UserColumnName="Customer_Id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Name" msprop:Generator_ColumnVarNameInTable="columnCustomer_Name" msprop:Generator_ColumnPropNameInRow="Customer_Name" msprop:Generator_ColumnPropNameInTable="Customer_NameColumn" msprop:Generator_UserColumnName="Customer_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Sex" msprop:Generator_ColumnVarNameInTable="columnCustomer_Sex" msprop:Generator_ColumnPropNameInRow="Customer_Sex" msprop:Generator_ColumnPropNameInTable="Customer_SexColumn" msprop:Generator_UserColumnName="Customer_Sex" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Birth" msprop:Generator_ColumnVarNameInTable="columnCustomer_Birth" msprop:Generator_ColumnPropNameInRow="Customer_Birth" msprop:Generator_ColumnPropNameInTable="Customer_BirthColumn" msprop:Generator_UserColumnName="Customer_Birth" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Customer_Email" msprop:Generator_ColumnVarNameInTable="columnCustomer_Email" msprop:Generator_ColumnPropNameInRow="Customer_Email" msprop:Generator_ColumnPropNameInTable="Customer_EmailColumn" msprop:Generator_UserColumnName="Customer_Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Phone" msprop:Generator_ColumnVarNameInTable="columnCustomer_Phone" msprop:Generator_ColumnPropNameInRow="Customer_Phone" msprop:Generator_ColumnPropNameInTable="Customer_PhoneColumn" msprop:Generator_UserColumnName="Customer_Phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_TimeAdd" msprop:Generator_ColumnVarNameInTable="columnCustomer_TimeAdd" msprop:Generator_ColumnPropNameInRow="Customer_TimeAdd" msprop:Generator_ColumnPropNameInTable="Customer_TimeAddColumn" msprop:Generator_UserColumnName="Customer_TimeAdd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Repair_Id1" msprop:Generator_ColumnVarNameInTable="columnRepair_Id1" msprop:Generator_ColumnPropNameInRow="Repair_Id1" msprop:Generator_ColumnPropNameInTable="Repair_Id1Column" msprop:Generator_UserColumnName="Repair_Id1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer_Id1" msprop:Generator_ColumnVarNameInTable="columnCustomer_Id1" msprop:Generator_ColumnPropNameInRow="Customer_Id1" msprop:Generator_ColumnPropNameInTable="Customer_Id1Column" msprop:Generator_UserColumnName="Customer_Id1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Laptop_Name" msprop:Generator_ColumnVarNameInTable="columnLaptop_Name" msprop:Generator_ColumnPropNameInRow="Laptop_Name" msprop:Generator_ColumnPropNameInTable="Laptop_NameColumn" msprop:Generator_UserColumnName="Laptop_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Laptop_Status" msprop:Generator_ColumnVarNameInTable="columnLaptop_Status" msprop:Generator_ColumnPropNameInRow="Laptop_Status" msprop:Generator_ColumnPropNameInTable="Laptop_StatusColumn" msprop:Generator_UserColumnName="Laptop_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Staff_Id" msprop:Generator_ColumnVarNameInTable="columnStaff_Id" msprop:Generator_ColumnPropNameInRow="Staff_Id" msprop:Generator_ColumnPropNameInTable="Staff_IdColumn" msprop:Generator_UserColumnName="Staff_Id" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Inf_LK" msprop:Generator_TableClassName="Inf_LKDataTable" msprop:Generator_TableVarName="tableInf_LK" msprop:Generator_TablePropName="Inf_LK" msprop:Generator_RowDeletingName="Inf_LKRowDeleting" msprop:Generator_RowChangingName="Inf_LKRowChanging" msprop:Generator_RowEvHandlerName="Inf_LKRowChangeEventHandler" msprop:Generator_RowDeletedName="Inf_LKRowDeleted" msprop:Generator_UserTableName="Inf_LK" msprop:Generator_RowChangedName="Inf_LKRowChanged" msprop:Generator_RowEvArgName="Inf_LKRowChangeEvent" msprop:Generator_RowClassName="Inf_LKRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LK_Id" msprop:Generator_ColumnVarNameInTable="columnLK_Id" msprop:Generator_ColumnPropNameInRow="LK_Id" msprop:Generator_ColumnPropNameInTable="LK_IdColumn" msprop:Generator_UserColumnName="LK_Id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WareHouse_Id" msprop:Generator_ColumnVarNameInTable="columnWareHouse_Id" msprop:Generator_ColumnPropNameInRow="WareHouse_Id" msprop:Generator_ColumnPropNameInTable="WareHouse_IdColumn" msprop:Generator_UserColumnName="WareHouse_Id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LK_Name" msprop:Generator_ColumnVarNameInTable="columnLK_Name" msprop:Generator_ColumnPropNameInRow="LK_Name" msprop:Generator_ColumnPropNameInTable="LK_NameColumn" msprop:Generator_UserColumnName="LK_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LK_Number" msprop:Generator_ColumnVarNameInTable="columnLK_Number" msprop:Generator_ColumnPropNameInRow="LK_Number" msprop:Generator_ColumnPropNameInTable="LK_NumberColumn" msprop:Generator_UserColumnName="LK_Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LK_Producer" msprop:Generator_ColumnVarNameInTable="columnLK_Producer" msprop:Generator_ColumnPropNameInRow="LK_Producer" msprop:Generator_ColumnPropNameInTable="LK_ProducerColumn" msprop:Generator_UserColumnName="LK_Producer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LK_Price" msprop:Generator_ColumnVarNameInTable="columnLK_Price" msprop:Generator_ColumnPropNameInRow="LK_Price" msprop:Generator_ColumnPropNameInTable="LK_PriceColumn" msprop:Generator_UserColumnName="LK_Price" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LK_Time_Add" msprop:Generator_ColumnVarNameInTable="columnLK_Time_Add" msprop:Generator_ColumnPropNameInRow="LK_Time_Add" msprop:Generator_ColumnPropNameInTable="LK_Time_AddColumn" msprop:Generator_UserColumnName="LK_Time_Add" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:Customer_Id" />
+      <xs:field xpath="mstns:Repair_Id1" />
+    </xs:unique>
+    <xs:unique name="Inf_LK_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Inf_LK" />
+      <xs:field xpath="mstns:LK_Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

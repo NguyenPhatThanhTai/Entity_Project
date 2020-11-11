@@ -76,6 +76,13 @@ namespace Entity_Project
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            Data_RP DRP = new Data_RP();
+            load_LS(DRP.LichSu());
+        }
+
+        private void LichSuSuaChua_Enter(object sender, EventArgs e)
+        {
+            Data_RP DRP = new Data_RP();
             load_LS(DRP.LichSu());
         }
     }

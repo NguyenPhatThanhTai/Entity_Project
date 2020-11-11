@@ -8,14 +8,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.DataProcessing;
 
 namespace Entity_Project
 {
-    public partial class MainForm : DevExpress.XtraEditors.XtraForm
+    public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        string role, name, Id;
+        string ChucVu;
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public MainForm(string role, string name, string Id) : this()
+        {
+            this.role = role;
+            this.name = name;
+            this.Id = Id;
         }
 
         private bool checkForm(Form frm)
@@ -42,6 +53,43 @@ namespace Entity_Project
                 frm.MdiParent = this;
                 frm.Show();
             }
+
+            if (MdiChildren.Count() > 0)
+            {
+                pb1.Hide();
+                WelcomeBack.Hide();
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            if (role != "1")
+            {
+                ChucVu = "Nhân Viên";
+                PhanQuyen.Visible = false;
+                ThietLapKetNoiSQL.Visible = false;
+                PhucHoiSQL.Visible = false;
+                SaoLuuSQL.Visible = false;
+                NhanVien.Visible = false;
+            }
+            else
+            {
+                ChucVu = "Quản Lý";
+            }
+            txtXinChao.Caption = "Xin chào: " + name;
+            txtChucVu.Caption = "Chức vụ: " + ChucVu;
+            WelcomeBack.Text = "Chào mừng quay trở lại: " + name;
+        }
+
+        private void LuuTru_PageRemoved(object sender, DevExpress.XtraTabbedMdi.MdiTabPageEventArgs e)
+        {
+            if (MdiChildren.Count() == 0)
+            {
+                pb1.Show();
+                WelcomeBack.Show();
+                WelcomeBack.Text = "Tiếp tục với công việc nào: " + name;
+            }
         }
 
         private void ThongTinKhachHang_Click(object sender, EventArgs e)
@@ -52,7 +100,7 @@ namespace Entity_Project
 
         private void NhanMayBaoGia_Click(object sender, EventArgs e)
         {
-            NhanMayBaoGia frm = new NhanMayBaoGia();
+            NhanMayBaoGia frm = new NhanMayBaoGia(role, name);
             viewForm(frm);
         }
 
@@ -60,6 +108,7 @@ namespace Entity_Project
         {
             TinhTrangSua frm = new TinhTrangSua();
             viewForm(frm);
+            label1.Caption = "Hiện tại còn " + frm.getSoLuong().ToString() + " đơn chưa hoàn thành            ";
         }
 
         private void LichSuSuaChua_Click(object sender, EventArgs e)
@@ -80,7 +129,8 @@ namespace Entity_Project
 
         private void LinhKien_Click(object sender, EventArgs e)
         {
-
+            LinhKien frm = new LinhKien();
+            viewForm(frm);
         }
 
         private void TheoCombo_Click(object sender, EventArgs e)
@@ -106,7 +156,14 @@ namespace Entity_Project
 
         private void DanhSachNhanVien_Click(object sender, EventArgs e)
         {
+            ThongTinNhanVien frm = new ThongTinNhanVien(role, name, Id);
+            viewForm(frm);
+        }
 
+        private void BangLuong_Click(object sender, EventArgs e)
+        {
+            ThongTinLuongNhanVien frm = new ThongTinLuongNhanVien();
+            viewForm(frm);
         }
 
         private void BangChamCong_Click(object sender, EventArgs e)
@@ -121,12 +178,14 @@ namespace Entity_Project
 
         private void HangTonKho_Click(object sender, EventArgs e)
         {
-
+            BaoCaoHangTonKho frm = new BaoCaoHangTonKho();
+            viewForm(frm);
         }
 
         private void PhanQuyen_Click(object sender, EventArgs e)
         {
-
+            PhanQuyenVaTaiKhoan frm = new PhanQuyenVaTaiKhoan();
+            viewForm(frm);
         }
 
         private void ThietLapKetNoiSQL_Click(object sender, EventArgs e)
@@ -146,12 +205,21 @@ namespace Entity_Project
 
         private void DangXuat_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialog = MessageBox.Show("Bạn muốn đăng xuất à?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Properties.Settings.Default.UserName = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Save();
+                this.Hide();
+                DangNhap dn = new DangNhap();
+                dn.Show();
+            }
         }
 
         private void Thoat_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void HuongDan_Click(object sender, EventArgs e)
@@ -159,14 +227,54 @@ namespace Entity_Project
 
         }
 
+        private void DiSuaChua_Click(object sender, EventArgs e)
+        {
+            DiSuaChua frm = new DiSuaChua();
+            viewForm(frm);
+        }
+
         private void YeuCauTroGiup_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void accordionControlElement6_Click(object sender, EventArgs e)
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DialogResult dialog = MessageBox.Show("Bạn muốn đăng xuất à?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Properties.Settings.Default.UserName = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Save();
+                this.Hide();
+                DangNhap dn = new DangNhap();
+                dn.Show();
+            }
+        }
 
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Bạn muốn thoát à?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Environment.Exit(1);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            txtTime.Caption = "Bây giờ là: " + DateTime.Now.ToString("hh:mm:ss");
+            txtDate.Caption = "Ngày: " + DateTime.Now.ToString("dd/MM/yyyy");
+            label1.Caption = label1.Caption.Substring(1, label1.Caption.Length - 1) + label1.Caption.Substring(0, 1);
         }
     }
 }

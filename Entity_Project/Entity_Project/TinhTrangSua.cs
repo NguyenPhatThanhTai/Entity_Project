@@ -20,10 +20,14 @@ namespace Entity_Project
         }
 
         Data_RP DRP;
-        string id;
+        string id, note;
 
         private void TinhTrangSua_Load(object sender, EventArgs e)
         {
+            d1.Hide();
+            d2.Hide();
+            l1.Hide();
+            l2.Hide();
             DRP = new Data_RP();
             Load_TinhTrang(DRP.Inf_Repair());
         }
@@ -47,20 +51,30 @@ namespace Entity_Project
             }
         }
 
-        private void btnHoanThanh_Click(object sender, EventArgs e)
+        private async void btnHoanThanh_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Xác nhận hoàn thành đơn này?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
                 List<Inf_Repair> Inf_Repair = DRP.FindBy_ID(id);
-                //string Repair_Id, string Laptop_Name, string Repair_Reason, string Repair_Money, string Repair_Appoinment
                 foreach (var item in Inf_Repair)
                 {
-                    if (DRP.Done_RP(item.Repair_Id) && DRP.Delete_KH(item.Customer_Id))
+                    l1.Show();
+                    l2.Show();
+                    if (DRP.Done_RP(item.Repair_Id, note))
                     {
-                        MessageBox.Show("Thành công");
+                        await Task.Delay(5000);
+                        l1.Hide();
+                        l2.Hide();
+                        d1.Show();
+                        d2.Show();
+                        DRP.Delete_KH(item.Customer_Id);
+                        DRP = new Data_RP();
                         Load_TinhTrang(DRP.Inf_Repair());
                         btnHoanThanh.Enabled = false;
+                        await Task.Delay(2000);
+                        d1.Hide();
+                        d2.Hide();
                     }
                     else
                     {
@@ -68,16 +82,38 @@ namespace Entity_Project
                     }
                 }
             }
-            else
-            {
-                Load_TinhTrang(DRP.Inf_Repair());
-            }
         }
 
         private void Data_Click(object sender, EventArgs e)
         {
-            btnHoanThanh.Enabled = true;
-            id = Data.SelectedRows[0].Cells[1].Value.ToString();
+            if (Data.SelectedRows[0].Cells[5].Value.ToString() != "Chưa biết")
+            {
+                btnHoanThanh.Enabled = true;
+                id = Data.SelectedRows[0].Cells[1].Value.ToString();
+                note = Data.SelectedRows[0].Cells[3].Value.ToString();
+            }
+            else
+            {
+                btnHoanThanh.Enabled = false;
+            }
+        }
+
+        private void TinhTrangSua_Enter(object sender, EventArgs e)
+        {
+            Data_RP DRP = new Data_RP();
+            Load_TinhTrang(DRP.Inf_Repair());
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Data_RP DRP = new Data_RP();
+            Load_TinhTrang(DRP.Inf_Repair());
+        }
+
+        public long getSoLuong()
+        {
+            List<Inf_Repair> Inf_Repair = DRP.Inf_Repair();
+            return Inf_Repair.Count();
         }
     }
 }
