@@ -38,10 +38,10 @@
             // 
             this.pb1.BackColor = System.Drawing.Color.White;
             this.pb1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb1.Image = global::Entity_Project.Properties.Resources._1_em5HcTFZIQw90qIgdbYjVg;
-            this.pb1.Location = new System.Drawing.Point(582, 326);
+            this.pb1.Image = global::Entity_Project.Properties.Resources.fff16_862c4e_80c174747b704e778f110260a995cc97mv2;
+            this.pb1.Location = new System.Drawing.Point(605, 355);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(219, 178);
+            this.pb1.Size = new System.Drawing.Size(196, 149);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb1.TabIndex = 2;
             this.pb1.TabStop = false;
@@ -50,9 +50,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Entity_Project.Properties.Resources.laptop1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -4);
+            this.pictureBox1.Location = new System.Drawing.Point(-56, -4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(826, 539);
+            this.pictureBox1.Size = new System.Drawing.Size(910, 539);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;

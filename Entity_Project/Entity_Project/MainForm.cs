@@ -86,6 +86,7 @@ namespace Entity_Project
             {
                 pb1.Show();
                 WelcomeBack.Show();
+                WelcomeBack.Text = "Tiếp tục với công việc nào: " + name;
             }
         }
 

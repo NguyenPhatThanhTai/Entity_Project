@@ -163,6 +163,16 @@ namespace Entity_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fff16_862c4e_80c174747b704e778f110260a995cc97mv2 {
+            get {
+                object obj = ResourceManager.GetObject("fff16-862c4e_80c174747b704e778f110260a995cc97mv2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_256x256 {
             get {
                 object obj = ResourceManager.GetObject("icon-256x256", resourceCulture);
@@ -246,6 +256,16 @@ namespace Entity_Project.Properties {
         internal static System.Drawing.Bitmap shrink__1_ {
             get {
                 object obj = ResourceManager.GetObject("shrink (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap source {
+            get {
+                object obj = ResourceManager.GetObject("source", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

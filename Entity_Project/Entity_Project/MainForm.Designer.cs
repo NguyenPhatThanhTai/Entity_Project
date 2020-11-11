@@ -70,6 +70,12 @@
             this.LuuTru = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.WelcomeBack = new System.Windows.Forms.Label();
+            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -82,11 +88,17 @@
             this.txtXinChao,
             this.txtChucVu,
             this.accordionControlElement1,
+            this.accordionControlSeparator1,
             this.accordionControlElement6,
+            this.accordionControlSeparator2,
             this.accordionControlElement7,
+            this.accordionControlSeparator3,
             this.NhanVien,
+            this.accordionControlSeparator4,
             this.accordionControlElement9,
+            this.accordionControlSeparator5,
             this.accordionControlElement10,
+            this.accordionControlSeparator6,
             this.accordionControlElement11});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -382,7 +394,7 @@
             // pb1
             // 
             this.pb1.BackColor = System.Drawing.Color.White;
-            this.pb1.Image = global::Entity_Project.Properties.Resources._7904424933cc535b666f2de669973530;
+            this.pb1.Image = global::Entity_Project.Properties.Resources.source;
             this.pb1.Location = new System.Drawing.Point(682, 207);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(420, 295);
@@ -399,6 +411,30 @@
             this.WelcomeBack.TabIndex = 4;
             this.WelcomeBack.Text = "Welcome back";
             this.WelcomeBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
+            // accordionControlSeparator3
+            // 
+            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
+            // 
+            // accordionControlSeparator4
+            // 
+            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
+            // 
+            // accordionControlSeparator5
+            // 
+            this.accordionControlSeparator5.Name = "accordionControlSeparator5";
+            // 
+            // accordionControlSeparator6
+            // 
+            this.accordionControlSeparator6.Name = "accordionControlSeparator6";
             // 
             // MainForm
             // 
@@ -467,5 +503,11 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement txtChucVu;
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.Label WelcomeBack;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator6;
     }
 }
