@@ -19,6 +19,7 @@ namespace Entity_Project
         }
 
         string Staff_Id, Sex, PhongBan, ChucVu;
+
         Data_NV DNV;
 
         public ThongTinTaiKhoan(string Staff_Id) : this()

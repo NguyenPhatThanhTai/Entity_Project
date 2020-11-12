@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.DataProcessing;
 using DevExpress.PivotGrid.Criteria;
+using DevExpress.Utils.Extensions;
+using System.Drawing.Imaging;
 
 namespace Entity_Project
 {
@@ -17,6 +19,8 @@ namespace Entity_Project
     {
         string role, name, Id;
         string ChucVu;
+
+        private PictureBox pb;
 
         public MainForm()
         {
@@ -260,8 +264,25 @@ namespace Entity_Project
 
         private void Thongtintaikhoan_Click(object sender, EventArgs e)
         {
+            this.Opacity = 0.70d;
+            this.BackColor = Color.Gray;
+            this.accordionControl1.Appearance.AccordionControl.BackColor = Color.Gray;
+            pb1.Hide();
+            WelcomeBack.Hide();
+            accordionControl1.Hide();
+
             ThongTinTaiKhoan frm = new ThongTinTaiKhoan(Id);
             frm.ShowDialog();
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            this.Opacity = 1.00d;
+            this.BackColor = Color.White;
+            this.accordionControl1.Appearance.AccordionControl.BackColor = Color.Empty;
+            pb1.Show();
+            WelcomeBack.Show();
+            accordionControl1.Show();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -273,7 +294,14 @@ namespace Entity_Project
             }
             else
             {
-                Environment.Exit(1);
+                try
+                {
+                    Environment.Exit(1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Chậm thôi nào");
+                }
             }
         }
 
@@ -294,7 +322,7 @@ namespace Entity_Project
                     break;
                 case "Thursday":
                     txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Thứ năm";
-                break;
+                    break;
                 case "Friday":
                     txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Thứ sáu";
                     break;
