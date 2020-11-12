@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+
+namespace Entity_Project
+{
+    public partial class ThongTinTaiKhoan : DevExpress.XtraEditors.XtraForm
+    {
+        public ThongTinTaiKhoan()
+        {
+            InitializeComponent();
+        }
+
+        public ThongTinTaiKhoan()
+        {
+
+        }
+
+        private void ThongTinTaiKhoan_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

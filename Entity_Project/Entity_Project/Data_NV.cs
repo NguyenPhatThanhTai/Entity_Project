@@ -282,5 +282,11 @@ namespace Entity_Project
             Account_Staff account = data.Account_Staff.FirstOrDefault(p => p.Staff_Id == Staff_Id);
             return account.Inf_Staff.Staff_Name;
         }
+
+        public List<Inf_Staff> Infomation(string Staff_Id)
+        {
+            List<Inf_Staff> Staff = data.Inf_Staff.Where(p => p.Staff_Id == Staff_Id).ToList();
+            return Staff;
+        }
     }
 }

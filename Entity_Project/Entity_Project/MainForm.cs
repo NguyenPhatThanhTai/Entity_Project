@@ -8,10 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.DataProcessing;
+using DevExpress.PivotGrid.Criteria;
 
 namespace Entity_Project
 {
-    public partial class MainForm : DevExpress.XtraEditors.XtraForm
+    public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         string role, name, Id;
         string ChucVu;
@@ -62,6 +64,7 @@ namespace Entity_Project
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             if (role != "1")
             {
                 ChucVu = "Nhân Viên";
@@ -75,8 +78,8 @@ namespace Entity_Project
             {
                 ChucVu = "Quản Lý";
             }
-            txtXinChao.Text = "Xin chào: " + name;
-            txtChucVu.Text = "Chức vụ: " + ChucVu;
+            txtXinChao.Caption = "Xin chào: ".ToUpper() + name;
+            txtChucVu.Caption = "Chức vụ: ".ToUpper() + ChucVu;
             WelcomeBack.Text = "Chào mừng quay trở lại: " + name;
         }
 
@@ -106,6 +109,7 @@ namespace Entity_Project
         {
             TinhTrangSua frm = new TinhTrangSua();
             viewForm(frm);
+            label1.Caption = "Hiện tại còn " + frm.getSoLuong().ToString() + " đơn chưa hoàn thành            ";
         }
 
         private void LichSuSuaChua_Click(object sender, EventArgs e)
@@ -235,6 +239,31 @@ namespace Entity_Project
 
         }
 
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Bạn muốn đăng xuất à?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Properties.Settings.Default.UserName = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Save();
+                this.Hide();
+                DangNhap dn = new DangNhap();
+                dn.Show();
+            }
+        }
+
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Thongtintaikhoan_Click(object sender, EventArgs e)
+        {
+            ThongTinTaiKhoan frm = new ThongTinTaiKhoan(Id);
+            frm.ShowDialog();
+        }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Bạn muốn thoát à?", "Xác nhận", MessageBoxButtons.YesNo);
@@ -246,6 +275,37 @@ namespace Entity_Project
             {
                 Environment.Exit(1);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            txtTime.Caption = "Giờ: ".ToUpper() + DateTime.Now.ToString("hh:mm:ss");
+            txtDate.Caption = "Ngày: ".ToUpper() + DateTime.Now.ToString("dd/MM/yyyy");
+            switch (DateTime.Now.DayOfWeek.ToString())
+            {
+                case "Monday":
+                    txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Thứ hai";
+                    break;
+                case "Tuesday":
+                    txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Thứ ba";
+                    break;
+                case "Wednesday":
+                    txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Thứ tư";
+                    break;
+                case "Thursday":
+                    txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Thứ năm";
+                break;
+                case "Friday":
+                    txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Thứ sáu";
+                    break;
+                case "Saturday":
+                    txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Thứ bảy";
+                    break;
+                case "Sunday":
+                    txtDayOfWeek.Caption = "Thứ:".ToUpper() + " Chủ nhật";
+                    break;
+            }
+            label1.Caption = label1.Caption.Substring(1, label1.Caption.Length - 1) + label1.Caption.Substring(0, 1);
         }
     }
 }

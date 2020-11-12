@@ -109,5 +109,11 @@ namespace Entity_Project
             Data_RP DRP = new Data_RP();
             Load_TinhTrang(DRP.Inf_Repair());
         }
+
+        public long getSoLuong()
+        {
+            List<Inf_Repair> Inf_Repair = DRP.Inf_Repair();
+            return Inf_Repair.Count();
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb1.TabIndex = 2;
             this.pb1.TabStop = false;
+            this.pb1.Visible = false;
             this.pb1.WaitOnLoad = true;
             // 
             // pictureBox1

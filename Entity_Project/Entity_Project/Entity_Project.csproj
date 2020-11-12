@@ -166,6 +166,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\dstInf_Customers.cs">
       <DependentUpon>dstInf_Customers.xsd</DependentUpon>
@@ -228,6 +229,12 @@
     </Compile>
     <Compile Include="ThongTinKhachHang.Designer.cs">
       <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="TinhTrangSua.cs">
       <SubType>Form</SubType>
@@ -296,6 +303,9 @@
     </Compile>
     <EmbeddedResource Include="ThongTinKhachHang.resx">
       <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinTaiKhoan.resx">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TinhTrangSua.resx">
       <DependentUpon>TinhTrangSua.cs</DependentUpon>

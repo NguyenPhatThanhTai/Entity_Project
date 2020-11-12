@@ -209,8 +209,10 @@
             // 
             // DangNhap
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(465, 566);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtPassword);

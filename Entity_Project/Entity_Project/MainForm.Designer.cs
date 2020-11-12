@@ -29,64 +29,111 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
-            this.txtXinChao = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.txtChucVu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ThongTinKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NhanMayBaoGia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TinhTrangSua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DiSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LichSuSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LinhKien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.MayTinhDeBan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LapTop = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TheoCombo = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.KhuyenMai = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DanhSachKhoHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.NhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DanhSachNhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.BangChamCong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.BangLuong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TongKetTaiChinh = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.HangTonKho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.Thongtintaikhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.PhanQuyen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ThietLapKetNoiSQL = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.SaoLuuSQL = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.PhucHoiSQL = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Thoat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.HuongDan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.YeuCauTroGiup = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LuuTru = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.WelcomeBack = new System.Windows.Forms.Label();
-            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLamMoi = new DevExpress.XtraBars.BarButtonItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
+            this.txtXinChao = new DevExpress.XtraBars.BarHeaderItem();
+            this.txtChucVu = new DevExpress.XtraBars.BarHeaderItem();
+            this.btnDone = new DevExpress.XtraBars.BarButtonItem();
+            this.txtDate = new DevExpress.XtraBars.BarHeaderItem();
+            this.txtTime = new DevExpress.XtraBars.BarHeaderItem();
+            this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.barHeaderItem3 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barMdiChildrenListItem1 = new DevExpress.XtraBars.BarMdiChildrenListItem();
+            this.ribbonGalleryBarItem2 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.barHeaderItem4 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.label1 = new DevExpress.XtraBars.BarStaticItem();
+            this.txtDayOfWeek = new DevExpress.XtraBars.BarHeaderItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // accordionControl1
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.txtXinChao,
-            this.txtChucVu,
             this.accordionControlElement1,
             this.accordionControlSeparator1,
             this.accordionControlElement6,
@@ -100,25 +147,13 @@
             this.accordionControlElement10,
             this.accordionControlSeparator6,
             this.accordionControlElement11});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 193);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(286, 736);
+            this.accordionControl1.Size = new System.Drawing.Size(285, 756);
             this.accordionControl1.TabIndex = 2;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
-            // 
-            // txtXinChao
-            // 
-            this.txtXinChao.Name = "txtXinChao";
-            this.txtXinChao.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.txtXinChao.Text = "Xin chào";
-            // 
-            // txtChucVu
-            // 
-            this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.txtChucVu.Text = "Element8";
             // 
             // accordionControlElement1
             // 
@@ -176,6 +211,10 @@
             this.LichSuSuaChua.Text = "Lịch sử sữa chữa";
             this.LichSuSuaChua.Click += new System.EventHandler(this.LichSuSuaChua_Click);
             // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            // 
             // accordionControlElement6
             // 
             this.accordionControlElement6.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -218,6 +257,10 @@
             this.KhuyenMai.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.KhuyenMai.Text = "Khuyến mãi";
             // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
             // accordionControlElement7
             // 
             this.accordionControlElement7.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -231,6 +274,10 @@
             this.DanhSachKhoHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.DanhSachKhoHang.Text = "Kiểm tra kho hàng";
             this.DanhSachKhoHang.Click += new System.EventHandler(this.DanhSachKhoHang_Click);
+            // 
+            // accordionControlSeparator3
+            // 
+            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
             // 
             // NhanVien
             // 
@@ -260,6 +307,10 @@
             this.BangLuong.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.BangLuong.Text = "Bảng lương";
             this.BangLuong.Click += new System.EventHandler(this.BangLuong_Click);
+            // 
+            // accordionControlSeparator4
+            // 
+            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
             // 
             // accordionControlElement9
             // 
@@ -303,10 +354,14 @@
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement3.Text = "Báo cáo chuyển kho hàng";
             // 
+            // accordionControlSeparator5
+            // 
+            this.accordionControlSeparator5.Name = "accordionControlSeparator5";
+            // 
             // accordionControlElement10
             // 
             this.accordionControlElement10.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement5,
+            this.Thongtintaikhoan,
             this.PhanQuyen,
             this.ThietLapKetNoiSQL,
             this.SaoLuuSQL,
@@ -321,11 +376,12 @@
             this.accordionControlElement10.Name = "accordionControlElement10";
             this.accordionControlElement10.Text = "Hệ thống";
             // 
-            // accordionControlElement5
+            // Thongtintaikhoan
             // 
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "Đổi mật khẩu";
+            this.Thongtintaikhoan.Name = "Thongtintaikhoan";
+            this.Thongtintaikhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.Thongtintaikhoan.Text = "Thông tin tài khoản";
+            this.Thongtintaikhoan.Click += new System.EventHandler(this.Thongtintaikhoan_Click);
             // 
             // PhanQuyen
             // 
@@ -366,6 +422,10 @@
             this.Thoat.Text = "Thoát";
             this.Thoat.Click += new System.EventHandler(this.Thoat_Click);
             // 
+            // accordionControlSeparator6
+            // 
+            this.accordionControlSeparator6.Name = "accordionControlSeparator6";
+            // 
             // accordionControlElement11
             // 
             this.accordionControlElement11.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -395,7 +455,7 @@
             // 
             this.pb1.BackColor = System.Drawing.Color.White;
             this.pb1.Image = global::Entity_Project.Properties.Resources.source;
-            this.pb1.Location = new System.Drawing.Point(682, 207);
+            this.pb1.Location = new System.Drawing.Point(660, 368);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(420, 295);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -405,36 +465,378 @@
             // WelcomeBack
             // 
             this.WelcomeBack.AutoSize = true;
-            this.WelcomeBack.Location = new System.Drawing.Point(746, 457);
+            this.WelcomeBack.Location = new System.Drawing.Point(733, 629);
             this.WelcomeBack.Name = "WelcomeBack";
             this.WelcomeBack.Size = new System.Drawing.Size(98, 17);
             this.WelcomeBack.TabIndex = 4;
             this.WelcomeBack.Text = "Welcome back";
             this.WelcomeBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // accordionControlSeparator1
+            // ribbonControl1
             // 
-            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            this.ribbonControl1.AutoSizeItems = true;
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
+            this.btnThem,
+            this.btnSua,
+            this.barButtonItem3,
+            this.btnXoa,
+            this.btnLamMoi,
+            this.skinRibbonGalleryBarItem1,
+            this.ribbonGalleryBarItem1,
+            this.barEditItem1,
+            this.barEditItem2,
+            this.btnDangXuat,
+            this.btnThoat,
+            this.barHeaderItem1,
+            this.barHeaderItem2,
+            this.txtXinChao,
+            this.txtChucVu,
+            this.btnDone,
+            this.txtDate,
+            this.txtTime,
+            this.skinRibbonGalleryBarItem2,
+            this.barHeaderItem3,
+            this.barMdiChildrenListItem1,
+            this.ribbonGalleryBarItem2,
+            this.barHeaderItem4,
+            this.barStaticItem1,
+            this.label1,
+            this.txtDayOfWeek});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 30;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1});
+            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTimeEdit1,
+            this.repositoryItemDateEdit1});
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
+            this.ribbonControl1.Size = new System.Drawing.Size(1470, 193);
+            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
-            // accordionControlSeparator2
+            // btnThem
             // 
-            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            this.btnThem.Id = 1;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
             // 
-            // accordionControlSeparator3
+            // btnSua
             // 
-            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
+            this.btnSua.Id = 2;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
+            this.btnSua.Name = "btnSua";
             // 
-            // accordionControlSeparator4
+            // barButtonItem3
             // 
-            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 3;
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // accordionControlSeparator5
+            // btnXoa
             // 
-            this.accordionControlSeparator5.Name = "accordionControlSeparator5";
+            this.btnXoa.Id = 4;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
+            this.btnXoa.Name = "btnXoa";
             // 
-            // accordionControlSeparator6
+            // btnLamMoi
             // 
-            this.accordionControlSeparator6.Name = "accordionControlSeparator6";
+            this.btnLamMoi.Id = 5;
+            this.btnLamMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.ImageOptions.Image")));
+            this.btnLamMoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.ImageOptions.LargeImage")));
+            this.btnLamMoi.Name = "btnLamMoi";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 6;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
+            // ribbonGalleryBarItem1
+            // 
+            this.ribbonGalleryBarItem1.Caption = "ribbonGalleryBarItem1";
+            this.ribbonGalleryBarItem1.Id = 7;
+            this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.repositoryItemTimeEdit1;
+            this.barEditItem1.Id = 8;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemTimeEdit1
+            // 
+            this.repositoryItemTimeEdit1.AutoHeight = false;
+            this.repositoryItemTimeEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
+            // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Caption = "barEditItem2";
+            this.barEditItem2.Edit = this.repositoryItemDateEdit1;
+            this.barEditItem2.Id = 9;
+            this.barEditItem2.Name = "barEditItem2";
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Caption = "Đăng xuất";
+            this.btnDangXuat.Id = 12;
+            this.btnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.Image")));
+            this.btnDangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.LargeImage")));
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 13;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Caption = "barHeaderItem1";
+            this.barHeaderItem1.Id = 14;
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // barHeaderItem2
+            // 
+            this.barHeaderItem2.Caption = "barHeaderItem2";
+            this.barHeaderItem2.Id = 15;
+            this.barHeaderItem2.Name = "barHeaderItem2";
+            // 
+            // txtXinChao
+            // 
+            this.txtXinChao.Caption = "barHeaderItem3";
+            this.txtXinChao.Id = 16;
+            this.txtXinChao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtXinChao.ImageOptions.Image")));
+            this.txtXinChao.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("txtXinChao.ImageOptions.LargeImage")));
+            this.txtXinChao.Name = "txtXinChao";
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.Caption = "barHeaderItem4";
+            this.txtChucVu.Id = 17;
+            this.txtChucVu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtChucVu.ImageOptions.Image")));
+            this.txtChucVu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("txtChucVu.ImageOptions.LargeImage")));
+            this.txtChucVu.Name = "txtChucVu";
+            // 
+            // btnDone
+            // 
+            this.btnDone.Id = 18;
+            this.btnDone.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDone.ImageOptions.SvgImage")));
+            this.btnDone.Name = "btnDone";
+            // 
+            // txtDate
+            // 
+            this.txtDate.Caption = "barHeaderItem3";
+            this.txtDate.Id = 19;
+            this.txtDate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtDate.ImageOptions.Image")));
+            this.txtDate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("txtDate.ImageOptions.LargeImage")));
+            this.txtDate.Name = "txtDate";
+            // 
+            // txtTime
+            // 
+            this.txtTime.Caption = "barHeaderItem4";
+            this.txtTime.Id = 20;
+            this.txtTime.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtTime.ImageOptions.Image")));
+            this.txtTime.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("txtTime.ImageOptions.LargeImage")));
+            this.txtTime.Name = "txtTime";
+            // 
+            // skinRibbonGalleryBarItem2
+            // 
+            this.skinRibbonGalleryBarItem2.Caption = "skinRibbonGalleryBarItem2";
+            this.skinRibbonGalleryBarItem2.Id = 21;
+            this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
+            // 
+            // barHeaderItem3
+            // 
+            this.barHeaderItem3.Caption = "barHeaderItem3";
+            this.barHeaderItem3.Id = 22;
+            this.barHeaderItem3.Name = "barHeaderItem3";
+            this.barHeaderItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barMdiChildrenListItem1
+            // 
+            this.barMdiChildrenListItem1.Caption = "barMdiChildrenListItem1";
+            this.barMdiChildrenListItem1.Id = 23;
+            this.barMdiChildrenListItem1.Name = "barMdiChildrenListItem1";
+            // 
+            // ribbonGalleryBarItem2
+            // 
+            this.ribbonGalleryBarItem2.Caption = "ribbonGalleryBarItem2";
+            this.ribbonGalleryBarItem2.Id = 24;
+            this.ribbonGalleryBarItem2.Name = "ribbonGalleryBarItem2";
+            // 
+            // barHeaderItem4
+            // 
+            this.barHeaderItem4.Caption = "123";
+            this.barHeaderItem4.Id = 25;
+            this.barHeaderItem4.ImageOptions.Image = global::Entity_Project.Properties.Resources.source;
+            this.barHeaderItem4.Name = "barHeaderItem4";
+            this.barHeaderItem4.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "barStaticItem1";
+            this.barStaticItem1.Id = 26;
+            this.barStaticItem1.ImageOptions.Image = global::Entity_Project.Properties.Resources._1_em5HcTFZIQw90qIgdbYjVg;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barStaticItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // label1
+            // 
+            this.label1.Caption = "Trạm sữa chữa Laptop số 13  (^.^)                  ";
+            this.label1.Id = 27;
+            this.label1.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ItemAppearance.Disabled.Options.UseFont = true;
+            this.label1.Name = "label1";
+            this.label1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // txtDayOfWeek
+            // 
+            this.txtDayOfWeek.Caption = "barHeaderItem5";
+            this.txtDayOfWeek.Id = 29;
+            this.txtDayOfWeek.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtDayOfWeek.ImageOptions.Image")));
+            this.txtDayOfWeek.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("txtDayOfWeek.ImageOptions.LargeImage")));
+            this.txtDayOfWeek.Name = "txtDayOfWeek";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup3});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Thông tin chung";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ImageOptions.Image = global::Entity_Project.Properties.Resources.check;
+            this.ribbonPageGroup1.ItemLinks.Add(this.txtDayOfWeek);
+            this.ribbonPageGroup1.ItemLinks.Add(this.txtDate);
+            this.ribbonPageGroup1.ItemLinks.Add(this.txtTime);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Ngày giờ";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup2.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Người đăng nhập";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnDangXuat);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnThoat);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Rời phiên làm việc";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.skinRibbonGalleryBarItem2);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Tùy Chỉnh Giao diện";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.label1);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 949);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1470, 30);
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup9.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "--------------------";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup10.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "--------------------";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup11.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "--------------------";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup12.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "--------------------";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup13.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "--------------------";
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup14.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Text = "--------------------";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup15.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Text = "--------------------";
+            // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.ItemLinks.Add(this.txtXinChao);
+            this.ribbonPageGroup16.ItemLinks.Add(this.txtChucVu);
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "--------------------";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainForm
             // 
@@ -442,19 +844,27 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1495, 736);
+            this.ClientSize = new System.Drawing.Size(1470, 979);
             this.Controls.Add(this.WelcomeBack);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.pb1);
+            this.Controls.Add(this.ribbonStatusBar1);
+            this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
+            this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StatusBar = this.ribbonStatusBar1;
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,9 +908,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement BangLuong;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement txtXinChao;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement txtChucVu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement Thongtintaikhoan;
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.Label WelcomeBack;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
@@ -509,5 +917,51 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator6;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem btnLamMoi;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit1;
+        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraBars.BarButtonItem btnDangXuat;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
+        private DevExpress.XtraBars.BarHeaderItem txtXinChao;
+        private DevExpress.XtraBars.BarHeaderItem txtChucVu;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
+        private DevExpress.XtraBars.BarButtonItem btnDone;
+        private DevExpress.XtraBars.BarHeaderItem txtDate;
+        private DevExpress.XtraBars.BarHeaderItem txtTime;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
+        private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem1;
+        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem2;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem label1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarHeaderItem txtDayOfWeek;
     }
 }

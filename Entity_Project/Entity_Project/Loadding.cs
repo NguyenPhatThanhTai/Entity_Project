@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Threading;
 
 namespace Entity_Project
 {
@@ -20,7 +21,6 @@ namespace Entity_Project
 
         private async void Loadding_Load(object sender, EventArgs e)
         {
-            pb1.Hide();
             await Task.Delay(1000);
             pb1.Show();
             WhenStartedcs ws = new WhenStartedcs();

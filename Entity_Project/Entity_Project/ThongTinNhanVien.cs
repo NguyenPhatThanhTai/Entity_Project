@@ -68,7 +68,7 @@ namespace Entity_Project
                 }
 
                 var date1 = DateTime.Parse(item.Staff_Birth.ToString());
-                var date2 = DateTime.Parse(item.Staff_Birth.ToString());
+                var date2 = DateTime.Parse(item.Staff_TimeAdd.ToString());
 
                 int index = Data.Rows.Add();
                 Data.Rows[index].Cells[0].Value = i;
