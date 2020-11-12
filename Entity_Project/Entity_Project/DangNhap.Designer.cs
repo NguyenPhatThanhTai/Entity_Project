@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,6 +43,9 @@
             this.pbCheck = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtSoLanDN = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtQuaSoLan = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -207,6 +211,32 @@
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
+            // txtSoLanDN
+            // 
+            this.txtSoLanDN.AutoSize = true;
+            this.txtSoLanDN.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txtSoLanDN.Location = new System.Drawing.Point(170, 258);
+            this.txtSoLanDN.Name = "txtSoLanDN";
+            this.txtSoLanDN.Size = new System.Drawing.Size(107, 17);
+            this.txtSoLanDN.TabIndex = 28;
+            this.txtSoLanDN.Text = "Lần thử thứ 0/1";
+            this.txtSoLanDN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // txtQuaSoLan
+            // 
+            this.txtQuaSoLan.AutoSize = true;
+            this.txtQuaSoLan.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txtQuaSoLan.Location = new System.Drawing.Point(29, 258);
+            this.txtQuaSoLan.Name = "txtQuaSoLan";
+            this.txtQuaSoLan.Size = new System.Drawing.Size(408, 17);
+            this.txtQuaSoLan.TabIndex = 29;
+            this.txtQuaSoLan.Text = "Bạn đã thử quá số lần quy định, vui lòng đợi 00:30 giây để thử lại";
+            this.txtQuaSoLan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DangNhap
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -214,6 +244,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(465, 566);
+            this.Controls.Add(this.txtQuaSoLan);
+            this.Controls.Add(this.txtSoLanDN);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
@@ -254,5 +286,8 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.CheckBox Ckb_SaveMyPass;
+        private System.Windows.Forms.Label txtSoLanDN;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label txtQuaSoLan;
     }
 }

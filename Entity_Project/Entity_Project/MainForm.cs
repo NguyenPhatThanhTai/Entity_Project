@@ -82,14 +82,22 @@ namespace Entity_Project
             {
                 ChucVu = "Quản Lý";
             }
-            txtXinChao.Caption = "Xin chào: ".ToUpper() + name;
-            txtChucVu.Caption = "Chức vụ: ".ToUpper() + ChucVu;
-            WelcomeBack.Text = "Chào mừng quay trở lại: " + name;
+            if (MdiChildren.Count() == 0)
+            {
+                txtXinChao.Caption = "Xin chào: ".ToUpper() + name;
+                txtChucVu.Caption = "Chức vụ: ".ToUpper() + ChucVu;
+                WelcomeBack.Text = "Chào mừng quay trở lại: " + name;
+            }
         }
 
         private void LuuTru_PageRemoved(object sender, DevExpress.XtraTabbedMdi.MdiTabPageEventArgs e)
         {
-            if (MdiChildren.Count() == 0)
+            if (MdiChildren.Count() > 0)
+            {
+                pb1.Hide();
+                WelcomeBack.Hide();
+            }
+            else
             {
                 pb1.Show();
                 WelcomeBack.Show();
@@ -267,21 +275,24 @@ namespace Entity_Project
             this.Opacity = 0.70d;
             this.BackColor = Color.Gray;
             this.accordionControl1.Appearance.AccordionControl.BackColor = Color.Gray;
+            accordionControl1.Hide();
             pb1.Hide();
             WelcomeBack.Hide();
-            accordionControl1.Hide();
-
             ThongTinTaiKhoan frm = new ThongTinTaiKhoan(Id);
             frm.ShowDialog();
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
+
             this.Opacity = 1.00d;
             this.BackColor = Color.White;
             this.accordionControl1.Appearance.AccordionControl.BackColor = Color.Empty;
-            pb1.Show();
-            WelcomeBack.Show();
+            if (MdiChildren.Count() == 0)
+            {
+                pb1.Show();
+                WelcomeBack.Show();
+            }
             accordionControl1.Show();
         }
 
@@ -298,7 +309,7 @@ namespace Entity_Project
                 {
                     Environment.Exit(1);
                 }
-                catch (Exception ex)
+                catch (ArgumentException ex)
                 {
                     MessageBox.Show("Chậm thôi nào");
                 }

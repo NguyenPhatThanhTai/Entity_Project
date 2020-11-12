@@ -50,7 +50,6 @@ namespace Entity_Project
                 }
 
                 var date1 = DateTime.Parse(item.Customer_Birth.ToString());
-                var date2 = DateTime.Parse(item.Customer_Birth.ToString());
 
                 int index = Data.Rows.Add();
                 Data.Rows[index].Cells[0].Value = i;
@@ -60,7 +59,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[4].Value = date1.ToString("dd/MM/yyyy");
                 Data.Rows[index].Cells[5].Value = item.Customer_Email;
                 Data.Rows[index].Cells[6].Value = item.Customer_Phone;
-                Data.Rows[index].Cells[7].Value = date2.ToString("dd/MM/yyyy");
+                Data.Rows[index].Cells[7].Value = item.Customer_TimeAdd;
                 i++;
             }
         }

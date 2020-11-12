@@ -36,7 +36,7 @@ namespace Entity_Project
             {
                 if (item.Staff_Role.ToString() == "1")
                 {
-                    quyen = "Admin";
+                    quyen = "Quản Lý";
                 }
                 else
                 {
@@ -63,6 +63,11 @@ namespace Entity_Project
                 {
                     if (DNV.Update_Account(txtPassword.Text, txtRole.Text,  txtMaNv.Text))
                     {
+                        if (Properties.Settings.Default.UserName == txtMaNv.Text)
+                        {
+                            Properties.Settings.Default.Password = txtPassword.Text;
+                            Properties.Settings.Default.Save();
+                        }
                         MessageBox.Show("Cập nhật thành công");
                         Load_Account(DNV.Account_Staff());
                         openButton(true);

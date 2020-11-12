@@ -455,7 +455,7 @@
             // 
             this.pb1.BackColor = System.Drawing.Color.White;
             this.pb1.Image = global::Entity_Project.Properties.Resources.source;
-            this.pb1.Location = new System.Drawing.Point(660, 368);
+            this.pb1.Location = new System.Drawing.Point(670, 351);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(420, 295);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -465,7 +465,7 @@
             // WelcomeBack
             // 
             this.WelcomeBack.AutoSize = true;
-            this.WelcomeBack.Location = new System.Drawing.Point(733, 629);
+            this.WelcomeBack.Location = new System.Drawing.Point(736, 616);
             this.WelcomeBack.Name = "WelcomeBack";
             this.WelcomeBack.Size = new System.Drawing.Size(98, 17);
             this.WelcomeBack.TabIndex = 4;
@@ -847,8 +847,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 979);
             this.Controls.Add(this.WelcomeBack);
-            this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.pb1);
+            this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;

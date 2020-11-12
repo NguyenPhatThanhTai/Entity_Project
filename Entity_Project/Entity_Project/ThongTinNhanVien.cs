@@ -68,7 +68,6 @@ namespace Entity_Project
                 }
 
                 var date1 = DateTime.Parse(item.Staff_Birth.ToString());
-                var date2 = DateTime.Parse(item.Staff_TimeAdd.ToString());
 
                 int index = Data.Rows.Add();
                 Data.Rows[index].Cells[0].Value = i;
@@ -79,7 +78,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[5].Value = item.Staff_Address;
                 Data.Rows[index].Cells[6].Value = item.Staff_Phone;
                 Data.Rows[index].Cells[7].Value = PhongBan;
-                Data.Rows[index].Cells[8].Value = date2.ToString("dd/MM/yyyy");
+                Data.Rows[index].Cells[8].Value = item.Staff_TimeAdd;
                 i++;
             }
         }

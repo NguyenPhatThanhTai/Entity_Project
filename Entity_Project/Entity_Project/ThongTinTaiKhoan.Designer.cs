@@ -38,9 +38,9 @@ namespace Entity_Project
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnQuayLai = new System.Windows.Forms.Button();
+            this.btnSuaThongTin = new System.Windows.Forms.Button();
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -59,6 +59,7 @@ namespace Entity_Project
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtDate = new System.Windows.Forms.DateTimePicker();
+            this.btnKhongLuu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -151,42 +152,45 @@ namespace Entity_Project
             this.label9.TabIndex = 8;
             this.label9.Text = "Quyền";
             // 
-            // button1
+            // btnLuu
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Enabled = false;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(321, 549);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 40);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Lưu thay đổi";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLuu.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLuu.Enabled = false;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(225, 549);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(112, 40);
+            this.btnLuu.TabIndex = 9;
+            this.btnLuu.Text = "Lưu thay đổi";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // button2
+            // btnQuayLai
             // 
-            this.button2.BackColor = System.Drawing.Color.LightCoral;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(439, 549);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 40);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Quay lại";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnQuayLai.BackColor = System.Drawing.Color.LightCoral;
+            this.btnQuayLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuayLai.ForeColor = System.Drawing.Color.White;
+            this.btnQuayLai.Location = new System.Drawing.Point(459, 549);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(112, 40);
+            this.btnQuayLai.TabIndex = 10;
+            this.btnQuayLai.Text = "Quay lại";
+            this.btnQuayLai.UseVisualStyleBackColor = false;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
-            // button3
+            // btnSuaThongTin
             // 
-            this.button3.BackColor = System.Drawing.Color.Green;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(203, 549);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 40);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Sửa thông tin";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnSuaThongTin.BackColor = System.Drawing.Color.Green;
+            this.btnSuaThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaThongTin.ForeColor = System.Drawing.Color.White;
+            this.btnSuaThongTin.Location = new System.Drawing.Point(107, 549);
+            this.btnSuaThongTin.Name = "btnSuaThongTin";
+            this.btnSuaThongTin.Size = new System.Drawing.Size(112, 40);
+            this.btnSuaThongTin.TabIndex = 11;
+            this.btnSuaThongTin.Text = "Sửa thông tin";
+            this.btnSuaThongTin.UseVisualStyleBackColor = false;
+            this.btnSuaThongTin.Click += new System.EventHandler(this.btnSuaThongTin_Click);
             // 
             // txtAccount
             // 
@@ -367,11 +371,26 @@ namespace Entity_Project
             this.txtDate.Size = new System.Drawing.Size(326, 23);
             this.txtDate.TabIndex = 42;
             // 
+            // btnKhongLuu
+            // 
+            this.btnKhongLuu.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnKhongLuu.Enabled = false;
+            this.btnKhongLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhongLuu.ForeColor = System.Drawing.Color.White;
+            this.btnKhongLuu.Location = new System.Drawing.Point(341, 549);
+            this.btnKhongLuu.Name = "btnKhongLuu";
+            this.btnKhongLuu.Size = new System.Drawing.Size(112, 40);
+            this.btnKhongLuu.TabIndex = 43;
+            this.btnKhongLuu.Text = "Không lưu";
+            this.btnKhongLuu.UseVisualStyleBackColor = false;
+            this.btnKhongLuu.Click += new System.EventHandler(this.btnKhongLuu_Click);
+            // 
             // ThongTinTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 601);
+            this.Controls.Add(this.btnKhongLuu);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.txtPhongBan);
@@ -390,9 +409,9 @@ namespace Entity_Project
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtAccount);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSuaThongTin);
+            this.Controls.Add(this.btnQuayLai);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -422,9 +441,9 @@ namespace Entity_Project
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnQuayLai;
+        private System.Windows.Forms.Button btnSuaThongTin;
         private System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtPassword;
@@ -443,5 +462,6 @@ namespace Entity_Project
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ComboBox txtGioiTinh;
         private System.Windows.Forms.DateTimePicker txtDate;
+        private System.Windows.Forms.Button btnKhongLuu;
     }
 }

@@ -10,7 +10,7 @@ namespace Entity_Project
 {
     class Data_NV
     {
-        string time = DateTime.Now.ToString("yyyy/MM/dd");
+        string time = DateTime.Now.ToString("dd/MM/yyyy");
         string day = DateTime.Now.ToString("dd");
         string Min = DateTime.Now.ToString("mm");
         string sec = DateTime.Now.ToString("ss");
@@ -232,7 +232,7 @@ namespace Entity_Project
 
         public bool Update_Account(string Staff_Password, string Staff_Role, string Staff_Id)
         {
-            if (Staff_Role == "Admin")
+            if (Staff_Role == "Quản Lý")
             {
                 Quyen = "1";
             }

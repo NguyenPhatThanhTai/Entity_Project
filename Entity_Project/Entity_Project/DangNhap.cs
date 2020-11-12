@@ -19,16 +19,22 @@ namespace Entity_Project
         }
 
         Data_NV DNV;
+        int check;
+        int numberCheck = 1;
+        double second = 30;
 
         private void DangNhap_Load(object sender, EventArgs e)
         {
             DNV = new Data_NV();
             pbCheck.Hide();
             lbCheck.Hide();
+            txtSoLanDN.Hide();
+            txtQuaSoLan.Hide();
         }
 
         private async void btnDangNhap_Click(object sender, EventArgs e)
         {
+            btnDangNhap.Enabled = false;
             string Account = txtAccount.Text;
             string Password = txtPassword.Text;
             if (Account != "" && Password != "")
@@ -50,13 +56,25 @@ namespace Entity_Project
                 }
                 else
                 {
+                    btnDangNhap.Enabled = true;
                     pbCheck.Hide();
                     lbCheck.Hide();
+                    txtSoLanDN.Show();
+                    check += 1;
+                    txtSoLanDN.Text = "Lần thử thứ " + check +"/5";
                     MessageBox.Show("Sai tài khoản hoặc mật khẩu");
+                    if (check == 5)
+                    {
+                        second = second * numberCheck;
+                        btnDangNhap.Enabled = false;
+                        timer1.Interval = 1000;
+                        timer1.Start();
+                    }
                 }
             }
             else
             {
+                btnDangNhap.Enabled = true;
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin !");
             }
         }
@@ -76,6 +94,22 @@ namespace Entity_Project
             else
             {
                 Environment.Exit(1);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            txtQuaSoLan.Show();
+            txtQuaSoLan.Text = "Bạn đã thử quá số lần quy định, vui lòng đợi " + (second -= 1) + " giây để thử lại";
+            if (second == 0)
+            {
+                timer1.Stop();
+                btnDangNhap.Enabled = true;
+                txtSoLanDN.Hide();
+                txtQuaSoLan.Hide();
+                numberCheck += 1;
+                second = 30;
+                check = 0;
             }
         }
     }

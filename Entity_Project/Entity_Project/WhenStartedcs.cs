@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Entity_Project
 {
@@ -19,6 +20,12 @@ namespace Entity_Project
                 {
                     MainForm form = new MainForm(DNV.getRole(Account), DNV.getName(Account), Account);
                     form.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra, vui lòng đăng nhập lại");
+                    DangNhap dn = new DangNhap();
+                    dn.Show();
                 }
             }
             else
