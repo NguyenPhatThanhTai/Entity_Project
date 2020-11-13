@@ -115,24 +115,31 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
-            openButton(true);
-            if(Data.SelectedRows[0].Cells[9].Value.ToString() == Name)
+            if (Data.Rows.Count == 0)
             {
-                btnTiepNhan.Text = "Tiếp tục đơn";
+                MessageBox.Show("Hiện tại chưa có đơn hàng nào");
             }
             else
             {
-                btnTiepNhan.Text = "Tiếp nhận đơn";
+                openButton(true);
+                if (Data.SelectedRows[0].Cells[9].Value.ToString() == Name)
+                {
+                    btnTiepNhan.Text = "Tiếp tục đơn";
+                }
+                else
+                {
+                    btnTiepNhan.Text = "Tiếp nhận đơn";
+                }
+                txtMaSuaChua.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
+                txtTenKhachHang.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
+                txtTenMay.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
+                txtTinhTrang.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
+                txtCanSua.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
+                txtHenSua.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
+                txtDateHen.Value = DateTime.Parse((string)Data.SelectedRows[0].Cells[7].Value);
+                txtSoTien.Text = Data.SelectedRows[0].Cells[8].Value.ToString();
+                txtNVTN.Text = Data.SelectedRows[0].Cells[9].Value.ToString();
             }
-            txtMaSuaChua.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
-            txtTenKhachHang.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
-            txtTenMay.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
-            txtTinhTrang.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
-            txtCanSua.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
-            txtHenSua.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
-            txtDateHen.Value = DateTime.Parse((string)Data.SelectedRows[0].Cells[7].Value);
-            txtSoTien.Text = Data.SelectedRows[0].Cells[8].Value.ToString();
-            txtNVTN.Text = Data.SelectedRows[0].Cells[9].Value.ToString();
         }
 
         private void NhanMayBaoGia_Enter(object sender, EventArgs e)

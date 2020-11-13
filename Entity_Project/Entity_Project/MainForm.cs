@@ -307,7 +307,7 @@ namespace Entity_Project
             {
                 try
                 {
-                    Environment.Exit(1);
+                    Application.Exit();
                 }
                 catch (ArgumentException ex)
                 {

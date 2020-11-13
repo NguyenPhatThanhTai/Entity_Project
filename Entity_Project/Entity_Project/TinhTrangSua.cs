@@ -86,15 +86,22 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
-            if (Data.SelectedRows[0].Cells[5].Value.ToString() != "Chưa biết")
+            if (Data.Rows.Count == 0)
             {
-                btnHoanThanh.Enabled = true;
-                id = Data.SelectedRows[0].Cells[1].Value.ToString();
-                note = Data.SelectedRows[0].Cells[3].Value.ToString();
+                MessageBox.Show("Hiện tại chưa có đơn hàng nào");
             }
             else
             {
-                btnHoanThanh.Enabled = false;
+                if (Data.SelectedRows[0].Cells[5].Value.ToString() != "Chưa biết")
+                {
+                    btnHoanThanh.Enabled = true;
+                    id = Data.SelectedRows[0].Cells[1].Value.ToString();
+                    note = Data.SelectedRows[0].Cells[3].Value.ToString();
+                }
+                else
+                {
+                    btnHoanThanh.Enabled = false;
+                }
             }
         }
 
@@ -112,6 +119,7 @@ namespace Entity_Project
 
         public long getSoLuong()
         {
+            DRP = new Data_RP();
             List<Inf_Repair> Inf_Repair = DRP.Inf_Repair();
             return Inf_Repair.Count();
         }

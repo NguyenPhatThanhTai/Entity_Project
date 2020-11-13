@@ -188,14 +188,21 @@ namespace Entity_Project
 
         private void Data1_Click(object sender, EventArgs e)
         {
-            btnDelete.Enabled = true;
-            btnUpdate.Enabled = true;
-            btnThem.Enabled = false;
-            txtMaLinhKien.Text = Data1.SelectedRows[0].Cells[1].Value.ToString();
-            txtTenLinhKien.Text = Data1.SelectedRows[0].Cells[3].Value.ToString();
-            txtSoLuong.Text = Data1.SelectedRows[0].Cells[4].Value.ToString();
-            txtNhaSanXuat.Text = Data1.SelectedRows[0].Cells[5].Value.ToString();
-            txtPrice.Text = Data1.SelectedRows[0].Cells[6].Value.ToString();
+            if (Data1.Rows.Count == 0)
+            {
+                MessageBox.Show("Hiện tại kho này vẫn chưa có hàng");
+            }
+            else
+            {
+                btnDelete.Enabled = true;
+                btnUpdate.Enabled = true;
+                btnThem.Enabled = false;
+                txtMaLinhKien.Text = Data1.SelectedRows[0].Cells[1].Value.ToString();
+                txtTenLinhKien.Text = Data1.SelectedRows[0].Cells[3].Value.ToString();
+                txtSoLuong.Text = Data1.SelectedRows[0].Cells[4].Value.ToString();
+                txtNhaSanXuat.Text = Data1.SelectedRows[0].Cells[5].Value.ToString();
+                txtPrice.Text = Data1.SelectedRows[0].Cells[6].Value.ToString();
+            }
         }
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)

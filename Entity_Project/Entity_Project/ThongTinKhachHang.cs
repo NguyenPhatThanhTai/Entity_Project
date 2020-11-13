@@ -93,14 +93,21 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
-            openButton(false);
-            txtMaKhachHang.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
-            txtHoTen.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
-            txtGioiTinh.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
-            txtBirth.Value = DateTime.Parse((string)Data.SelectedRows[0].Cells[4].Value);
-            txtEmail.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
-            txtSDT.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
-            txtThoiGian.Text = Data.SelectedRows[0].Cells[7].Value.ToString();
+            if (Data.Rows.Count == 0)
+            {
+                MessageBox.Show("Hiện tại chưa khách hàng nào");
+            }
+            else
+            {
+                openButton(false);
+                txtMaKhachHang.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
+                txtHoTen.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
+                txtGioiTinh.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
+                txtBirth.Value = DateTime.Parse((string)Data.SelectedRows[0].Cells[4].Value);
+                txtEmail.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
+                txtSDT.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
+                txtThoiGian.Text = Data.SelectedRows[0].Cells[7].Value.ToString();
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)

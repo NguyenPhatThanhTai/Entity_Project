@@ -73,20 +73,27 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
-            openButton(false);
-            txtMaNV.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
-            txtTenNV.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
-            txtLuongCoBan.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
-            txtLuongTheoGio.Text = Data.SelectedRows[0].Cells[4].Value.ToString();
-            txtLamNgoaiGio.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
-            txtTienThuong.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
+            if (Data.Rows.Count == 0)
+            {
+                MessageBox.Show("Hiện tại chưa có nhân viên nào");
+            }
+            else
+            {
+                openButton(false);
+                txtMaNV.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
+                txtTenNV.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
+                txtLuongCoBan.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
+                txtLuongTheoGio.Text = Data.SelectedRows[0].Cells[4].Value.ToString();
+                txtLamNgoaiGio.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
+                txtTienThuong.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
 
-            int TienCoBan = int.Parse(Data.SelectedRows[0].Cells[3].Value.ToString());
-            int TienThuong = int.Parse(Data.SelectedRows[0].Cells[6].Value.ToString());
-            int LamNgoaiGio = int.Parse(Data.SelectedRows[0].Cells[5].Value.ToString());
-            int TongLuong = TienCoBan + TienThuong + LamNgoaiGio;
+                int TienCoBan = int.Parse(Data.SelectedRows[0].Cells[3].Value.ToString());
+                int TienThuong = int.Parse(Data.SelectedRows[0].Cells[6].Value.ToString());
+                int LamNgoaiGio = int.Parse(Data.SelectedRows[0].Cells[5].Value.ToString());
+                int TongLuong = TienCoBan + TienThuong + LamNgoaiGio;
 
-            txtTongLuong.Text = string.Format("{0:#,###}VND", TongLuong.ToString());
+                txtTongLuong.Text = string.Format("{0:#,###}VND", TongLuong.ToString());
+            }
         }
 
         private void Clear()

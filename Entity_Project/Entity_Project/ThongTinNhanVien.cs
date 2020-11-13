@@ -193,22 +193,29 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
-            openButton(false);
-            if (Id == Data.SelectedRows[0].Cells[1].Value.ToString())
+            if (Data.Rows.Count == 0)
             {
-                btnDelete.Enabled = false;
+                MessageBox.Show("Hiện tại chưa có nhân viên nào");
             }
             else
             {
-                btnDelete.Enabled = true;
+                openButton(false);
+                if (Id == Data.SelectedRows[0].Cells[1].Value.ToString())
+                {
+                    btnDelete.Enabled = false;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                }
+                txtMaNv.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
+                txtHoTen.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
+                txtGioiTinh.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
+                txtDate.Value = DateTime.Parse((string)Data.SelectedRows[0].Cells[4].Value);
+                txtDiaChi.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
+                txtSDT.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
+                txtDepartment.Text = Data.SelectedRows[0].Cells[7].Value.ToString();
             }
-            txtMaNv.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
-            txtHoTen.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
-            txtGioiTinh.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
-            txtDate.Value = DateTime.Parse((string)Data.SelectedRows[0].Cells[4].Value);
-            txtDiaChi.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
-            txtSDT.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
-            txtDepartment.Text = Data.SelectedRows[0].Cells[7].Value.ToString();
         }
 
         private void Clear()

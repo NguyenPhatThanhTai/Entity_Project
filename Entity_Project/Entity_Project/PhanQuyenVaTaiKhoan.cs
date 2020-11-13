@@ -112,12 +112,19 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
-            openButton(false);
-            txtMaNv.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
-            txtTenNhanVien.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
-            txtAccount.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
-            txtPassword.Text = Data.SelectedRows[0].Cells[4].Value.ToString();
-            txtRole.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
+            if (Data.Rows.Count == 0)
+            {
+                MessageBox.Show("Hiện tại chưa có nhân viên nào");
+            }
+            else
+            {
+                openButton(false);
+                txtMaNv.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
+                txtTenNhanVien.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
+                txtAccount.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
+                txtPassword.Text = Data.SelectedRows[0].Cells[4].Value.ToString();
+                txtRole.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
+            }
         }
 
         private void PhanQuyenVaTaiKhoan_Enter(object sender, EventArgs e)

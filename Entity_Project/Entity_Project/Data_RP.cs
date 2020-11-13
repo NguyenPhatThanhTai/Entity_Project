@@ -61,15 +61,27 @@ namespace Entity_Project
 
         public bool Done_RP(string Repair_Id, string note)
         {
-            string repairid = (String)Repair_Id;
-            Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == repairid);
+            data = new Data();
+            Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
             if(repair != null)
             {
                 if (note.ToString() == "Hẹn ngày lấy")
                 {
-                    MessageBox.Show(repair.Detail_Inf_Repair.Repair_Note.ToString());
-                    var thread = new Thread(() => sendMail(repair.Inf_Customers.Customer_Name, repair.Inf_Customers.Customer_Email, repair.Inf_Customers.Customer_Phone, repair.Laptop_Name, repair.Detail_Inf_Repair.Repair_Reason, repair.Detail_Inf_Repair.Repair_Money));
-                    thread.Start();
+                    string NameTo = repair.Inf_Customers.Customer_Name;
+                    string EmailTo = repair.Inf_Customers.Customer_Email;
+                    string SDTTo = repair.Inf_Customers.Customer_Phone;
+                    string Laptop_Name = repair.Laptop_Name;
+                    string Repair_Reason = repair.Detail_Inf_Repair.Repair_Reason;
+                    string Repair_Money = repair.Detail_Inf_Repair.Repair_Money;
+                    try
+                    {
+                        var thread = new Thread(() => sendMail(NameTo, EmailTo, SDTTo, Laptop_Name, Repair_Reason, Repair_Money));
+                        thread.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi gửi mail");
+                    }
                 }
                 Inf_LichSu ls = new Inf_LichSu()
                 {
