@@ -73,6 +73,16 @@ namespace Entity_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _71a75dace5dd09eb98fb0bee98a85876 {
+            get {
+                object obj = ResourceManager.GetObject("71a75dace5dd09eb98fb0bee98a85876", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7802b3a_newprogress {
             get {
                 object obj = ResourceManager.GetObject("7802b3a-newprogress", resourceCulture);

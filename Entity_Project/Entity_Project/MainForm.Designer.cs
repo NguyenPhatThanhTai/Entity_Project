@@ -121,6 +121,9 @@
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Loadding1 = new System.Windows.Forms.PictureBox();
+            this.loadding2 = new System.Windows.Forms.Label();
+            this.loadding = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -128,6 +131,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Loadding1)).BeginInit();
+            this.loadding.SuspendLayout();
             this.SuspendLayout();
             // 
             // accordionControl1
@@ -368,7 +373,6 @@
             this.PhucHoiSQL,
             this.DangXuat,
             this.Thoat});
-            this.accordionControlElement10.Expanded = true;
             this.accordionControlElement10.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -842,6 +846,37 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // Loadding1
+            // 
+            this.Loadding1.BackColor = System.Drawing.Color.Gainsboro;
+            this.Loadding1.Image = global::Entity_Project.Properties.Resources.loaddonegif;
+            this.Loadding1.Location = new System.Drawing.Point(3, 17);
+            this.Loadding1.Name = "Loadding1";
+            this.Loadding1.Size = new System.Drawing.Size(116, 54);
+            this.Loadding1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Loadding1.TabIndex = 7;
+            this.Loadding1.TabStop = false;
+            // 
+            // loadding2
+            // 
+            this.loadding2.AutoSize = true;
+            this.loadding2.BackColor = System.Drawing.Color.Gainsboro;
+            this.loadding2.Location = new System.Drawing.Point(125, 35);
+            this.loadding2.Name = "loadding2";
+            this.loadding2.Size = new System.Drawing.Size(163, 17);
+            this.loadding2.TabIndex = 8;
+            this.loadding2.Text = "Vui lòng đợi trong giây lát";
+            // 
+            // loadding
+            // 
+            this.loadding.BackColor = System.Drawing.Color.Gainsboro;
+            this.loadding.Controls.Add(this.Loadding1);
+            this.loadding.Controls.Add(this.loadding2);
+            this.loadding.Location = new System.Drawing.Point(1148, 96);
+            this.loadding.Name = "loadding";
+            this.loadding.Size = new System.Drawing.Size(290, 88);
+            this.loadding.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -849,6 +884,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 979);
+            this.Controls.Add(this.loadding);
             this.Controls.Add(this.WelcomeBack);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.accordionControl1);
@@ -870,6 +906,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Loadding1)).EndInit();
+            this.loadding.ResumeLayout(false);
+            this.loadding.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -968,5 +1007,8 @@
         private DevExpress.XtraBars.BarStaticItem label1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarHeaderItem txtDayOfWeek;
+        private System.Windows.Forms.Panel loadding;
+        private System.Windows.Forms.PictureBox Loadding1;
+        private System.Windows.Forms.Label loadding2;
     }
 }

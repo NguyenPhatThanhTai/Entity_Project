@@ -17,6 +17,7 @@ using Entity_Project.Entity;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace Entity_Project
 {
@@ -73,6 +74,7 @@ namespace Entity_Project
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            loadding.Hide();
             timer1.Start();
             if (role != "1")
             {
@@ -213,7 +215,15 @@ namespace Entity_Project
 
         private void SaoLuuSQL_Click(object sender, EventArgs e)
         {
-            BackupDatabase("ProjectOne", "TAEITAEI\\SQLEXPRESS", "D:\\Entity_Project\\Entity_Project\\BackUpSQL\\");
+            DialogResult dialog = MessageBox.Show("Bạn chắc chắn muốn sao lưu?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                loadding.Show();
+                Task.Delay(1000);
+                var thread = new Thread(() => BackupDatabase("ProjectOne", "TAEITAEI\\SQLEXPRESS", "D:\\Entity_Project\\Entity_Project\\BackUpSQL\\"));
+                thread.Start();
+                loadding.Hide();
+            }
         }
 
         private void PhucHoiSQL_Click(object sender, EventArgs e)
@@ -360,7 +370,6 @@ namespace Entity_Project
             //Specify the type of backup, the description, the name, and the database to be backed up.
             sqlBackup.Action = BackupActionType.Database;
             sqlBackup.BackupSetDescription = "BackUp of:" + databaseName + "on" + date.ToShortDateString();
-            date = DateTime.Now;
             sqlBackup.BackupSetName = "FullBackUp";
             sqlBackup.Database = databaseName;
 
@@ -388,10 +397,17 @@ namespace Entity_Project
 
             sqlBackup.FormatMedia = false;
             //Run SqlBackup to perform the full database backup on the instance of SQL Server.
-            sqlBackup.SqlBackup(sqlServer);
+            try
+            {
+                sqlBackup.SqlBackup(sqlServer);
+                sqlBackup.Devices.Remove(deviceItem);
+                MessageBox.Show("Sao lưu cơ sở dữ liêu thành công");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Hôm nay bạn đã sao lưu dữ liệu rồi");
+            }
             //Remove the backup device from the Backup object.
-            sqlBackup.Devices.Remove(deviceItem);
-            MessageBox.Show("Sao lưu cơ sở dữ liêu thành công");
         }
     }
 }
