@@ -163,7 +163,6 @@
             this.TinhTrangSua,
             this.DiSuaChua,
             this.LichSuSuaChua});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Dịch Vụ";
             // 
@@ -369,6 +368,7 @@
             this.PhucHoiSQL,
             this.DangXuat,
             this.Thoat});
+            this.accordionControlElement10.Expanded = true;
             this.accordionControlElement10.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -402,12 +402,14 @@
             this.SaoLuuSQL.Name = "SaoLuuSQL";
             this.SaoLuuSQL.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.SaoLuuSQL.Text = "Sao lưu CSDL";
+            this.SaoLuuSQL.Click += new System.EventHandler(this.SaoLuuSQL_Click);
             // 
             // PhucHoiSQL
             // 
             this.PhucHoiSQL.Name = "PhucHoiSQL";
             this.PhucHoiSQL.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.PhucHoiSQL.Text = "Phục hồi CSDL";
+            this.PhucHoiSQL.Click += new System.EventHandler(this.PhucHoiSQL_Click);
             // 
             // DangXuat
             // 

@@ -12,6 +12,11 @@ using DevExpress.DataProcessing;
 using DevExpress.PivotGrid.Criteria;
 using DevExpress.Utils.Extensions;
 using System.Drawing.Imaging;
+using Entity_Project.Entity;
+
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
+using System.Data.SqlClient;
 
 namespace Entity_Project
 {
@@ -208,12 +213,13 @@ namespace Entity_Project
 
         private void SaoLuuSQL_Click(object sender, EventArgs e)
         {
-
+            BackupDatabase("ProjectOne", "TAEITAEI\\SQLEXPRESS", "D:\\Entity_Project\\Entity_Project\\BackUpSQL\\");
         }
 
         private void PhucHoiSQL_Click(object sender, EventArgs e)
         {
-
+            PhucHoiSQL frm = new PhucHoiSQL();
+            frm.ShowDialog();
         }
 
         private void DangXuat_Click(object sender, EventArgs e)
@@ -284,7 +290,15 @@ namespace Entity_Project
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-
+            Data_NV DNV = new Data_NV();
+            var name = DNV.getName(Id);
+            this.name = name;
+            if (MdiChildren.Count() == 0)
+            {
+                txtXinChao.Caption = "Xin chào: ".ToUpper() + name;
+                txtChucVu.Caption = "Chức vụ: ".ToUpper() + ChucVu;
+                WelcomeBack.Text = "Chào mừng quay trở lại: " + name;
+            }
             this.Opacity = 1.00d;
             this.BackColor = Color.White;
             this.accordionControl1.Appearance.AccordionControl.BackColor = Color.Empty;
@@ -302,17 +316,6 @@ namespace Entity_Project
             if (dialog == DialogResult.No)
             {
                 e.Cancel = true;
-            }
-            else
-            {
-                try
-                {
-                    Application.Exit();
-                }
-                catch (ArgumentException ex)
-                {
-                    MessageBox.Show("Chậm thôi nào");
-                }
             }
         }
 
@@ -345,6 +348,50 @@ namespace Entity_Project
                     break;
             }
             label1.Caption = label1.Caption.Substring(1, label1.Caption.Length - 1) + label1.Caption.Substring(0, 1);
+        }
+
+        private void BackupDatabase(string databaseName, string serverName, string destinationPath)
+        {
+            DateTime date = DateTime.Now;
+
+            //Define a Backup object variable.
+            Backup sqlBackup = new Backup();
+
+            //Specify the type of backup, the description, the name, and the database to be backed up.
+            sqlBackup.Action = BackupActionType.Database;
+            sqlBackup.BackupSetDescription = "BackUp of:" + databaseName + "on" + date.ToShortDateString();
+            date = DateTime.Now;
+            sqlBackup.BackupSetName = "FullBackUp";
+            sqlBackup.Database = databaseName;
+
+            //Declare a BackupDeviceItem
+            BackupDeviceItem deviceItem = new BackupDeviceItem(destinationPath + "FullBackUp.bak", DeviceType.File);
+            //Define Server connection
+            ServerConnection connection = new ServerConnection(serverName);
+            //To Avoid TimeOut Exception
+            Server sqlServer = new Server(connection);
+            sqlServer.ConnectionContext.StatementTimeout = 60 * 60;
+            Database db = sqlServer.Databases[databaseName];
+
+            sqlBackup.Initialize = true;
+            sqlBackup.Checksum = true;
+            sqlBackup.ContinueAfterError = true;
+
+            //Add the device to the Backup object.
+            sqlBackup.Devices.Add(deviceItem);
+            //Set the Incremental property to False to specify that this is a full database backup.
+            sqlBackup.Incremental = false;
+
+            sqlBackup.ExpirationDate = DateTime.Now.AddDays(3);
+            //Specify that the log must be truncated after the backup is complete.
+            sqlBackup.LogTruncation = BackupTruncateLogType.Truncate;
+
+            sqlBackup.FormatMedia = false;
+            //Run SqlBackup to perform the full database backup on the instance of SQL Server.
+            sqlBackup.SqlBackup(sqlServer);
+            //Remove the backup device from the Backup object.
+            sqlBackup.Devices.Remove(deviceItem);
+            MessageBox.Show("Sao lưu cơ sở dữ liêu thành công");
         }
     }
 }

@@ -227,3 +227,12 @@ D:\Entity_Project\Entity_Project\bin\Debug\CrystalDecisions.ReportAppServer.Comm
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.BaoCao.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.BaoCaoHangTonKho.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.ThongTinTaiKhoan.resources
+D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.Dmf.dll
+D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.PhucHoiSQL.resources
