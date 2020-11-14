@@ -236,3 +236,4 @@ D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum
 D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.PhucHoiSQL.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.SuaChuaTanNha.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.SaoLuuSQL.resources

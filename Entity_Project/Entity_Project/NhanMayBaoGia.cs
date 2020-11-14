@@ -70,7 +70,7 @@ namespace Entity_Project
             if (Data.SelectedRows[0].Cells[9].Value.ToString() == Name)
             {
                 openButton(false);
-                MessageBox.Show("Nhận đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tiếp tục đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -162,6 +162,12 @@ namespace Entity_Project
                 btnUpdate.Enabled = true;
             }
         }
+
+        //private void txtSoTien_Leave(object sender, EventArgs e)
+        //{
+        //    float value = float.Parse(txtSoTien.Text);
+        //    txtSoTien.Text = String.Format("{0:N0}", value);
+        //}
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {

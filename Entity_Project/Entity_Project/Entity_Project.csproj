@@ -189,6 +189,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dstInf_Customers.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SaoLuuSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaoLuuSQL.Designer.cs">
+      <DependentUpon>SaoLuuSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinLuongNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     <EmbeddedResource Include="Report\CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaoLuuSQL.resx">
+      <DependentUpon>SaoLuuSQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTinLuongNhanVien.resx">
       <DependentUpon>ThongTinLuongNhanVien.cs</DependentUpon>

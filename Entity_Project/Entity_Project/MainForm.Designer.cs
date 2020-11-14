@@ -170,7 +170,6 @@
             this.TinhTrangSua,
             this.SuaChuaTanNha,
             this.LichSuSuaChua});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Dịch Vụ";
             // 
@@ -231,7 +230,6 @@
             this.LapTop,
             this.TheoCombo,
             this.KhuyenMai});
-            this.accordionControlElement6.Expanded = true;
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Text = "Mặt hàng";
             // 
@@ -377,6 +375,7 @@
             this.PhucHoiSQL,
             this.DangXuat,
             this.Thoat});
+            this.accordionControlElement10.Expanded = true;
             this.accordionControlElement10.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -884,10 +883,14 @@
             // WelcomeBack
             // 
             this.WelcomeBack.AutoSize = true;
+            this.WelcomeBack.BackColor = System.Drawing.Color.Orange;
             this.WelcomeBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WelcomeBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WelcomeBack.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeBack.ForeColor = System.Drawing.Color.White;
             this.WelcomeBack.Location = new System.Drawing.Point(285, 193);
             this.WelcomeBack.Name = "WelcomeBack";
-            this.WelcomeBack.Size = new System.Drawing.Size(98, 17);
+            this.WelcomeBack.Size = new System.Drawing.Size(167, 29);
             this.WelcomeBack.TabIndex = 12;
             this.WelcomeBack.Text = "Welcome back";
             this.WelcomeBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

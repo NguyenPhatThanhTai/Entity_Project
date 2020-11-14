@@ -215,15 +215,8 @@ namespace Entity_Project
 
         private void SaoLuuSQL_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Bạn chắc chắn muốn sao lưu?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
-                loadding.Show();
-                Task.Delay(3000);
-                var thread = new Thread(() => BackupDatabase("ProjectOne", "TAEITAEI\\SQLEXPRESS", "D:\\Entity_Project\\Entity_Project\\BackUpSQL\\"));
-                thread.Start();
-                loadding.Hide();
-            }
+            SaoLuuSQL frm = new SaoLuuSQL();
+            frm.ShowDialog();
         }
 
         private void PhucHoiSQL_Click(object sender, EventArgs e)
@@ -364,56 +357,6 @@ namespace Entity_Project
                     break;
             }
             label1.Caption = label1.Caption.Substring(1, label1.Caption.Length - 1) + label1.Caption.Substring(0, 1);
-        }
-
-        private void BackupDatabase(string databaseName, string serverName, string destinationPath)
-        {
-            DateTime date = DateTime.Now;
-
-            //Define a Backup object variable.
-            Backup sqlBackup = new Backup();
-
-            //Specify the type of backup, the description, the name, and the database to be backed up.
-            sqlBackup.Action = BackupActionType.Database;
-            sqlBackup.BackupSetDescription = "BackUp of:" + databaseName + "on" + date.ToShortDateString();
-            sqlBackup.BackupSetName = "FullBackUp";
-            sqlBackup.Database = databaseName;
-
-            //Declare a BackupDeviceItem
-            BackupDeviceItem deviceItem = new BackupDeviceItem(destinationPath + "FullBackUp.bak", DeviceType.File);
-            //Define Server connection
-            ServerConnection connection = new ServerConnection(serverName);
-            //To Avoid TimeOut Exception
-            Server sqlServer = new Server(connection);
-            sqlServer.ConnectionContext.StatementTimeout = 60 * 60;
-            Database db = sqlServer.Databases[databaseName];
-
-            sqlBackup.Initialize = true;
-            sqlBackup.Checksum = true;
-            sqlBackup.ContinueAfterError = true;
-
-            //Add the device to the Backup object.
-            sqlBackup.Devices.Add(deviceItem);
-            //Set the Incremental property to False to specify that this is a full database backup.
-            sqlBackup.Incremental = false;
-
-            sqlBackup.ExpirationDate = DateTime.Now.AddDays(3);
-            //Specify that the log must be truncated after the backup is complete.
-            sqlBackup.LogTruncation = BackupTruncateLogType.Truncate;
-
-            sqlBackup.FormatMedia = false;
-            //Run SqlBackup to perform the full database backup on the instance of SQL Server.
-            try
-            {
-                sqlBackup.SqlBackup(sqlServer);
-                sqlBackup.Devices.Remove(deviceItem);
-                MessageBox.Show("Sao lưu cơ sở dữ liêu thành công");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Hôm nay bạn đã sao lưu dữ liệu rồi");
-            }
-            //Remove the backup device from the Backup object.
         }
     }
 }
