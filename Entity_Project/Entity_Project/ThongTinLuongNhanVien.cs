@@ -43,6 +43,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[6].Value = item.Staff_Reward;
                 i++;
             }
+            Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

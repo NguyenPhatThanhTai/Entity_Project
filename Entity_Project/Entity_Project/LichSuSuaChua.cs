@@ -72,6 +72,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[16].Value = date4.ToString("dd/MM/yyyy");
                 i++;
             }
+            Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

@@ -358,14 +358,15 @@
             this.Email,
             this.SDT,
             this.NgayThem});
+            this.Data.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Data.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Data.Location = new System.Drawing.Point(20, 271);
+            this.Data.Location = new System.Drawing.Point(0, 283);
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(1148, 424);
+            this.Data.Size = new System.Drawing.Size(1244, 424);
             this.Data.TabIndex = 79;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
@@ -472,6 +473,7 @@
             this.Controls.Add(this.btnThem);
             this.Name = "ThongTinKhachHang";
             this.Text = "ThongTinKhachHang";
+            this.Activated += new System.EventHandler(this.ThongTinKhachHang_Activated);
             this.Load += new System.EventHandler(this.ThongTinKhachHang_Load);
             this.Enter += new System.EventHandler(this.ThongTinKhachHang_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

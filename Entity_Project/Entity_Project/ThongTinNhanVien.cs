@@ -81,6 +81,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[8].Value = item.Staff_TimeAdd;
                 i++;
             }
+            Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnThem_Click(object sender, EventArgs e)

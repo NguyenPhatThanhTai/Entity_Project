@@ -49,11 +49,12 @@ namespace Entity_Project
                 Data.Rows[index].Cells[5].Value = item.Staff_Id;
                 i++;
             }
+            Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private async void btnHoanThanh_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Xác nhận hoàn thành đơn này?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult dialog = MessageBox.Show("Bạn có chắc chắn hoàn thành đơn này?", "Xác nhận hoàn thành", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
                 List<Inf_Repair> Inf_Repair = DRP.FindBy_ID(id);
@@ -78,7 +79,7 @@ namespace Entity_Project
                     }
                     else
                     {
-                        MessageBox.Show("Không thành công");
+                        MessageBox.Show("Không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -88,7 +89,7 @@ namespace Entity_Project
         {
             if (Data.Rows.Count == 0)
             {
-                MessageBox.Show("Hiện tại chưa có đơn hàng nào");
+                MessageBox.Show("Hiện tại chưa có đơn hàng nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

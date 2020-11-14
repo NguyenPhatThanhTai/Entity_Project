@@ -205,11 +205,11 @@
     <Compile Include="Data_LK.cs" />
     <Compile Include="Data_NV.cs" />
     <Compile Include="Data_RP.cs" />
-    <Compile Include="DiSuaChua.cs">
+    <Compile Include="SuaChuaTanNha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiSuaChua.Designer.cs">
-      <DependentUpon>DiSuaChua.cs</DependentUpon>
+    <Compile Include="SuaChuaTanNha.Designer.cs">
+      <DependentUpon>SuaChuaTanNha.cs</DependentUpon>
     </Compile>
     <Compile Include="LichSuSuaChua.cs">
       <SubType>Form</SubType>
@@ -291,8 +291,8 @@
     <EmbeddedResource Include="ThongTinNhanVien.resx">
       <DependentUpon>ThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DiSuaChua.resx">
-      <DependentUpon>DiSuaChua.cs</DependentUpon>
+    <EmbeddedResource Include="SuaChuaTanNha.resx">
+      <DependentUpon>SuaChuaTanNha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LichSuSuaChua.resx">
       <DependentUpon>LichSuSuaChua.cs</DependentUpon>
@@ -468,6 +468,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\71a75dace5dd09eb98fb0bee98a85876.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

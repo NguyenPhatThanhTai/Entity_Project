@@ -59,14 +59,15 @@
             this.HenSua,
             this.HenNhanMay,
             this.NhanVienTiepNhan});
+            this.Data.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Data.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Data.Location = new System.Drawing.Point(29, 82);
+            this.Data.Location = new System.Drawing.Point(0, 105);
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(1194, 599);
+            this.Data.Size = new System.Drawing.Size(1245, 599);
             this.Data.TabIndex = 3;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 

@@ -356,6 +356,9 @@ namespace Entity_Project
             this.txtGioiTinh.Enabled = false;
             this.txtGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtGioiTinh.FormattingEnabled = true;
+            this.txtGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.txtGioiTinh.Location = new System.Drawing.Point(225, 208);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(326, 24);

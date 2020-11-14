@@ -35,7 +35,7 @@
             this.ThongTinKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NhanMayBaoGia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TinhTrangSua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.DiSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.SuaChuaTanNha = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LichSuSuaChua = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -74,8 +74,11 @@
             this.YeuCauTroGiup = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LuuTru = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.pb1 = new System.Windows.Forms.PictureBox();
-            this.WelcomeBack = new System.Windows.Forms.Label();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.btnHelp = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -87,8 +90,6 @@
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
             this.txtXinChao = new DevExpress.XtraBars.BarHeaderItem();
@@ -107,7 +108,6 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -124,10 +124,12 @@
             this.Loadding1 = new System.Windows.Forms.PictureBox();
             this.loadding2 = new System.Windows.Forms.Label();
             this.loadding = new System.Windows.Forms.Panel();
+            this.WelcomeBack = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -166,8 +168,9 @@
             this.ThongTinKhachHang,
             this.NhanMayBaoGia,
             this.TinhTrangSua,
-            this.DiSuaChua,
+            this.SuaChuaTanNha,
             this.LichSuSuaChua});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Dịch Vụ";
             // 
@@ -202,12 +205,12 @@
             this.TinhTrangSua.Text = "Tình trạng sửa";
             this.TinhTrangSua.Click += new System.EventHandler(this.TinhTrangSua_Click);
             // 
-            // DiSuaChua
+            // SuaChuaTanNha
             // 
-            this.DiSuaChua.Name = "DiSuaChua";
-            this.DiSuaChua.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.DiSuaChua.Text = "Đi sửa chửa";
-            this.DiSuaChua.Click += new System.EventHandler(this.DiSuaChua_Click);
+            this.SuaChuaTanNha.Name = "SuaChuaTanNha";
+            this.SuaChuaTanNha.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.SuaChuaTanNha.Text = "Sửa chữa tận nhà";
+            this.SuaChuaTanNha.Click += new System.EventHandler(this.SuaChuaTanNha_Click);
             // 
             // LichSuSuaChua
             // 
@@ -228,6 +231,7 @@
             this.LapTop,
             this.TheoCombo,
             this.KhuyenMai});
+            this.accordionControlElement6.Expanded = true;
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Text = "Mặt hàng";
             // 
@@ -461,26 +465,18 @@
             // pb1
             // 
             this.pb1.BackColor = System.Drawing.Color.White;
+            this.pb1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pb1.Image = global::Entity_Project.Properties.Resources.source;
-            this.pb1.Location = new System.Drawing.Point(670, 351);
+            this.pb1.Location = new System.Drawing.Point(285, 193);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(420, 295);
+            this.pb1.Size = new System.Drawing.Size(1185, 756);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb1.TabIndex = 3;
             this.pb1.TabStop = false;
             // 
-            // WelcomeBack
-            // 
-            this.WelcomeBack.AutoSize = true;
-            this.WelcomeBack.Location = new System.Drawing.Point(736, 616);
-            this.WelcomeBack.Name = "WelcomeBack";
-            this.WelcomeBack.Size = new System.Drawing.Size(98, 17);
-            this.WelcomeBack.TabIndex = 4;
-            this.WelcomeBack.Text = "Welcome back";
-            this.WelcomeBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ribbonControl1
             // 
+            this.ribbonControl1.ApplicationButtonDropDownControl = this.applicationMenu1;
             this.ribbonControl1.AutoSizeItems = true;
             this.ribbonControl1.BackColor = System.Drawing.Color.White;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
@@ -496,8 +492,6 @@
             this.ribbonGalleryBarItem1,
             this.barEditItem1,
             this.barEditItem2,
-            this.btnDangXuat,
-            this.btnThoat,
             this.barHeaderItem1,
             this.barHeaderItem2,
             this.txtXinChao,
@@ -512,9 +506,12 @@
             this.barHeaderItem4,
             this.barStaticItem1,
             this.label1,
-            this.txtDayOfWeek});
+            this.txtDayOfWeek,
+            this.btnHelp,
+            this.btnDangXuat,
+            this.btnThoat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 30;
+            this.ribbonControl1.MaxItemId = 33;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -524,6 +521,39 @@
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribbonControl1.Size = new System.Drawing.Size(1470, 193);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
+            // 
+            // applicationMenu1
+            // 
+            this.applicationMenu1.ItemLinks.Add(this.btnHelp);
+            this.applicationMenu1.ItemLinks.Add(this.btnDangXuat);
+            this.applicationMenu1.ItemLinks.Add(this.btnThoat);
+            this.applicationMenu1.Name = "applicationMenu1";
+            this.applicationMenu1.Ribbon = this.ribbonControl1;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Caption = "Trợ giúp";
+            this.btnHelp.Id = 30;
+            this.btnHelp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.ImageOptions.Image")));
+            this.btnHelp.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHelp.ImageOptions.LargeImage")));
+            this.btnHelp.Name = "btnHelp";
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Caption = "Đăng xuất";
+            this.btnDangXuat.Id = 31;
+            this.btnDangXuat.ImageOptions.Image = global::Entity_Project.Properties.Resources.logout;
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 32;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // btnThem
             // 
@@ -600,24 +630,6 @@
             this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.Caption = "Đăng xuất";
-            this.btnDangXuat.Id = 12;
-            this.btnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.Image")));
-            this.btnDangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.LargeImage")));
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 13;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barHeaderItem1
             // 
@@ -734,7 +746,6 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup5,
             this.ribbonPageGroup4,
             this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
@@ -755,13 +766,6 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.txtChucVu);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Người đăng nhập";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnDangXuat);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnThoat);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Rời phiên làm việc";
             // 
             // ribbonPageGroup4
             // 
@@ -877,6 +881,17 @@
             this.loadding.Size = new System.Drawing.Size(290, 88);
             this.loadding.TabIndex = 9;
             // 
+            // WelcomeBack
+            // 
+            this.WelcomeBack.AutoSize = true;
+            this.WelcomeBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WelcomeBack.Location = new System.Drawing.Point(285, 193);
+            this.WelcomeBack.Name = "WelcomeBack";
+            this.WelcomeBack.Size = new System.Drawing.Size(98, 17);
+            this.WelcomeBack.TabIndex = 12;
+            this.WelcomeBack.Text = "Welcome back";
+            this.WelcomeBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -884,9 +899,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 979);
-            this.Controls.Add(this.loadding);
             this.Controls.Add(this.WelcomeBack);
             this.Controls.Add(this.pb1);
+            this.Controls.Add(this.loadding);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
@@ -903,6 +918,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LuuTru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
@@ -919,7 +935,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement NhanMayBaoGia;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement DiSuaChua;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement SuaChuaTanNha;
         private DevExpress.XtraBars.Navigation.AccordionControlElement TinhTrangSua;
         private DevExpress.XtraBars.Navigation.AccordionControlElement LichSuSuaChua;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
@@ -954,7 +970,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement BangLuong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement Thongtintaikhoan;
         private System.Windows.Forms.PictureBox pb1;
-        private System.Windows.Forms.Label WelcomeBack;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
@@ -978,8 +993,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit1;
         private DevExpress.XtraBars.BarEditItem barEditItem2;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
-        private DevExpress.XtraBars.BarButtonItem btnDangXuat;
-        private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
         private DevExpress.XtraBars.BarHeaderItem txtXinChao;
@@ -996,7 +1009,6 @@
         private DevExpress.XtraBars.BarButtonItem btnDone;
         private DevExpress.XtraBars.BarHeaderItem txtDate;
         private DevExpress.XtraBars.BarHeaderItem txtTime;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
@@ -1010,5 +1022,10 @@
         private System.Windows.Forms.Panel loadding;
         private System.Windows.Forms.PictureBox Loadding1;
         private System.Windows.Forms.Label loadding2;
+        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
+        private DevExpress.XtraBars.BarButtonItem btnHelp;
+        private DevExpress.XtraBars.BarButtonItem btnDangXuat;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
+        private System.Windows.Forms.Label WelcomeBack;
     }
 }

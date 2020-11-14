@@ -40,9 +40,10 @@
             this.crystalReportViewer2.ActiveViewIndex = -1;
             this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer2.Location = new System.Drawing.Point(-1, 4);
+            this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.crystalReportViewer2.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.Size = new System.Drawing.Size(1305, 632);
+            this.crystalReportViewer2.Size = new System.Drawing.Size(1304, 632);
             this.crystalReportViewer2.TabIndex = 6;
             // 
             // label2

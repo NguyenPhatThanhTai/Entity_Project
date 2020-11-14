@@ -44,6 +44,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[7].Value = item.LK_Time_Add;
                 i++;
             }
+            Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace Entity_Project
 
             if (tlk == "" || nsx == "")
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

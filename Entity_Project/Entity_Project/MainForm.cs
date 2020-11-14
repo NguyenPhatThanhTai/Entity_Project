@@ -219,7 +219,7 @@ namespace Entity_Project
             if (dialog == DialogResult.Yes)
             {
                 loadding.Show();
-                Task.Delay(1000);
+                Task.Delay(3000);
                 var thread = new Thread(() => BackupDatabase("ProjectOne", "TAEITAEI\\SQLEXPRESS", "D:\\Entity_Project\\Entity_Project\\BackUpSQL\\"));
                 thread.Start();
                 loadding.Hide();
@@ -234,7 +234,7 @@ namespace Entity_Project
 
         private void DangXuat_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Bạn muốn đăng xuất à?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult dialog = MessageBox.Show("Bạn có muốn đăng xuất khỏi chương trình không?", "Xác nhận đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialog == DialogResult.Yes)
             {
                 Properties.Settings.Default.UserName = "";
@@ -256,9 +256,9 @@ namespace Entity_Project
 
         }
 
-        private void DiSuaChua_Click(object sender, EventArgs e)
+        private void SuaChuaTanNha_Click(object sender, EventArgs e)
         {
-            DiSuaChua frm = new DiSuaChua();
+            SuaChuaTanNha frm = new SuaChuaTanNha();
             viewForm(frm);
         }
 
@@ -269,7 +269,7 @@ namespace Entity_Project
 
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Bạn muốn đăng xuất à?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult dialog = MessageBox.Show("Bạn có muốn đăng xuất khỏi chương trình không?", "Xác nhận đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialog == DialogResult.Yes)
             {
                 Properties.Settings.Default.UserName = "";
@@ -322,11 +322,17 @@ namespace Entity_Project
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Bạn muốn thoát à?", "Xác nhận", MessageBoxButtons.YesNo);
+            
+            DialogResult dialog = MessageBox.Show("Bạn có muốn thoát khỏi chương trình không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialog == DialogResult.No)
             {
                 e.Cancel = true;
             }
+            else
+            {
+                Environment.Exit(1);
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

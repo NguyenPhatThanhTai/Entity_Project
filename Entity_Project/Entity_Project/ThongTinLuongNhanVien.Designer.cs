@@ -84,14 +84,15 @@
             this.LuongTheoGio,
             this.LamNgoaiGio,
             this.TienThuong});
+            this.Data.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Data.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Data.Location = new System.Drawing.Point(25, 281);
+            this.Data.Location = new System.Drawing.Point(0, 302);
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(1137, 407);
+            this.Data.Size = new System.Drawing.Size(1244, 407);
             this.Data.TabIndex = 4;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 

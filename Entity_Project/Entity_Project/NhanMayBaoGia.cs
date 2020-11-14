@@ -55,6 +55,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[9].Value = item.Staff_Id;
                 i++;
             }
+            Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Btn_ReFresh_Click(object sender, EventArgs e)
@@ -69,19 +70,19 @@ namespace Entity_Project
             if (Data.SelectedRows[0].Cells[9].Value.ToString() == Name)
             {
                 openButton(false);
-                MessageBox.Show("Đã tiếp tục đơn !");
+                MessageBox.Show("Nhận đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 if (Data.SelectedRows[0].Cells[9].Value.ToString() != "Chưa biết")
                 {
-                    MessageBox.Show("Đơn này đã có nhân viên " + Data.SelectedRows[0].Cells[9].Value.ToString() + " tiếp nhận rồi, vui lòng chọn đơn khác");
+                    MessageBox.Show("Nhân viên " + Data.SelectedRows[0].Cells[9].Value.ToString() + " đã nhận đơn này rồi, vui lòng chọn đơn khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DRP = new Data_RP();
                     Load_RP(DRP.Inf_Repair());
                 }
                 else
                 {
-                    DialogResult dialog = MessageBox.Show("Xác nhận nhận đơn này?", "Xác nhận", MessageBoxButtons.YesNo);
+                    DialogResult dialog = MessageBox.Show("Bạn có muốn nhận đơn này?", "Xác nhận nhận đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialog == DialogResult.Yes)
                     {
                         openButton(false);
@@ -117,7 +118,7 @@ namespace Entity_Project
         {
             if (Data.Rows.Count == 0)
             {
-                MessageBox.Show("Hiện tại chưa có đơn hàng nào");
+                MessageBox.Show("Hiện tại chưa có đơn hàng nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -152,7 +153,7 @@ namespace Entity_Project
         {
             if (txtSoTien.Text.All(char.IsDigit) == false)
             {
-                errorProvider1.SetError(txtSoTien, "Không được phép có chữ");
+                errorProvider1.SetError(txtSoTien, "Chỉ cho phép số");
                 btnUpdate.Enabled = false;
             }
             else
@@ -166,7 +167,7 @@ namespace Entity_Project
         {
             if (txtTenMay.Text != "" && txtTinhTrang.Text != "" && txtHenSua.Text != "" && txtDateHen.Text != "" && txtSoTien.Text != "" && txtSoTien.Text != "" && txtCanSua.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận cập nhật ?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có chắn chắn muốn cập nhật đơn này?", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (DRP.Update_RP(txtTenMay.Text, txtTinhTrang.Text, txtCanSua.Text, txtHenSua.Text, txtDateHen.Value, txtSoTien.Text, txtMaSuaChua.Text))
@@ -184,13 +185,13 @@ namespace Entity_Project
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại");
+                        MessageBox.Show("Cập nhật thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

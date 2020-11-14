@@ -106,9 +106,13 @@ namespace Entity_Project
             {
                 Sex = "1";
             }
-            else
+            else if(Customer_Sex == "Nữ")
             {
                 Sex = "2";
+            }
+            else if (Customer_Sex == "Khác")
+            {
+                Sex = "3";
             }
 
             Inf_Customers Customer = data.Inf_Customers.FirstOrDefault(p => p.Customer_Id == Customer_Id);

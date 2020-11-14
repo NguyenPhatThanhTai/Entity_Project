@@ -62,6 +62,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[7].Value = item.Customer_TimeAdd;
                 i++;
             }
+            Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Btn_ReFresh_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace Entity_Project
         {
             if (Data.Rows.Count == 0)
             {
-                MessageBox.Show("Hiện tại chưa khách hàng nào");
+                MessageBox.Show("Hiện tại chưa có khách hàng nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -112,24 +113,24 @@ namespace Entity_Project
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtHoTen.Text != "" && txtEmail.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtBirth.Text != "" && txtEmail.Text != ""
+                if (txtHoTen.Text != "" && txtEmail.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtBirth.Text != "" && txtEmail.Text != ""
                                 && txtSDT.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận thêm khách hàng " + txtHoTen.Text + " ?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có muốn thêm khách hàng " + txtHoTen.Text + " không?", "Xác nhận thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (!DKH.check_KH(txtMaKhachHang.Text))
                     {
                         if(DKH.Add_KH(txtHoTen.Text, txtGioiTinh.Text, txtBirth.Value, txtEmail.Text, txtSDT.Text))
                         {
-                            MessageBox.Show("Thêm thành công");
+                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             DKH = new Data_KH();
                             Load_KH(DKH.Inf_KH());
                             openButton(true);
                         }
                         else
                         {
-                            MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại");
+                            MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             DKH = new Data_KH();
                             Load_KH(DKH.Inf_KH());
                         }
@@ -138,7 +139,7 @@ namespace Entity_Project
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -147,19 +148,19 @@ namespace Entity_Project
             if (txtHoTen.Text != "" && txtEmail.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtBirth.Text != "" && txtEmail.Text != ""
                     && txtSDT.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận cập nhật ?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có chắn chắn muốn cập nhật khách hàng " + txtHoTen.Text + " không?", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (DKH.Update_KH(txtHoTen.Text, txtGioiTinh.Text, txtBirth.Value, txtEmail.Text, txtSDT.Text, txtMaKhachHang.Text))
                     {
-                        MessageBox.Show("Cập nhật thành công");
+                        MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DKH = new Data_KH();
                         Load_KH(DKH.Inf_KH());
                         openButton(true);
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại");
+                        MessageBox.Show("Cập nhật thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DKH = new Data_KH();
                         Load_KH(DKH.Inf_KH());
                     }
@@ -172,19 +173,19 @@ namespace Entity_Project
             if (txtHoTen.Text != "" && txtEmail.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtBirth.Text != "" && txtEmail.Text != ""
         && txtSDT.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận xóa ?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có chắn chắn muốn xóa khách hàng " + txtHoTen.Text + " không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 if (dialog == DialogResult.Yes)
                 {
                     if (DKH.Delete_KH(txtMaKhachHang.Text))
                     {
-                        MessageBox.Show("Xóa thành công");
+                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DKH = new Data_KH();
                         Load_KH(DKH.Inf_KH());
                         openButton(true);
                     }
                     else
                     {
-                        MessageBox.Show("Xóa thất bại");
+                        MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -200,7 +201,7 @@ namespace Entity_Project
         {
             if(txtSDT.Text.All(char.IsDigit) == false)
             {
-                errorProvider1.SetError(txtSDT, "Không được phép có chữ");
+                errorProvider1.SetError(txtSDT, "Chỉ cho phép số");
                 btnThem.Enabled = false;
                 btnUpdate.Enabled = false;
             }
@@ -240,7 +241,7 @@ namespace Entity_Project
         {
             if (checkEmail(txtEmail.Text) == false)
             {
-                errorProvider1.SetError(txtEmail, "Sai định dạng");
+                errorProvider1.SetError(txtEmail, "Định dạng chưa đúng");
                 btnThem.Enabled = false;
                 btnUpdate.Enabled = false;
             }
@@ -250,6 +251,12 @@ namespace Entity_Project
                 btnUpdate.Enabled = true;
                 btnThem.Enabled = true;
             }
+        }
+
+        private void ThongTinKhachHang_Activated(object sender, EventArgs e)
+        {
+            DKH = new Data_KH();
+            Load_KH(DKH.Inf_KH());
         }
     }
 }

@@ -52,6 +52,7 @@ namespace Entity_Project
                 Data.Rows[index].Cells[5].Value = quyen;
                 i++;
             }
+            Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

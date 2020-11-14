@@ -188,7 +188,6 @@ D:\Entity_Project\Entity_Project\bin\Debug\es\DevExpress.Diagram.v20.1.Core.reso
 D:\Entity_Project\Entity_Project\bin\Debug\ja\DevExpress.Diagram.v20.1.Core.resources.dll
 D:\Entity_Project\Entity_Project\bin\Debug\ru\DevExpress.Diagram.v20.1.Core.resources.dll
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.exe.licenses
-D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.DiSuaChua.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.NhanMayBaoGia.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.MainForm.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.ThongTinKhachHang.resources
@@ -236,3 +235,4 @@ D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.Dmf.dll
 D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
 D:\Entity_Project\Entity_Project\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.PhucHoiSQL.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.SuaChuaTanNha.resources

@@ -74,14 +74,15 @@
             this.Hen,
             this.SoTien,
             this.KetThuc});
+            this.Data.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Data.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Data.Location = new System.Drawing.Point(26, 73);
+            this.Data.Location = new System.Drawing.Point(0, 105);
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(1194, 599);
+            this.Data.Size = new System.Drawing.Size(1246, 599);
             this.Data.TabIndex = 4;
             // 
             // STT
