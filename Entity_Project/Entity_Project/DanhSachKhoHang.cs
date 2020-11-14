@@ -73,18 +73,18 @@ namespace Entity_Project
         {
             if (txtTenLinhKien.Text != "" && txtSoLuong.Text != "" && txtNhaSanXuat.Text != "" && txtPrice.Text != "" && txtMaKhoHang.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Bạn có muốn thêm linh kiện " + txtTenLinhKien.Text + " của nhà sản xuất: " + txtNhaSanXuat.Text + " vào kho hàng "+ txtMaKhoHang.Text +" không !", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có muốn thêm linh kiện " + txtTenLinhKien.Text + " của nhà sản xuất: " + txtNhaSanXuat.Text + " vào kho hàng "+ txtMaKhoHang.Text +" không!", "Xác nhận thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if(DLK.Add_LK(txtTenLinhKien.Text, txtSoLuong.Text, txtNhaSanXuat.Text, txtPrice.Text, txtMaKhoHang.Text))
                     {
-                        MessageBox.Show("Thêm linh kiện vào kho" + txtMaKhoHang.Text + " thành công");
+                        MessageBox.Show("Thêm linh kiện vào kho" + txtMaKhoHang.Text + " thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Load_KHA(DLK.Inf_WareHouse());
                         Load_LK(DLK.Inf_LK());
                     }
                     else
                     {
-                        MessageBox.Show("Thêm không thành công");
+                        MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Load_KHA(DLK.Inf_WareHouse());
                         Load_LK(DLK.Inf_LK());
                     }
@@ -92,7 +92,7 @@ namespace Entity_Project
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -100,18 +100,18 @@ namespace Entity_Project
         {
             if (txtTenLinhKien.Text != "" && txtSoLuong.Text != "" && txtNhaSanXuat.Text != "" && txtPrice.Text != "" && txtMaKhoHang.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận cập nhật", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có chắc chắn cập nhật không?", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (DLK.Update_LK(txtTenLinhKien.Text, txtSoLuong.Text, txtNhaSanXuat.Text, txtPrice.Text, txtMaKhoHang.Text, txtMaLinhKien.Text))
                     {
-                        MessageBox.Show("Cập nhật thành công");
+                        MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Load_KHA(DLK.Inf_WareHouse());
                         Load_LK(DLK.Inf_LK());
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật không thành công");
+                        MessageBox.Show("Cập nhật không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Load_KHA(DLK.Inf_WareHouse());
                         Load_LK(DLK.Inf_LK());
                     }
@@ -119,7 +119,7 @@ namespace Entity_Project
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -127,18 +127,18 @@ namespace Entity_Project
         {
             if (txtMaLinhKien.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận xóa", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có chắc chắn muốn xóa mục này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (DLK.Delete_LK(txtMaLinhKien.Text))
                     {
-                        MessageBox.Show("Xóa thành công");
+                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Load_KHA(DLK.Inf_WareHouse());
                         Load_LK(DLK.Inf_LK());
                     }
                     else
                     {
-                        MessageBox.Show("Xóa không thành công");
+                        MessageBox.Show("Xóa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Load_KHA(DLK.Inf_WareHouse());
                         Load_LK(DLK.Inf_LK());
                     }
@@ -146,7 +146,7 @@ namespace Entity_Project
             }
             else
             {
-                MessageBox.Show("Bạn chưa chọn");
+                MessageBox.Show("Vui lòng chọn mục cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -190,7 +190,7 @@ namespace Entity_Project
         {
             if (Data1.Rows.Count == 0)
             {
-                MessageBox.Show("Hiện tại kho này vẫn chưa có hàng");
+                MessageBox.Show("Hiện tại kho này vẫn chưa có hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

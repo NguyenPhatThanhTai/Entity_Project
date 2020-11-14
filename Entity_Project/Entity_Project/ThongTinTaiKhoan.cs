@@ -109,7 +109,7 @@ namespace Entity_Project
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Xác nhận thay đổi thông tin ?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn thay đổi thông tin không?", "Xác nhận thay đổi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
                 if (DNV.Update_NV(txtHoTen.Text, txtGioiTinh.Text, txtDate.Value, txtDiaChi.Text, txtSDT.Text, txtPhongBan.Text, txtAccount.Text) && DNV.Update_Account(txtPassword.Text, txtChucVu.Text, txtAccount.Text))
@@ -119,13 +119,13 @@ namespace Entity_Project
                         Properties.Settings.Default.Password = txtPassword.Text;
                         Properties.Settings.Default.Save();
                     }
-                    MessageBox.Show("Cập nhật thông tin thành công");
+                    MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     enable(false);
                     Load_Inf();
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi xảy ra, vui lòng kiểm tra lại");
+                    MessageBox.Show("Có lỗi xảy ra, vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -62,7 +62,7 @@ namespace Entity_Project
                     txtSoLanDN.Show();
                     check += 1;
                     txtSoLanDN.Text = "Lần thử thứ " + check +"/5";
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu");
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (check == 5)
                     {
                         second = second * numberCheck;
@@ -75,7 +75,7 @@ namespace Entity_Project
             else
             {
                 btnDangNhap.Enabled = true;
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin !");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -86,7 +86,7 @@ namespace Entity_Project
 
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Bạn muốn thoát à?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult dialog = MessageBox.Show("Bạn có muốn thoát khỏi chương trình không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.No)
             {
                 e.Cancel = true;

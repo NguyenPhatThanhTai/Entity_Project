@@ -89,21 +89,21 @@ namespace Entity_Project
             if (txtHoTen.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtDate.Text != "" && txtDepartment.Text != ""
                                 && txtSDT.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận thêm nhân viên " + txtHoTen.Text + " ở phòng ban " + txtDepartment.Text +" ?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có muốn thêm nhân viên " + txtHoTen.Text + " ở phòng ban " + txtDepartment.Text +" không?", "Xác nhận thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (!DNV.check_Nv(txtMaNv.Text))
                     {
                         if (DNV.Add_NV(txtHoTen.Text, txtGioiTinh.Text, txtDate.Value, txtDiaChi.Text, txtSDT.Text, txtDepartment.Text))
                         {
-                            MessageBox.Show("Thêm thành công");
+                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             DNV = new Data_NV();
                             Load_NV(DNV.Inf_Staff());
                             openButton(true);
                         }
                         else
                         {
-                            MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại");
+                            MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             DNV = new Data_NV();
                             Load_NV(DNV.Inf_Staff());
                         }
@@ -112,7 +112,7 @@ namespace Entity_Project
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -121,19 +121,19 @@ namespace Entity_Project
             if (txtHoTen.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtDate.Text != "" && txtDepartment.Text != ""
                                 && txtSDT.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận cập nhật ?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có chắc chắn muốn cập nhật mục này không?", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (DNV.Update_NV(txtHoTen.Text, txtGioiTinh.Text, txtDate.Value, txtDiaChi.Text, txtSDT.Text, txtDepartment.Text, txtMaNv.Text))
                     {
-                        MessageBox.Show("Cập nhật thành công");
+                        MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DNV = new Data_NV();
                         Load_NV(DNV.Inf_Staff());
                         openButton(true);
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại");
+                        MessageBox.Show("Cập nhật thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         DNV = new Data_NV();
                         Load_NV(DNV.Inf_Staff());
                     }
@@ -141,7 +141,7 @@ namespace Entity_Project
             }
             else
             {
-                MessageBox.Show("Vui lòng không để trống");
+                MessageBox.Show("Vui lòng không để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -150,19 +150,19 @@ namespace Entity_Project
             if (txtHoTen.Text != "" && txtSDT.Text != "" && txtGioiTinh.Text != "" && txtDate.Text != "" && txtDepartment.Text != ""
                                 && txtSDT.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận xóa nhân viên " + txtHoTen.Text + " ở phòng ban " + txtDepartment.Text + " ?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên " + txtHoTen.Text + " ở phòng ban " + txtDepartment.Text + " không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (DNV.Delete_NV(txtMaNv.Text))
                     {
-                        MessageBox.Show("Xóa thành công");
+                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DNV = new Data_NV();
                         Load_NV(DNV.Inf_Staff());
                         openButton(true);
                     }
                     else
                     {
-                        MessageBox.Show("Xóa thất bại");
+                        MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         DNV = new Data_NV();
                         Load_NV(DNV.Inf_Staff());
                     }
@@ -196,7 +196,7 @@ namespace Entity_Project
         {
             if (Data.Rows.Count == 0)
             {
-                MessageBox.Show("Hiện tại chưa có nhân viên nào");
+                MessageBox.Show("Hiện tại chưa có nhân viên nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

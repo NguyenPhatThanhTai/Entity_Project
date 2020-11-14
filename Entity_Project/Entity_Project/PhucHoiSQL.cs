@@ -38,7 +38,7 @@ namespace Entity_Project
                 con.Open();
                 command.ExecuteNonQuery();
 
-                MessageBox.Show("Hoàn tất phục hồi cơ sở dữ liệu");
+                MessageBox.Show("Hoàn tất phục hồi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 string sql2 = "Alter Database ProjectOne SET MULTI_USER WITH ROLLBACK IMMEDIATE;";
                 con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");

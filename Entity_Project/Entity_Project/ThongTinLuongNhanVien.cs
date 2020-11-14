@@ -50,25 +50,25 @@ namespace Entity_Project
         {
             if (txtLuongCoBan.Text != "" && txtLuongTheoGio.Text != "" && txtLamNgoaiGio.Text != "" && txtTienThuong.Text != "")
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận cập nhật ?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Bạn có chắc chắn muốn cập nhật mục này không?", "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     if (DNV.Update_Salary(txtLuongCoBan.Text, txtLuongTheoGio.Text, txtLamNgoaiGio.Text, txtTienThuong.Text, txtMaNV.Text))
                     {
-                        MessageBox.Show("Cập nhật thành công");
+                        MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Load_Salary(DNV.Salary_Staff());
                         openButton(true);
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại");
+                        MessageBox.Show("Cập nhật thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Load_Salary(DNV.Salary_Staff());
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng không để trống");
+                MessageBox.Show("Vui lòng không để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -76,7 +76,7 @@ namespace Entity_Project
         {
             if (Data.Rows.Count == 0)
             {
-                MessageBox.Show("Hiện tại chưa có nhân viên nào");
+                MessageBox.Show("Hiện tại chưa có nhân viên nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
