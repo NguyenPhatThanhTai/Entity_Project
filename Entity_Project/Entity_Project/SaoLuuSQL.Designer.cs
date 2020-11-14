@@ -34,7 +34,7 @@ namespace Entity_Project
             this.btnChonDuongDan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaoLuu = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtNameOfSave = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,15 +92,15 @@ namespace Entity_Project
             this.btnSaoLuu.UseVisualStyleBackColor = false;
             this.btnSaoLuu.Click += new System.EventHandler(this.btnSaoLuu_Click);
             // 
-            // label2
+            // txtNameOfSave
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(225, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 21);
-            this.label2.TabIndex = 5;
-            this.label2.Text = ".bak";
+            this.txtNameOfSave.AutoSize = true;
+            this.txtNameOfSave.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameOfSave.Location = new System.Drawing.Point(225, 88);
+            this.txtNameOfSave.Name = "txtNameOfSave";
+            this.txtNameOfSave.Size = new System.Drawing.Size(41, 21);
+            this.txtNameOfSave.TabIndex = 5;
+            this.txtNameOfSave.Text = ".bak";
             // 
             // pictureBox1
             // 
@@ -118,7 +118,7 @@ namespace Entity_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 456);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNameOfSave);
             this.Controls.Add(this.btnSaoLuu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnChonDuongDan);
@@ -141,7 +141,7 @@ namespace Entity_Project
         private System.Windows.Forms.Button btnChonDuongDan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSaoLuu;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtNameOfSave;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

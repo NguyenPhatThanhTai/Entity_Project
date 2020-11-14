@@ -375,7 +375,6 @@
             this.PhucHoiSQL,
             this.DangXuat,
             this.Thoat});
-            this.accordionControlElement10.Expanded = true;
             this.accordionControlElement10.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -441,6 +440,7 @@
             this.accordionControlElement11.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.HuongDan,
             this.YeuCauTroGiup});
+            this.accordionControlElement11.Expanded = true;
             this.accordionControlElement11.Name = "accordionControlElement11";
             this.accordionControlElement11.Text = "Trợ giúp";
             // 
@@ -455,6 +455,7 @@
             this.YeuCauTroGiup.Name = "YeuCauTroGiup";
             this.YeuCauTroGiup.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.YeuCauTroGiup.Text = "Yêu cầu trợ giúp";
+            this.YeuCauTroGiup.Click += new System.EventHandler(this.YeuCauTroGiup_Click);
             // 
             // LuuTru
             // 
@@ -468,7 +469,7 @@
             this.pb1.Image = global::Entity_Project.Properties.Resources.source;
             this.pb1.Location = new System.Drawing.Point(285, 193);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(1185, 756);
+            this.pb1.Size = new System.Drawing.Size(1293, 756);
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb1.TabIndex = 3;
             this.pb1.TabStop = false;
@@ -518,7 +519,7 @@
             this.repositoryItemTimeEdit1,
             this.repositoryItemDateEdit1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(1470, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(1578, 193);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // applicationMenu1
@@ -782,7 +783,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 949);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1470, 30);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1578, 30);
             // 
             // ribbonPage2
             // 
@@ -853,7 +854,7 @@
             // 
             this.Loadding1.BackColor = System.Drawing.Color.Gainsboro;
             this.Loadding1.Image = global::Entity_Project.Properties.Resources.loaddonegif;
-            this.Loadding1.Location = new System.Drawing.Point(3, 17);
+            this.Loadding1.Location = new System.Drawing.Point(3, 13);
             this.Loadding1.Name = "Loadding1";
             this.Loadding1.Size = new System.Drawing.Size(116, 54);
             this.Loadding1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -875,7 +876,7 @@
             this.loadding.BackColor = System.Drawing.Color.Gainsboro;
             this.loadding.Controls.Add(this.Loadding1);
             this.loadding.Controls.Add(this.loadding2);
-            this.loadding.Location = new System.Drawing.Point(1148, 96);
+            this.loadding.Location = new System.Drawing.Point(1233, 88);
             this.loadding.Name = "loadding";
             this.loadding.Size = new System.Drawing.Size(290, 88);
             this.loadding.TabIndex = 9;
@@ -901,7 +902,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1470, 979);
+            this.ClientSize = new System.Drawing.Size(1578, 979);
             this.Controls.Add(this.WelcomeBack);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.loadding);

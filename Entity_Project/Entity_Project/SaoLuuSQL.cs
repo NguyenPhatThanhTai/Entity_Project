@@ -31,6 +31,7 @@ namespace Entity_Project
 
         private void BackupDatabase(string databaseName, string serverName, string destinationPath)
         {
+
             DateTime date = DateTime.Now;
 
             //Define a Backup object variable.
@@ -43,7 +44,7 @@ namespace Entity_Project
             sqlBackup.Database = databaseName;
 
             //Declare a BackupDeviceItem
-            BackupDeviceItem deviceItem = new BackupDeviceItem(destinationPath + "\\" + name+".bak", DeviceType.File);
+            BackupDeviceItem deviceItem = new BackupDeviceItem(destinationPath + "\\" + name + ".bak", DeviceType.File);
             //Define Server connection
             ServerConnection connection = new ServerConnection(serverName);
             //To Avoid TimeOut Exception
@@ -71,6 +72,7 @@ namespace Entity_Project
                 sqlBackup.SqlBackup(sqlServer);
                 sqlBackup.Devices.Remove(deviceItem);
                 MessageBox.Show("Sao lưu cơ sở dữ liêu thành công");
+                date = DateTime.Now;
             }
             catch (Exception ex)
             {

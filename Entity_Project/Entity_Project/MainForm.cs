@@ -215,12 +215,24 @@ namespace Entity_Project
 
         private void SaoLuuSQL_Click(object sender, EventArgs e)
         {
+            this.Opacity = 0.70d;
+            this.BackColor = Color.Gray;
+            this.accordionControl1.Appearance.AccordionControl.BackColor = Color.Gray;
+            accordionControl1.Hide();
+            pb1.Hide();
+            WelcomeBack.Hide();
             SaoLuuSQL frm = new SaoLuuSQL();
             frm.ShowDialog();
         }
 
         private void PhucHoiSQL_Click(object sender, EventArgs e)
         {
+            this.Opacity = 0.70d;
+            this.BackColor = Color.Gray;
+            this.accordionControl1.Appearance.AccordionControl.BackColor = Color.Gray;
+            accordionControl1.Hide();
+            pb1.Hide();
+            WelcomeBack.Hide();
             PhucHoiSQL frm = new PhucHoiSQL();
             frm.ShowDialog();
         }
@@ -257,7 +269,14 @@ namespace Entity_Project
 
         private void YeuCauTroGiup_Click(object sender, EventArgs e)
         {
-
+            this.Opacity = 0.70d;
+            this.BackColor = Color.Gray;
+            this.accordionControl1.Appearance.AccordionControl.BackColor = Color.Gray;
+            accordionControl1.Hide();
+            pb1.Hide();
+            WelcomeBack.Hide();
+            YeuCauTroGiup frm = new YeuCauTroGiup(Id, name);
+            frm.ShowDialog();
         }
 
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -323,7 +342,7 @@ namespace Entity_Project
             }
             else
             {
-                Environment.Exit(1);
+                Application.ExitThread();
             }
 
         }

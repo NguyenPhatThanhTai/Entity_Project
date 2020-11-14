@@ -262,6 +262,12 @@
       <DependentUpon>TinhTrangSua.cs</DependentUpon>
     </Compile>
     <Compile Include="WhenStartedcs.cs" />
+    <Compile Include="YeuCauTroGiup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YeuCauTroGiup.Designer.cs">
+      <DependentUpon>YeuCauTroGiup.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaoCao.resx">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TinhTrangSua.resx">
       <DependentUpon>TinhTrangSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YeuCauTroGiup.resx">
+      <DependentUpon>YeuCauTroGiup.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -483,6 +492,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drag %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

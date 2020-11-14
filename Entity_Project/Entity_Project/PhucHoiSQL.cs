@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -19,10 +20,9 @@ namespace Entity_Project
         {
             InitializeComponent();
         }
-
         private void PhucHoiSQL_Load(object sender, EventArgs e)
         {
-
+            pb2.Hide();
         }
 
         private void RestoreSQL()
@@ -38,14 +38,16 @@ namespace Entity_Project
                 con.Open();
                 command.ExecuteNonQuery();
 
-                MessageBox.Show("Hoàn tất phục hồi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 string sql2 = "Alter Database ProjectOne SET MULTI_USER WITH ROLLBACK IMMEDIATE;";
                 con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
                 command = new SqlCommand(sql2, con);
 
                 con.Close();
                 con.Dispose();
+
+                MessageBox.Show("Hoàn tất phục hồi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Hệ thống sẽ tự động khởi động lại chương trình, hãy nhấn có sau đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Restart();
             }
             catch (Exception ex)
             {
@@ -62,6 +64,63 @@ namespace Entity_Project
                 thread.Start();
                 this.Close();
             }
+        }
+
+        private void PhucHoiSQL_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] fileList = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn phục hồi cơ sở dữ liệu bằng tệp: '" + fileList.First()+"'", "Xác nhận thay đổi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                try
+                {
+                    string sql = "Alter Database ProjectOne SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                    sql += "Restore Database ProjectOne FROM DISK ='" + fileList.First() + "' WITH REPLACE;";
+
+                    SqlConnection con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+                    SqlCommand command = new SqlCommand(sql, con);
+
+                    con.Open();
+                    command.ExecuteNonQuery();
+
+                    string sql2 = "Alter Database ProjectOne SET MULTI_USER WITH ROLLBACK IMMEDIATE;";
+                    con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+                    command = new SqlCommand(sql2, con);
+
+                    con.Close();
+                    con.Dispose();
+
+                    MessageBox.Show("Hoàn tất phục hồi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Hệ thống sẽ tự động khởi động lại chương trình, hãy nhấn có sau đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Restart();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void PhucHoiSQL_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void PhucHoiSQL_DragOver(object sender, DragEventArgs e)
+        {
+            pb2.Show();
+        }
+
+        private void PhucHoiSQL_DragLeave(object sender, EventArgs e)
+        {
+            pb2.Hide();
         }
     }
 }
