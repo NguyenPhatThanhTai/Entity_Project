@@ -20,9 +20,11 @@ namespace Entity_Project
         {
             InitializeComponent();
         }
+
         private void PhucHoiSQL_Load(object sender, EventArgs e)
         {
             pb2.Hide();
+            pbLoi.Hide();
         }
 
         private void RestoreSQL()
@@ -69,35 +71,50 @@ namespace Entity_Project
         private void PhucHoiSQL_DragDrop(object sender, DragEventArgs e)
         {
             string[] fileList = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn phục hồi cơ sở dữ liệu bằng tệp: '" + fileList.First()+"'", "Xác nhận thay đổi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog == DialogResult.Yes)
+            string ext = Path.GetExtension(fileList.First());
+            if (ext.ToLower() == ".bak")
             {
-                try
+                pb2.Hide();
+                pb1.Show();
+                DialogResult dialog = MessageBox.Show("Bạn có chắc muốn phục hồi cơ sở dữ liệu bằng tệp: '" + fileList.First() + "'", "Xác nhận thay đổi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
                 {
-                    string sql = "Alter Database ProjectOne SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
-                    sql += "Restore Database ProjectOne FROM DISK ='" + fileList.First() + "' WITH REPLACE;";
+                    try
+                    {
+                        string sql = "Alter Database ProjectOne SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                        sql += "Restore Database ProjectOne FROM DISK ='" + fileList.First() + "' WITH REPLACE;";
 
-                    SqlConnection con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-                    SqlCommand command = new SqlCommand(sql, con);
+                        SqlConnection con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+                        SqlCommand command = new SqlCommand(sql, con);
 
-                    con.Open();
-                    command.ExecuteNonQuery();
+                        con.Open();
+                        command.ExecuteNonQuery();
 
-                    string sql2 = "Alter Database ProjectOne SET MULTI_USER WITH ROLLBACK IMMEDIATE;";
-                    con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-                    command = new SqlCommand(sql2, con);
+                        string sql2 = "Alter Database ProjectOne SET MULTI_USER WITH ROLLBACK IMMEDIATE;";
+                        con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+                        command = new SqlCommand(sql2, con);
 
-                    con.Close();
-                    con.Dispose();
+                        con.Close();
+                        con.Dispose();
 
-                    MessageBox.Show("Hoàn tất phục hồi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MessageBox.Show("Hệ thống sẽ tự động khởi động lại chương trình, hãy nhấn có sau đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Application.Restart();
+                        MessageBox.Show("Hoàn tất phục hồi cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Hệ thống sẽ tự động khởi động lại chương trình, hãy nhấn có sau đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Application.Restart();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            }
+            else
+            {
+                pbLoi.Show();
+                pb1.Hide();
+                pb2.Hide();
+                MessageBox.Show("Định dạng tệp '" + ext + "' không được hỗ trợ, định dạng tệp đúng phải là đuôi '.bak'");
+                pbLoi.Hide();
+                pb1.Show();
             }
         }
 
@@ -116,11 +133,14 @@ namespace Entity_Project
         private void PhucHoiSQL_DragOver(object sender, DragEventArgs e)
         {
             pb2.Show();
+            pb1.Hide();
         }
 
         private void PhucHoiSQL_DragLeave(object sender, EventArgs e)
         {
             pb2.Hide();
+            pb1.Show();
+            pbLoi.Hide();
         }
     }
 }

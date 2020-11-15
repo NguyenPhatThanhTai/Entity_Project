@@ -73,6 +73,16 @@ namespace Entity_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _464015_200 {
+            get {
+                object obj = ResourceManager.GetObject("464015-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _71a75dace5dd09eb98fb0bee98a85876 {
             get {
                 object obj = ResourceManager.GetObject("71a75dace5dd09eb98fb0bee98a85876", resourceCulture);
@@ -176,6 +186,16 @@ namespace Entity_Project.Properties {
         internal static System.Drawing.Bitmap drag__1_ {
             get {
                 object obj = ResourceManager.GetObject("drag (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drop_files_here_extra {
+            get {
+                object obj = ResourceManager.GetObject("drop-files-here-extra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
