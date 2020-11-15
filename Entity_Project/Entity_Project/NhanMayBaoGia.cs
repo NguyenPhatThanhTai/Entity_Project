@@ -163,16 +163,6 @@ namespace Entity_Project
             }
         }
 
-        private void txtTinhTrang_TextChanged(object sender, EventArgs e)
-        {
-            txtKTTD1.Text = txtTinhTrang.TextLength + "/50";
-        }
-
-        private void txtCanSua_TextChanged(object sender, EventArgs e)
-        {
-            txtKTTD2.Text = txtCanSua.TextLength + "/50";
-        }
-
         //private void txtSoTien_Leave(object sender, EventArgs e)
         //{
         //    float value = float.Parse(txtSoTien.Text);

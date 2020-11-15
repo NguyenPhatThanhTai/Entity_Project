@@ -48,18 +48,12 @@ namespace Entity_Project
                 {
                     data.SaveChanges();
                 }
-                catch(System.Data.Entity.Validation.DbEntityValidationException ex )
+                catch(Exception ex )
                 {
-                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
-                    {
-                        foreach (var validationError in entityValidationErrors.ValidationErrors)
-                        {
-                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
-                        }
-                    }
+                    MessageBox.Show(ex.Message);
                 }
                 return true;
-            }
+                }
             return false;
         }
 

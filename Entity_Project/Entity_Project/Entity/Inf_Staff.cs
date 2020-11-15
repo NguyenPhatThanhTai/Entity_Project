@@ -12,7 +12,7 @@ namespace Entity_Project.Entity
         [StringLength(10)]
         public string Staff_Id { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string Staff_Name { get; set; }
 
         [StringLength(1)]
@@ -21,7 +21,7 @@ namespace Entity_Project.Entity
         [Column(TypeName = "date")]
         public DateTime? Staff_Birth { get; set; }
 
-        [StringLength(100)]
+        [StringLength(200)]
         public string Staff_Address { get; set; }
 
         [StringLength(15)]

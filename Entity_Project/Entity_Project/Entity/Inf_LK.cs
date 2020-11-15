@@ -16,13 +16,13 @@ namespace Entity_Project.Entity
         [StringLength(8)]
         public string WareHouse_Id { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string LK_Name { get; set; }
 
         [StringLength(10)]
         public string LK_Number { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string LK_Producer { get; set; }
 
         [StringLength(10)]

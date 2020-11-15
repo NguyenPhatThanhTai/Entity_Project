@@ -72,8 +72,6 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtKTTD1 = new System.Windows.Forms.Label();
-            this.txtKTTD2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -220,12 +218,10 @@
             this.txtTinhTrang.Enabled = false;
             this.txtTinhTrang.Location = new System.Drawing.Point(588, 24);
             this.txtTinhTrang.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTinhTrang.MaxLength = 50;
             this.txtTinhTrang.Multiline = true;
             this.txtTinhTrang.Name = "txtTinhTrang";
             this.txtTinhTrang.Size = new System.Drawing.Size(216, 76);
             this.txtTinhTrang.TabIndex = 83;
-            this.txtTinhTrang.TextChanged += new System.EventHandler(this.txtTinhTrang_TextChanged);
             // 
             // label3
             // 
@@ -243,7 +239,6 @@
             this.txtTenMay.Enabled = false;
             this.txtTenMay.Location = new System.Drawing.Point(993, 65);
             this.txtTenMay.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenMay.MaxLength = 50;
             this.txtTenMay.Name = "txtTenMay";
             this.txtTenMay.Size = new System.Drawing.Size(216, 23);
             this.txtTenMay.TabIndex = 66;
@@ -336,19 +331,17 @@
             this.txtCanSua.Enabled = false;
             this.txtCanSua.Location = new System.Drawing.Point(588, 141);
             this.txtCanSua.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCanSua.MaxLength = 50;
             this.txtCanSua.Multiline = true;
             this.txtCanSua.Name = "txtCanSua";
             this.txtCanSua.Size = new System.Drawing.Size(216, 76);
             this.txtCanSua.TabIndex = 67;
-            this.txtCanSua.TextChanged += new System.EventHandler(this.txtCanSua_TextChanged);
             // 
             // txtSoTien
             // 
             this.txtSoTien.Enabled = false;
             this.txtSoTien.Location = new System.Drawing.Point(993, 194);
             this.txtSoTien.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSoTien.MaxLength = 50;
+            this.txtSoTien.MaxLength = 15;
             this.txtSoTien.Name = "txtSoTien";
             this.txtSoTien.Size = new System.Drawing.Size(216, 23);
             this.txtSoTien.TabIndex = 72;
@@ -512,35 +505,11 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtKTTD1
-            // 
-            this.txtKTTD1.AutoSize = true;
-            this.txtKTTD1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtKTTD1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKTTD1.Location = new System.Drawing.Point(767, 83);
-            this.txtKTTD1.Name = "txtKTTD1";
-            this.txtKTTD1.Size = new System.Drawing.Size(37, 17);
-            this.txtKTTD1.TabIndex = 97;
-            this.txtKTTD1.Text = "0/50";
-            // 
-            // txtKTTD2
-            // 
-            this.txtKTTD2.AutoSize = true;
-            this.txtKTTD2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtKTTD2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKTTD2.Location = new System.Drawing.Point(767, 200);
-            this.txtKTTD2.Name = "txtKTTD2";
-            this.txtKTTD2.Size = new System.Drawing.Size(37, 17);
-            this.txtKTTD2.TabIndex = 98;
-            this.txtKTTD2.Text = "0/50";
-            // 
             // NhanMayBaoGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 705);
-            this.Controls.Add(this.txtKTTD2);
-            this.Controls.Add(this.txtKTTD1);
             this.Controls.Add(this.Btn_ReFresh);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnTiepNhan);
@@ -636,7 +605,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TienTamTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienTiepNhan;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label txtKTTD1;
-        private System.Windows.Forms.Label txtKTTD2;
     }
 }

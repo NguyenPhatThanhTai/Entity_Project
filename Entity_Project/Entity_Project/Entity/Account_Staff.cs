@@ -15,7 +15,6 @@ namespace Entity_Project.Entity
         [StringLength(50)]
         public string Staff_Account { get; set; }
 
-        [StringLength(50)]
         public string Staff_Password { get; set; }
 
         [StringLength(1)]

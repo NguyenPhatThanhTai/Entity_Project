@@ -18,10 +18,10 @@ namespace Entity_Project.Entity
         [StringLength(8)]
         public string WareHouse_Id { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string WareHouse_Name { get; set; }
 
-        [StringLength(50)]
+        [StringLength(200)]
         public string WareHouse_Address { get; set; }
 
         [Column(TypeName = "numeric")]

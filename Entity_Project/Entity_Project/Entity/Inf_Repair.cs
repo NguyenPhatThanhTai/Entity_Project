@@ -16,10 +16,9 @@ namespace Entity_Project.Entity
         [StringLength(10)]
         public string Customer_Id { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string Laptop_Name { get; set; }
 
-        [StringLength(50)]
         public string Laptop_Status { get; set; }
 
         [StringLength(50)]

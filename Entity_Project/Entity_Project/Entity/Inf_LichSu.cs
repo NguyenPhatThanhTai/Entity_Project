@@ -12,7 +12,7 @@ namespace Entity_Project.Entity
         [StringLength(10)]
         public string Customer_Id { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string Customer_Name { get; set; }
 
         [StringLength(1)]
@@ -21,7 +21,7 @@ namespace Entity_Project.Entity
         [Column(TypeName = "date")]
         public DateTime? Customer_Birth { get; set; }
 
-        [StringLength(50)]
+        [StringLength(135)]
         public string Customer_Email { get; set; }
 
         [StringLength(15)]
@@ -33,10 +33,9 @@ namespace Entity_Project.Entity
         [StringLength(10)]
         public string Repair_Id { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string Laptop_Name { get; set; }
 
-        [StringLength(50)]
         public string Laptop_Status { get; set; }
 
         [StringLength(50)]
