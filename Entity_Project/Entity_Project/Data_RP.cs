@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entity_Project
@@ -46,7 +44,20 @@ namespace Entity_Project
                 repair.Detail_Inf_Repair.Repair_Note = Repair_Note;
                 repair.Detail_Inf_Repair.Repair_Appointment = Repair_Appointment;
                 repair.Detail_Inf_Repair.Repair_Money = Repair_Money;
-                data.SaveChanges();
+                try
+                {
+                    data.SaveChanges();
+                }
+                catch(System.Data.Entity.Validation.DbEntityValidationException ex )
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
                 return true;
             }
             return false;

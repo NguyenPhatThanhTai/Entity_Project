@@ -178,9 +178,9 @@ namespace Entity_Project
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-                if (txtSDT.Text.All(char.IsDigit) == false)
+                if (txtSDT.Text.All(char.IsDigit) == false || txtSDT.TextLength < 9 || txtSDT.TextLength > 13)
                 {
-                    errorProvider1.SetError(txtSDT, "Không được phép có chữ");
+                    errorProvider1.SetError(txtSDT, "Chỉ cho phép số và số điện thoại tối thiểu phải lớn hơn 9 và bé hơn 13 kí tự số");
                     btnThem.Enabled = false;
                     btnUpdate.Enabled = false;
                 }

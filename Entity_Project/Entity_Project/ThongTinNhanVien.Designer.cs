@@ -180,6 +180,7 @@
             // 
             this.txtHoTen.Location = new System.Drawing.Point(168, 98);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHoTen.MaxLength = 50;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(216, 23);
             this.txtHoTen.TabIndex = 57;
@@ -308,6 +309,7 @@
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(932, 94);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiaChi.MaxLength = 30000;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(216, 23);
             this.txtDiaChi.TabIndex = 59;
@@ -328,6 +330,7 @@
             // 
             this.txtSDT.Location = new System.Drawing.Point(936, 158);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSDT.MaxLength = 50;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(216, 23);
             this.txtSDT.TabIndex = 60;

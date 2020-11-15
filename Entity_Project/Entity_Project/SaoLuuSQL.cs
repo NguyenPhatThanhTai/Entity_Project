@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -99,7 +100,9 @@ namespace Entity_Project
                 if (dialog == DialogResult.Yes)
                 {
                     name = txtTenSaoLuu.Text;
-                    var thread = new Thread(() => BackupDatabase("ProjectOne", "TAEITAEI\\SQLEXPRESS", folderPath));
+                    var connection = System.Configuration.ConfigurationManager.ConnectionStrings["Data"].ConnectionString;
+                    SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(connection);
+                    var thread = new Thread(() => BackupDatabase(builder.InitialCatalog, builder.DataSource, folderPath));
                     thread.Start();
                 }
             }

@@ -184,6 +184,7 @@
             // 
             this.txtLuongCoBan.Enabled = false;
             this.txtLuongCoBan.Location = new System.Drawing.Point(574, 47);
+            this.txtLuongCoBan.MaxLength = 12;
             this.txtLuongCoBan.Name = "txtLuongCoBan";
             this.txtLuongCoBan.Size = new System.Drawing.Size(208, 23);
             this.txtLuongCoBan.TabIndex = 77;
@@ -193,6 +194,7 @@
             // 
             this.txtLamNgoaiGio.Enabled = false;
             this.txtLamNgoaiGio.Location = new System.Drawing.Point(954, 105);
+            this.txtLamNgoaiGio.MaxLength = 12;
             this.txtLamNgoaiGio.Name = "txtLamNgoaiGio";
             this.txtLamNgoaiGio.Size = new System.Drawing.Size(208, 23);
             this.txtLamNgoaiGio.TabIndex = 64;
@@ -202,6 +204,7 @@
             // 
             this.txtLuongTheoGio.Enabled = false;
             this.txtLuongTheoGio.Location = new System.Drawing.Point(574, 107);
+            this.txtLuongTheoGio.MaxLength = 12;
             this.txtLuongTheoGio.Name = "txtLuongTheoGio";
             this.txtLuongTheoGio.Size = new System.Drawing.Size(208, 23);
             this.txtLuongTheoGio.TabIndex = 62;
@@ -252,6 +255,7 @@
             // 
             this.txtTienThuong.Enabled = false;
             this.txtTienThuong.Location = new System.Drawing.Point(954, 50);
+            this.txtTienThuong.MaxLength = 12;
             this.txtTienThuong.Name = "txtTienThuong";
             this.txtTienThuong.Size = new System.Drawing.Size(208, 23);
             this.txtTienThuong.TabIndex = 63;

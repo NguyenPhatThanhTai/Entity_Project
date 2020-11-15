@@ -134,7 +134,7 @@ namespace Entity_Project
                 txtMaSuaChua.Text = Data.SelectedRows[0].Cells[1].Value.ToString();
                 txtTenKhachHang.Text = Data.SelectedRows[0].Cells[2].Value.ToString();
                 txtTenMay.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
-                txtTinhTrang.Text = Data.SelectedRows[0].Cells[3].Value.ToString();
+                txtTinhTrang.Text = Data.SelectedRows[0].Cells[4].Value.ToString();
                 txtCanSua.Text = Data.SelectedRows[0].Cells[5].Value.ToString();
                 txtHenSua.Text = Data.SelectedRows[0].Cells[6].Value.ToString();
                 txtDateHen.Value = DateTime.Parse((string)Data.SelectedRows[0].Cells[7].Value);
@@ -163,6 +163,16 @@ namespace Entity_Project
             }
         }
 
+        private void txtTinhTrang_TextChanged(object sender, EventArgs e)
+        {
+            txtKTTD1.Text = txtTinhTrang.TextLength + "/50";
+        }
+
+        private void txtCanSua_TextChanged(object sender, EventArgs e)
+        {
+            txtKTTD2.Text = txtCanSua.TextLength + "/50";
+        }
+
         //private void txtSoTien_Leave(object sender, EventArgs e)
         //{
         //    float value = float.Parse(txtSoTien.Text);
@@ -184,7 +194,6 @@ namespace Entity_Project
                             bc.CreateReport(txtMaSuaChua.Text);
                             bc.Show();
                         }
-                        //MessageBox.Show("Cập nhật thành công");
                         DRP = new Data_RP();
                         Load_RP(DRP.Inf_Repair());
                         openButton(true);

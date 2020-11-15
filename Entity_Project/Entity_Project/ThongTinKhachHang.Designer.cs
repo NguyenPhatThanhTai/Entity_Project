@@ -177,6 +177,7 @@
             // 
             this.txtSDT.Location = new System.Drawing.Point(952, 78);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSDT.MaxLength = 50;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(216, 23);
             this.txtSDT.TabIndex = 62;
@@ -186,6 +187,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(556, 137);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(216, 23);
             this.txtEmail.TabIndex = 61;
@@ -219,18 +221,19 @@
             this.NumPhone.AutoSize = true;
             this.NumPhone.BackColor = System.Drawing.Color.Transparent;
             this.NumPhone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.NumPhone.Location = new System.Drawing.Point(860, 81);
+            this.NumPhone.Location = new System.Drawing.Point(854, 81);
             this.NumPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NumPhone.Name = "NumPhone";
-            this.NumPhone.Size = new System.Drawing.Size(34, 17);
+            this.NumPhone.Size = new System.Drawing.Size(87, 17);
             this.NumPhone.TabIndex = 60;
-            this.NumPhone.Text = "SDT";
+            this.NumPhone.Text = "Số điện thoại";
             // 
             // txtThoiGian
             // 
             this.txtThoiGian.Enabled = false;
             this.txtThoiGian.Location = new System.Drawing.Point(952, 135);
             this.txtThoiGian.Margin = new System.Windows.Forms.Padding(4);
+            this.txtThoiGian.MaxLength = 50;
             this.txtThoiGian.Name = "txtThoiGian";
             this.txtThoiGian.Size = new System.Drawing.Size(216, 23);
             this.txtThoiGian.TabIndex = 63;
@@ -340,6 +343,7 @@
             // 
             this.txtHoTen.Location = new System.Drawing.Point(167, 73);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHoTen.MaxLength = 30000;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(216, 23);
             this.txtHoTen.TabIndex = 59;
