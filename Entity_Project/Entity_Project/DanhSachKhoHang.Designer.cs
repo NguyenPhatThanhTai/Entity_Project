@@ -69,6 +69,8 @@
             this.txtMaLinhKien = new System.Windows.Forms.TextBox();
             this.txtMaKhoHang = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnThemBangExcell = new DevExpress.XtraEditors.SimpleButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -99,7 +101,7 @@
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(302, 392);
+            this.Data.Size = new System.Drawing.Size(374, 392);
             this.Data.TabIndex = 4;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
@@ -166,13 +168,13 @@
             this.GiaTien,
             this.ThoiGianThem});
             this.Data1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Data1.Location = new System.Drawing.Point(345, 276);
+            this.Data1.Location = new System.Drawing.Point(405, 276);
             this.Data1.Name = "Data1";
             this.Data1.ReadOnly = true;
             this.Data1.RowHeadersWidth = 51;
             this.Data1.RowTemplate.Height = 24;
             this.Data1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data1.Size = new System.Drawing.Size(878, 392);
+            this.Data1.Size = new System.Drawing.Size(907, 392);
             this.Data1.TabIndex = 5;
             this.Data1.Click += new System.EventHandler(this.Data1_Click);
             // 
@@ -374,7 +376,7 @@
             // 
             this.Btn_ReFresh.Enabled = false;
             this.Btn_ReFresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ReFresh.ImageOptions.Image")));
-            this.Btn_ReFresh.Location = new System.Drawing.Point(911, 182);
+            this.Btn_ReFresh.Location = new System.Drawing.Point(754, 188);
             this.Btn_ReFresh.Name = "Btn_ReFresh";
             this.Btn_ReFresh.Size = new System.Drawing.Size(202, 58);
             this.Btn_ReFresh.TabIndex = 76;
@@ -385,7 +387,7 @@
             // 
             this.btnDelete.Enabled = false;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(627, 182);
+            this.btnDelete.Location = new System.Drawing.Point(510, 188);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(202, 58);
             this.btnDelete.TabIndex = 75;
@@ -396,7 +398,7 @@
             // 
             this.btnUpdate.Enabled = false;
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(346, 182);
+            this.btnUpdate.Location = new System.Drawing.Point(270, 187);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(202, 57);
             this.btnUpdate.TabIndex = 74;
@@ -407,7 +409,7 @@
             // 
             this.btnThem.Enabled = false;
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.Location = new System.Drawing.Point(71, 181);
+            this.btnThem.Location = new System.Drawing.Point(35, 186);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(202, 60);
             this.btnThem.TabIndex = 73;
@@ -483,13 +485,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnThemBangExcell
+            // 
+            this.btnThemBangExcell.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnThemBangExcell.Location = new System.Drawing.Point(1007, 186);
+            this.btnThemBangExcell.Name = "btnThemBangExcell";
+            this.btnThemBangExcell.Size = new System.Drawing.Size(246, 58);
+            this.btnThemBangExcell.TabIndex = 84;
+            this.btnThemBangExcell.Text = "Thêm dữ liệu bằng file Excel";
+            this.btnThemBangExcell.Click += new System.EventHandler(this.btnThemBangExcell_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // DanhSachKhoHang
             // 
             this.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 702);
+            this.ClientSize = new System.Drawing.Size(1324, 702);
+            this.Controls.Add(this.btnThemBangExcell);
             this.Controls.Add(this.txtMaKhoHang);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label5);
@@ -572,5 +589,7 @@
         private System.Windows.Forms.TextBox txtMaLinhKien;
         private System.Windows.Forms.ComboBox txtMaKhoHang;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private DevExpress.XtraEditors.SimpleButton btnThemBangExcell;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

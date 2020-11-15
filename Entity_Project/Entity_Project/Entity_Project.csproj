@@ -345,6 +345,7 @@
       <DependentUpon>YeuCauTroGiup.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Huong dan %281%29.chm" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

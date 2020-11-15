@@ -440,7 +440,6 @@
             this.accordionControlElement11.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.HuongDan,
             this.YeuCauTroGiup});
-            this.accordionControlElement11.Expanded = true;
             this.accordionControlElement11.Name = "accordionControlElement11";
             this.accordionControlElement11.Text = "Trợ giúp";
             // 
@@ -449,6 +448,7 @@
             this.HuongDan.Name = "HuongDan";
             this.HuongDan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.HuongDan.Text = "Hướng dẫn";
+            this.HuongDan.Click += new System.EventHandler(this.HuongDan_Click);
             // 
             // YeuCauTroGiup
             // 
@@ -537,6 +537,7 @@
             this.btnHelp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.ImageOptions.Image")));
             this.btnHelp.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHelp.ImageOptions.LargeImage")));
             this.btnHelp.Name = "btnHelp";
+            this.btnHelp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHelp_ItemClick);
             // 
             // btnDangXuat
             // 

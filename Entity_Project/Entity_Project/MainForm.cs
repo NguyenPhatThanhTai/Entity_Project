@@ -258,7 +258,7 @@ namespace Entity_Project
 
         private void HuongDan_Click(object sender, EventArgs e)
         {
-
+            Help.ShowHelp(this, "D:\\Entity_Project\\Entity_Project\\Huong dan (1).chm");
         }
 
         private void SuaChuaTanNha_Click(object sender, EventArgs e)
@@ -330,6 +330,11 @@ namespace Entity_Project
                 WelcomeBack.Show();
             }
             accordionControl1.Show();
+        }
+
+        private void btnHelp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Help.ShowHelp(this, "D:\\Entity_Project\\Entity_Project\\Huong dan (1).chm");
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

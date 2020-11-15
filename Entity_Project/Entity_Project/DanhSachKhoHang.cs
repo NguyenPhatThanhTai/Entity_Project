@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Entity_Project.Entity;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.Threading;
 
 namespace Entity_Project
 {
@@ -235,6 +238,18 @@ namespace Entity_Project
                 btnThem.Enabled = true;
                 btnUpdate.Enabled = true;
             }
+        }
+
+        private void btnThemBangExcell_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Data File |*.xlsx";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var thread = new Thread(() => DLK.InsertExcelRecords(openFileDialog1.FileName));
+                thread.Start();
+            }
+            DLK = new Data_LK();
+            Load_LK(DLK.Inf_LK());
         }
     }
 }

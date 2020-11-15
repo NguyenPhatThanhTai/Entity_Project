@@ -76,7 +76,7 @@ namespace Entity_Project
             {
                 pb2.Hide();
                 pb1.Show();
-                DialogResult dialog = MessageBox.Show("Bạn có chắc muốn phục hồi cơ sở dữ liệu bằng tệp: '" + fileList.First() + "'", "Xác nhận thay đổi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialog = MessageBox.Show("Bạn có chắc muốn phục hồi cơ sở dữ liệu bằng tệp: '" + fileList.First() + "'", "Xác nhận phục hồi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     try
@@ -112,7 +112,7 @@ namespace Entity_Project
                 pbLoi.Show();
                 pb1.Hide();
                 pb2.Hide();
-                MessageBox.Show("Định dạng tệp '" + ext + "' không được hỗ trợ, định dạng tệp đúng phải là đuôi '.bak'");
+                MessageBox.Show("Định dạng tệp '" + ext + "' không được hỗ trợ, định dạng tệp đúng phải là đuôi '.bak'", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 pbLoi.Hide();
                 pb1.Show();
             }
