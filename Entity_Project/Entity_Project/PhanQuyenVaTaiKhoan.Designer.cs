@@ -51,8 +51,8 @@
             this.Btn_ReFresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtTenNhanVien = new System.Windows.Forms.Label();
+            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -296,25 +296,25 @@
             this.pictureBox1.TabIndex = 86;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(199, 93);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 23);
-            this.textBox1.TabIndex = 87;
-            // 
             // txtTenNhanVien
             // 
-            this.txtTenNhanVien.AutoSize = true;
-            this.txtTenNhanVien.BackColor = System.Drawing.Color.Transparent;
-            this.txtTenNhanVien.Location = new System.Drawing.Point(93, 98);
-            this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtTenNhanVien.Enabled = false;
+            this.txtTenNhanVien.Location = new System.Drawing.Point(199, 93);
+            this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(95, 17);
-            this.txtTenNhanVien.TabIndex = 85;
-            this.txtTenNhanVien.Text = "Tên nhân viên";
+            this.txtTenNhanVien.Size = new System.Drawing.Size(216, 23);
+            this.txtTenNhanVien.TabIndex = 87;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(93, 98);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 17);
+            this.label4.TabIndex = 85;
+            this.label4.Text = "Tên nhân viên";
             // 
             // PhanQuyenVaTaiKhoan
             // 
@@ -322,8 +322,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 706);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtTenNhanVien);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.Btn_ReFresh);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtRole);
@@ -378,7 +378,7 @@
         private DevExpress.XtraEditors.SimpleButton Btn_ReFresh;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label txtTenNhanVien;
+        private System.Windows.Forms.TextBox txtTenNhanVien;
+        private System.Windows.Forms.Label label4;
     }
 }

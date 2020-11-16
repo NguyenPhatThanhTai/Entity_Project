@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TinhTrangSua));
             this.Data = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSuaChua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HenSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HenNhanMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhanVienTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHoanThanh = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.l2 = new System.Windows.Forms.Label();
             this.l1 = new System.Windows.Forms.PictureBox();
             this.d2 = new System.Windows.Forms.Label();
             this.d1 = new System.Windows.Forms.PictureBox();
+            this.btnHoanThanhSua = new DevExpress.XtraEditors.SimpleButton();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSuaChua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HenSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HenNhanMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Repair_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhanVienTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.l1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.d1)).BeginInit();
@@ -58,6 +60,7 @@
             this.TenKhachHang,
             this.HenSua,
             this.HenNhanMay,
+            this.Repair_Status,
             this.NhanVienTiepNhan});
             this.Data.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Data.GridColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -71,59 +74,11 @@
             this.Data.TabIndex = 3;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 50;
-            // 
-            // MaSuaChua
-            // 
-            this.MaSuaChua.HeaderText = "Mã Sữa Chữa";
-            this.MaSuaChua.MinimumWidth = 6;
-            this.MaSuaChua.Name = "MaSuaChua";
-            this.MaSuaChua.ReadOnly = true;
-            this.MaSuaChua.Width = 125;
-            // 
-            // TenKhachHang
-            // 
-            this.TenKhachHang.HeaderText = "Tên khách hàng";
-            this.TenKhachHang.MinimumWidth = 6;
-            this.TenKhachHang.Name = "TenKhachHang";
-            this.TenKhachHang.ReadOnly = true;
-            this.TenKhachHang.Width = 170;
-            // 
-            // HenSua
-            // 
-            this.HenSua.HeaderText = "Hẹn sửa";
-            this.HenSua.MinimumWidth = 6;
-            this.HenSua.Name = "HenSua";
-            this.HenSua.ReadOnly = true;
-            this.HenSua.Width = 125;
-            // 
-            // HenNhanMay
-            // 
-            this.HenNhanMay.HeaderText = "Hẹn nhận máy";
-            this.HenNhanMay.MinimumWidth = 6;
-            this.HenNhanMay.Name = "HenNhanMay";
-            this.HenNhanMay.ReadOnly = true;
-            this.HenNhanMay.Width = 150;
-            // 
-            // NhanVienTiepNhan
-            // 
-            this.NhanVienTiepNhan.HeaderText = "Nhân viên tiếp nhận";
-            this.NhanVienTiepNhan.MinimumWidth = 6;
-            this.NhanVienTiepNhan.Name = "NhanVienTiepNhan";
-            this.NhanVienTiepNhan.ReadOnly = true;
-            this.NhanVienTiepNhan.Width = 125;
-            // 
             // btnHoanThanh
             // 
             this.btnHoanThanh.Enabled = false;
             this.btnHoanThanh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHoanThanh.ImageOptions.SvgImage")));
-            this.btnHoanThanh.Location = new System.Drawing.Point(203, 30);
+            this.btnHoanThanh.Location = new System.Drawing.Point(391, 30);
             this.btnHoanThanh.Name = "btnHoanThanh";
             this.btnHoanThanh.Size = new System.Drawing.Size(182, 46);
             this.btnHoanThanh.TabIndex = 4;
@@ -180,11 +135,79 @@
             this.d1.TabIndex = 77;
             this.d1.TabStop = false;
             // 
+            // btnHoanThanhSua
+            // 
+            this.btnHoanThanhSua.Enabled = false;
+            this.btnHoanThanhSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnHoanThanhSua.Location = new System.Drawing.Point(203, 30);
+            this.btnHoanThanhSua.Name = "btnHoanThanhSua";
+            this.btnHoanThanhSua.Size = new System.Drawing.Size(182, 46);
+            this.btnHoanThanhSua.TabIndex = 79;
+            this.btnHoanThanhSua.Text = "Hoàn thành sửa";
+            this.btnHoanThanhSua.Click += new System.EventHandler(this.btnHoanThanhSua_Click);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 50;
+            // 
+            // MaSuaChua
+            // 
+            this.MaSuaChua.HeaderText = "Mã Sữa Chữa";
+            this.MaSuaChua.MinimumWidth = 6;
+            this.MaSuaChua.Name = "MaSuaChua";
+            this.MaSuaChua.ReadOnly = true;
+            this.MaSuaChua.Width = 125;
+            // 
+            // TenKhachHang
+            // 
+            this.TenKhachHang.HeaderText = "Tên khách hàng";
+            this.TenKhachHang.MinimumWidth = 6;
+            this.TenKhachHang.Name = "TenKhachHang";
+            this.TenKhachHang.ReadOnly = true;
+            this.TenKhachHang.Width = 170;
+            // 
+            // HenSua
+            // 
+            this.HenSua.HeaderText = "Hẹn sửa";
+            this.HenSua.MinimumWidth = 6;
+            this.HenSua.Name = "HenSua";
+            this.HenSua.ReadOnly = true;
+            this.HenSua.Width = 125;
+            // 
+            // HenNhanMay
+            // 
+            this.HenNhanMay.HeaderText = "Hẹn nhận máy";
+            this.HenNhanMay.MinimumWidth = 6;
+            this.HenNhanMay.Name = "HenNhanMay";
+            this.HenNhanMay.ReadOnly = true;
+            this.HenNhanMay.Width = 150;
+            // 
+            // Repair_Status
+            // 
+            this.Repair_Status.HeaderText = "Tình trạng đơn";
+            this.Repair_Status.MinimumWidth = 6;
+            this.Repair_Status.Name = "Repair_Status";
+            this.Repair_Status.ReadOnly = true;
+            this.Repair_Status.Width = 125;
+            // 
+            // NhanVienTiepNhan
+            // 
+            this.NhanVienTiepNhan.HeaderText = "Nhân viên tiếp nhận";
+            this.NhanVienTiepNhan.MinimumWidth = 6;
+            this.NhanVienTiepNhan.Name = "NhanVienTiepNhan";
+            this.NhanVienTiepNhan.ReadOnly = true;
+            this.NhanVienTiepNhan.Width = 125;
+            // 
             // TinhTrangSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 704);
+            this.Controls.Add(this.btnHoanThanhSua);
             this.Controls.Add(this.d2);
             this.Controls.Add(this.d1);
             this.Controls.Add(this.l2);
@@ -207,17 +230,19 @@
         #endregion
 
         private System.Windows.Forms.DataGridView Data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSuaChua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HenSua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HenNhanMay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienTiepNhan;
         private DevExpress.XtraEditors.SimpleButton btnHoanThanh;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private System.Windows.Forms.Label l2;
         private System.Windows.Forms.PictureBox l1;
         private System.Windows.Forms.Label d2;
         private System.Windows.Forms.PictureBox d1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSuaChua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HenSua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HenNhanMay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Repair_Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienTiepNhan;
+        private DevExpress.XtraEditors.SimpleButton btnHoanThanhSua;
     }
 }

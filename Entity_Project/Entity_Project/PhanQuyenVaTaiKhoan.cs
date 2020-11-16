@@ -89,7 +89,7 @@ namespace Entity_Project
         private void Clear()
         {
             openButton(true);
-            txtMaNv.Text = "Chưa thiết lập";
+            txtMaNv.Text = "";
             txtTenNhanVien.Text = "";
             txtPassword.Text = "";
             txtAccount.Text = "";

@@ -24,7 +24,7 @@ namespace Entity_Project
         public bool Update_NhanDon(string name, string Repair_Id)
         {
             Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
-            if(repair != null)
+            if (repair != null)
             {
                 repair.Staff_Id = name;
                 data.SaveChanges();
@@ -36,7 +36,7 @@ namespace Entity_Project
         public bool Update_RP(string Laptop_Name, string Laptop_Status, string Repair_Reason, string Repair_Note, DateTime Repair_Appointment, string Repair_Money, string Repair_Id)
         {
             Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
-            if(repair != null)
+            if (repair != null)
             {
                 repair.Laptop_Name = Laptop_Name;
                 repair.Laptop_Status = Laptop_Status;
@@ -48,12 +48,12 @@ namespace Entity_Project
                 {
                     data.SaveChanges();
                 }
-                catch(Exception ex )
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
                 return true;
-                }
+            }
             return false;
         }
 
@@ -64,30 +64,12 @@ namespace Entity_Project
             return repair;
         }
 
-        public bool Done_RP(string Repair_Id, string note)
+        public bool Done_RP(string Repair_Id)
         {
             data = new Data();
             Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
-            if(repair != null)
+            if (repair != null)
             {
-                if (note.ToString() == "Hẹn ngày lấy")
-                {
-                    string NameTo = repair.Inf_Customers.Customer_Name;
-                    string EmailTo = repair.Inf_Customers.Customer_Email;
-                    string SDTTo = repair.Inf_Customers.Customer_Phone;
-                    string Laptop_Name = repair.Laptop_Name;
-                    string Repair_Reason = repair.Detail_Inf_Repair.Repair_Reason;
-                    string Repair_Money = repair.Detail_Inf_Repair.Repair_Money;
-                    try
-                    {
-                        var thread = new Thread(() => sendMail(NameTo, EmailTo, SDTTo, Laptop_Name, Repair_Reason, Repair_Money));
-                        thread.Start();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi gửi mail");
-                    }
-                }
                 Inf_LichSu ls = new Inf_LichSu()
                 {
                     Customer_Name = repair.Inf_Customers.Customer_Name,
@@ -175,6 +157,41 @@ namespace Entity_Project
                 }
             }
             catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Update_Status(string status, string Repair_Id, string note)
+        {
+            try
+            {
+                Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
+                if (repair != null)
+                {
+                    if (note.ToString() == "Hẹn ngày lấy")
+                    {
+                        string NameTo = repair.Inf_Customers.Customer_Name;
+                        string EmailTo = repair.Inf_Customers.Customer_Email;
+                        string SDTTo = repair.Inf_Customers.Customer_Phone;
+                        string Laptop_Name = repair.Laptop_Name;
+                        string Repair_Reason = repair.Detail_Inf_Repair.Repair_Reason;
+                        string Repair_Money = repair.Detail_Inf_Repair.Repair_Money;
+                        try
+                        {
+                            var thread = new Thread(() => sendMail(NameTo, EmailTo, SDTTo, Laptop_Name, Repair_Reason, Repair_Money));
+                            thread.Start();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi gửi mail");
+                        }
+                    }
+                    repair.Detail_Inf_Repair.Repair_Status = status;
+                    data.SaveChanges();
+                }
+            }catch(Exception ex)
             {
                 return false;
             }

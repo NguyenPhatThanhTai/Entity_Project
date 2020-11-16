@@ -16,6 +16,9 @@ namespace Entity_Project.Entity
 
         public string Repair_Note { get; set; }
 
+        [StringLength(1)]
+        public string Repair_Status { get; set; }
+
         [Column(TypeName = "date")]
         public DateTime? Repair_Appointment { get; set; }
 

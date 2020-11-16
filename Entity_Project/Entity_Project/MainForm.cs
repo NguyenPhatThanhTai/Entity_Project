@@ -18,6 +18,7 @@ using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 using System.Data.SqlClient;
 using System.Threading;
+using System.Net;
 
 namespace Entity_Project
 {
@@ -76,24 +77,32 @@ namespace Entity_Project
         {
             loadding.Hide();
             timer1.Start();
-            if (role != "1")
+            if (!CheckForInternetConnection())
             {
-                ChucVu = "Nhân Viên";
-                PhanQuyen.Visible = false;
-                ThietLapKetNoiSQL.Visible = false;
-                PhucHoiSQL.Visible = false;
-                SaoLuuSQL.Visible = false;
-                NhanVien.Visible = false;
+                MessageBox.Show("Hệ thống đang bị mất kết nối mạng, vui lòng kiểm tra lại kết nối mạng và thử lại", "Mất kết nối mạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Environment.Exit(0);
             }
             else
             {
-                ChucVu = "Quản Lý";
-            }
-            if (MdiChildren.Count() == 0)
-            {
-                txtXinChao.Caption = "Xin chào: ".ToUpper() + name;
-                txtChucVu.Caption = "Chức vụ: ".ToUpper() + ChucVu;
-                WelcomeBack.Text = "Chào mừng quay trở lại: " + name;
+                if (role != "1")
+                {
+                    ChucVu = "Nhân Viên";
+                    PhanQuyen.Visible = false;
+                    ThietLapKetNoiSQL.Visible = false;
+                    PhucHoiSQL.Visible = false;
+                    SaoLuuSQL.Visible = false;
+                    NhanVien.Visible = false;
+                }
+                else
+                {
+                    ChucVu = "Quản Lý";
+                }
+                if (MdiChildren.Count() == 0)
+                {
+                    txtXinChao.Caption = "Xin chào: ".ToUpper() + name;
+                    txtChucVu.Caption = "Chức vụ: ".ToUpper() + ChucVu;
+                    WelcomeBack.Text = "Chào mừng quay trở lại: " + name;
+                }
             }
         }
 
@@ -381,6 +390,22 @@ namespace Entity_Project
                     break;
             }
             label1.Caption = label1.Caption.Substring(1, label1.Caption.Length - 1) + label1.Caption.Substring(0, 1);
+        }
+
+        private static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (var stream = client.OpenRead("http://www.google.com"))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

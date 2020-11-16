@@ -143,6 +143,10 @@ namespace Entity_Project.Entity
                 .IsUnicode(false);
 
             modelBuilder.Entity<Detail_Inf_Repair>()
+                .Property(e => e.Repair_Status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Detail_Inf_Repair>()
                 .Property(e => e.Repair_Money)
                 .IsUnicode(false);
 

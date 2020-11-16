@@ -20,7 +20,7 @@ namespace Entity_Project
         }
 
         Data_RP DRP;
-        string id, note;
+        string id, note, status;
 
         private void TinhTrangSua_Load(object sender, EventArgs e)
         {
@@ -38,6 +38,14 @@ namespace Entity_Project
             Data.Rows.Clear();
             foreach (var item in Inf_Repair)
             {
+                if (item.Detail_Inf_Repair.Repair_Status.ToString() == "1")
+                {
+                    status = "Đã hoàn thành sửa";
+                }
+                else
+                {
+                    status = "Chưa hoàn thành sửa";
+                }
                 var date1 = DateTime.Parse(item.Detail_Inf_Repair.Repair_Appointment.ToString());
 
                 int index = Data.Rows.Add();
@@ -46,13 +54,14 @@ namespace Entity_Project
                 Data.Rows[index].Cells[2].Value = item.Inf_Customers.Customer_Name;
                 Data.Rows[index].Cells[3].Value = item.Detail_Inf_Repair.Repair_Note;
                 Data.Rows[index].Cells[4].Value = date1.ToString("dd/MM/yyyy");
-                Data.Rows[index].Cells[5].Value = item.Staff_Id;
+                Data.Rows[index].Cells[5].Value = status;
+                Data.Rows[index].Cells[6].Value = item.Staff_Id;
                 i++;
             }
             Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private async void btnHoanThanh_Click(object sender, EventArgs e)
+        private void btnHoanThanh_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Bạn có chắc chắn hoàn thành đơn này?", "Xác nhận hoàn thành", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
@@ -60,22 +69,12 @@ namespace Entity_Project
                 List<Inf_Repair> Inf_Repair = DRP.FindBy_ID(id);
                 foreach (var item in Inf_Repair)
                 {
-                    l1.Show();
-                    l2.Show();
-                    if (DRP.Done_RP(item.Repair_Id, note))
+                    if (DRP.Done_RP(item.Repair_Id))
                     {
-                        await Task.Delay(5000);
-                        l1.Hide();
-                        l2.Hide();
-                        d1.Show();
-                        d2.Show();
                         DRP.Delete_KH(item.Customer_Id);
                         DRP = new Data_RP();
                         Load_TinhTrang(DRP.Inf_Repair());
                         btnHoanThanh.Enabled = false;
-                        await Task.Delay(2000);
-                        d1.Hide();
-                        d2.Hide();
                     }
                     else
                     {
@@ -93,15 +92,21 @@ namespace Entity_Project
             }
             else
             {
-                if (Data.SelectedRows[0].Cells[5].Value.ToString() != "Chưa biết")
+                id = Data.SelectedRows[0].Cells[1].Value.ToString();
+                note = Data.SelectedRows[0].Cells[3].Value.ToString();
+                if (Data.SelectedRows[0].Cells[6].Value.ToString() != "Chưa biết" && Data.SelectedRows[0].Cells[5].Value.ToString() != "Chưa hoàn thành sửa")
                 {
                     btnHoanThanh.Enabled = true;
-                    id = Data.SelectedRows[0].Cells[1].Value.ToString();
-                    note = Data.SelectedRows[0].Cells[3].Value.ToString();
+                    btnHoanThanhSua.Enabled = true;
                 }
                 else
                 {
+                    btnHoanThanhSua.Enabled = false;
                     btnHoanThanh.Enabled = false;
+                }
+                if (Data.SelectedRows[0].Cells[6].Value.ToString() != "Chưa biết")
+                {
+                    btnHoanThanhSua.Enabled = true;
                 }
             }
         }
@@ -116,6 +121,31 @@ namespace Entity_Project
         {
             Data_RP DRP = new Data_RP();
             Load_TinhTrang(DRP.Inf_Repair());
+        }
+
+        private async void btnHoanThanhSua_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Bạn có chắc chắn hoàn thành sửa cho đơn này?", "Xác nhận hoàn thành", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                l1.Show();
+                l2.Show();
+                if (DRP.Update_Status("1",id ,note))
+                {
+                    await Task.Delay(5000);
+                    l1.Hide();
+                    l2.Hide();
+                    d1.Show();
+                    d2.Show();
+                    DRP = new Data_RP();
+                    Load_TinhTrang(DRP.Inf_Repair());
+                    await Task.Delay(2000);
+                    d1.Hide();
+                    d2.Hide();
+                    btnHoanThanhSua.Enabled = false;
+                    btnHoanThanh.Enabled = false;
+                }
+            }
         }
 
         public long getSoLuong()

@@ -82,7 +82,8 @@ namespace Entity_Project
                     Repair_Id = "RP" + day + "" + Min + "" + sec + "",
                     Repair_Reason = "Chưa biết",
                     Repair_Note = "Sửa lấy ngay",
-                    Repair_Appointment = DateTime.Parse("09/05/2000"),
+                    Repair_Appointment = DateTime.Parse("31/12/2020"),
+                    Repair_Status = "2",
                     Repair_Money = "0"
                 };
 
