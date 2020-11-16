@@ -1,6 +1,7 @@
 ﻿using Entity_Project.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -14,7 +15,7 @@ namespace Entity_Project
         int i = 0;
         string Name;
         Data data = new Data();
-        string time = DateTime.Now.ToString("yyyy/MM/dd");
+        DateTime time = DateTime.Now;
         public List<Inf_Repair> Inf_Repair()
         {
             List<Inf_Repair> repair = data.Inf_Repair.ToList();
@@ -66,34 +67,52 @@ namespace Entity_Project
 
         public bool Done_RP(string Repair_Id)
         {
-            data = new Data();
-            Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
-            if (repair != null)
+            try
             {
-                Inf_LichSu ls = new Inf_LichSu()
+                data = new Data();
+                Inf_Repair repair = data.Inf_Repair.FirstOrDefault(p => p.Repair_Id == Repair_Id);
+                if (repair != null)
                 {
-                    Customer_Name = repair.Inf_Customers.Customer_Name,
-                    Customer_Id = repair.Inf_Customers.Customer_Id,
-                    Customer_Sex = repair.Inf_Customers.Customer_Sex,
-                    Customer_Birth = repair.Inf_Customers.Customer_Birth,
-                    Customer_Email = repair.Inf_Customers.Customer_Email,
-                    Customer_Phone = repair.Inf_Customers.Customer_Phone,
-                    Customer_TimeAdd = repair.Inf_Customers.Customer_TimeAdd,
-                    Repair_Id = repair.Repair_Id,
-                    Laptop_Name = repair.Laptop_Name,
-                    Laptop_Status = repair.Laptop_Status,
-                    Staff_Id = repair.Staff_Id,
-                    Repair_Appointment = repair.Detail_Inf_Repair.Repair_Appointment,
-                    Repair_Money = repair.Detail_Inf_Repair.Repair_Money,
-                    Repair_Note = repair.Detail_Inf_Repair.Repair_Note,
-                    Repair_Reason = repair.Detail_Inf_Repair.Repair_Reason,
-                    Repair_Time_End = DateTime.Parse(time)
-                };
-                data.Inf_LichSu.Add(ls);
-                data.SaveChanges();
-                return true;
+                    Inf_LichSu ls = new Inf_LichSu()
+                    {
+                        Customer_Name = repair.Inf_Customers.Customer_Name,
+                        Customer_Id = repair.Inf_Customers.Customer_Id,
+                        Customer_Sex = repair.Inf_Customers.Customer_Sex,
+                        Customer_Birth = repair.Inf_Customers.Customer_Birth.Value,
+                        Customer_Email = repair.Inf_Customers.Customer_Email,
+                        Customer_Phone = repair.Inf_Customers.Customer_Phone,
+                        Customer_TimeAdd = repair.Inf_Customers.Customer_TimeAdd.Value,
+                        Repair_Id = repair.Repair_Id,
+                        Laptop_Name = repair.Laptop_Name,
+                        Laptop_Status = repair.Laptop_Status,
+                        Staff_Id = repair.Staff_Id,
+                        Repair_Appointment = repair.Detail_Inf_Repair.Repair_Appointment.Value,
+                        Repair_Money = repair.Detail_Inf_Repair.Repair_Money,
+                        Repair_Note = repair.Detail_Inf_Repair.Repair_Note,
+                        Repair_Reason = repair.Detail_Inf_Repair.Repair_Reason,
+                        Repair_Status = repair.Detail_Inf_Repair.Repair_Status,
+                        Repair_Time_End = time.Date
+                    };
+                    data.Inf_LichSu.Add(ls);
+                    data.SaveChanges();
+                }
             }
-            return false;
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                return false;
+                throw;
+            }
+            return true;
         }
 
         private static void sendMail(string NameTo, string EmailTo, string SDTTo, string Laptop_Name, string Repair_Reason, string Repair_Money)
@@ -115,7 +134,7 @@ namespace Entity_Project
                 message.BodyEncoding = System.Text.Encoding.UTF8;
                 message.IsBodyHtml = true;
                 mailclient.Send(message);
-                MessageBox.Show("Mail hẹn nhận máy đã được gửi đi cho khách hàng: " + NameTo + "", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thư hẹn nhận máy đã được gửi đi cho khách hàng: " + NameTo + "", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

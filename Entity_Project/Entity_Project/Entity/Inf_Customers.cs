@@ -33,8 +33,8 @@ namespace Entity_Project.Entity
         [StringLength(15)]
         public string Customer_Phone { get; set; }
 
-        [StringLength(50)]
-        public string Customer_TimeAdd { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? Customer_TimeAdd { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inf_Repair> Inf_Repair { get; set; }

@@ -27,8 +27,8 @@ namespace Entity_Project.Entity
         [StringLength(15)]
         public string Customer_Phone { get; set; }
 
-        [StringLength(50)]
-        public string Customer_TimeAdd { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? Customer_TimeAdd { get; set; }
 
         [StringLength(10)]
         public string Repair_Id { get; set; }
@@ -38,7 +38,7 @@ namespace Entity_Project.Entity
 
         public string Laptop_Status { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string Staff_Id { get; set; }
 
         public string Repair_Reason { get; set; }
@@ -50,6 +50,9 @@ namespace Entity_Project.Entity
 
         [StringLength(12)]
         public string Repair_Money { get; set; }
+
+        [StringLength(1)]
+        public string Repair_Status { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? Repair_Time_End { get; set; }

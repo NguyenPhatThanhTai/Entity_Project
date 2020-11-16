@@ -30,8 +30,8 @@ namespace Entity_Project.Entity
         [StringLength(1)]
         public string Staff_Deparment { get; set; }
 
-        [StringLength(50)]
-        public string Staff_TimeAdd { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? Staff_TimeAdd { get; set; }
 
         public virtual Account_Staff Account_Staff { get; set; }
 

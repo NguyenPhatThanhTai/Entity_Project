@@ -28,6 +28,7 @@ namespace Entity_Project.Entity
         [StringLength(10)]
         public string LK_Price { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime? LK_Time_Add { get; set; }
 
         public virtual Inf_WareHouse Inf_WareHouse { get; set; }

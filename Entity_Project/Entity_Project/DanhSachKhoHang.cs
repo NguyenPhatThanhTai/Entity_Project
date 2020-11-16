@@ -136,13 +136,11 @@ namespace Entity_Project
                     if (DLK.Delete_LK(txtMaLinhKien.Text))
                     {
                         MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Load_KHA(DLK.Inf_WareHouse());
                         Load_LK(DLK.Inf_LK());
                     }
                     else
                     {
                         MessageBox.Show("Xóa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Load_KHA(DLK.Inf_WareHouse());
                         Load_LK(DLK.Inf_LK());
                     }
                 }

@@ -56,7 +56,7 @@ namespace Entity_Project
 
                 if (item.Staff_Deparment.ToString() == "1")
                 {
-                    PhongBan = "Quản lý";
+                    PhongBan = "Quản Lý";
                 }
                 else if (item.Staff_Deparment.ToString() == "2")
                 {
@@ -194,13 +194,13 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
+            openButton(false);
             if (Data.Rows.Count == 0)
             {
                 MessageBox.Show("Hiện tại chưa có nhân viên nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                openButton(false);
                 if (Id == Data.SelectedRows[0].Cells[1].Value.ToString())
                 {
                     btnDelete.Enabled = false;

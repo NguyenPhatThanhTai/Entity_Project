@@ -10,7 +10,7 @@ namespace Entity_Project
 {
     class Data_NV
     {
-        string time = DateTime.Now.ToString("dd/MM/yyyy");
+        DateTime time = DateTime.Now;
         string day = DateTime.Now.ToString("dd");
         string Min = DateTime.Now.ToString("mm");
         string sec = DateTime.Now.ToString("ss");
@@ -74,7 +74,7 @@ namespace Entity_Project
                     Staff_Phone = Staff_Phone,
                     Staff_Address = Staff_Address,
                     Staff_Deparment = PhongBan,
-                    Staff_TimeAdd = time
+                    Staff_TimeAdd = time.Date
                 };
 
                 data.Inf_Staff.Add(Staff);
@@ -103,7 +103,7 @@ namespace Entity_Project
                 data.Salary_Staff.Add(salary);
                 data.SaveChanges();
 
-                time = DateTime.Now.ToString("yyyy/MM/dd");
+                time = DateTime.Now;
                 day = DateTime.Now.ToString("dd");
                 Min = DateTime.Now.ToString("mm");
                 sec = DateTime.Now.ToString("ss");

@@ -21,7 +21,7 @@ namespace Entity_Project.Entity
 
         public string Laptop_Status { get; set; }
 
-        [StringLength(50)]
+        [StringLength(60)]
         public string Staff_Id { get; set; }
 
         public virtual Inf_Customers Inf_Customers { get; set; }

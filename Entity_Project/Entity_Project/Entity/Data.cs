@@ -61,6 +61,10 @@ namespace Entity_Project.Entity
                 .Property(e => e.Repair_Money)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Inf_LichSu>()
+                .Property(e => e.Repair_Status)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Inf_LK>()
                 .Property(e => e.LK_Id)
                 .IsUnicode(false);

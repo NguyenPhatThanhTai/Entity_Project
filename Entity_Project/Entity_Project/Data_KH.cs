@@ -10,7 +10,7 @@ namespace Entity_Project
 {
     class Data_KH
     {
-        string time = DateTime.Now.ToString("yyyy/MM/dd");
+        DateTime time = DateTime.Now;
         string day = DateTime.Now.ToString("dd");
         string Min = DateTime.Now.ToString("mm");
         string sec = DateTime.Now.ToString("ss");
@@ -59,7 +59,7 @@ namespace Entity_Project
                     Customer_Birth = Customer_Birth,
                     Customer_Email = Customer_Email,
                     Customer_Phone = Customer_Phone,
-                    Customer_TimeAdd = time
+                    Customer_TimeAdd = time.Date
                 };
 
                 data.Inf_Customers.Add(Customer);
@@ -89,7 +89,7 @@ namespace Entity_Project
 
                 data.Detail_Inf_Repair.Add(Detail);
                 data.SaveChanges();
-                time = DateTime.Now.ToString("yyyy/MM/dd");
+                time = DateTime.Now;
                 day = DateTime.Now.ToString("dd");
                 Min = DateTime.Now.ToString("mm");
                 sec = DateTime.Now.ToString("ss");
