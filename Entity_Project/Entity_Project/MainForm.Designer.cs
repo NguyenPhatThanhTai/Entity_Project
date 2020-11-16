@@ -56,8 +56,8 @@
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TongKetTaiChinh = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.HangTonKho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.BaoCaoTongSoKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.BaoCaoTongSoNhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -324,9 +324,10 @@
             this.accordionControlElement9.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.TongKetTaiChinh,
             this.HangTonKho,
-            this.accordionControlElement2,
-            this.accordionControlElement4,
+            this.BaoCaoTongSoKhachHang,
+            this.BaoCaoTongSoNhanVien,
             this.accordionControlElement3});
+            this.accordionControlElement9.Expanded = true;
             this.accordionControlElement9.Name = "accordionControlElement9";
             this.accordionControlElement9.Text = "Báo cáo - thống kê";
             // 
@@ -343,17 +344,19 @@
             this.HangTonKho.Text = "Hàng tồn kho";
             this.HangTonKho.Click += new System.EventHandler(this.HangTonKho_Click);
             // 
-            // accordionControlElement2
+            // BaoCaoTongSoKhachHang
             // 
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement2.Text = "Báo cáo nhập hàng";
+            this.BaoCaoTongSoKhachHang.Name = "BaoCaoTongSoKhachHang";
+            this.BaoCaoTongSoKhachHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.BaoCaoTongSoKhachHang.Text = "Báo cáo tổng số khách hàng";
+            this.BaoCaoTongSoKhachHang.Click += new System.EventHandler(this.BaoCaoTongSoKhachHang_Click);
             // 
-            // accordionControlElement4
+            // BaoCaoTongSoNhanVien
             // 
-            this.accordionControlElement4.Name = "accordionControlElement4";
-            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement4.Text = "Báo cáo xuất hàng";
+            this.BaoCaoTongSoNhanVien.Name = "BaoCaoTongSoNhanVien";
+            this.BaoCaoTongSoNhanVien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.BaoCaoTongSoNhanVien.Text = "Báo cáo tổng số nhân viên";
+            this.BaoCaoTongSoNhanVien.Click += new System.EventHandler(this.BaoCaoTongSoNhanVien_Click);
             // 
             // accordionControlElement3
             // 
@@ -969,8 +972,8 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement YeuCauTroGiup;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager LuuTru;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ThongTinKhachHang;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement BaoCaoTongSoKhachHang;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement BaoCaoTongSoNhanVien;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement BangLuong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement Thongtintaikhoan;

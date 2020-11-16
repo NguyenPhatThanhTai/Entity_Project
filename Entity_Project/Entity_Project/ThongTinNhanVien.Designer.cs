@@ -190,6 +190,7 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(216, 23);
             this.txtDate.TabIndex = 75;
+            this.txtDate.ValueChanged += new System.EventHandler(this.txtDate_ValueChanged);
             // 
             // txtDepartment
             // 

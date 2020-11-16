@@ -163,6 +163,20 @@ namespace Entity_Project
             }
         }
 
+        private void txtDateHen_ValueChanged(object sender, EventArgs e)
+        {
+            if (txtDateHen.Value < DateTime.Now.Date)
+            {
+                errorProvider1.SetError(txtDateHen, "Ngày hẹn phải lớn hơn ngày hiện hành");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                btnUpdate.Enabled = true;
+            }
+        }
+
         //private void txtSoTien_Leave(object sender, EventArgs e)
         //{
         //    float value = float.Parse(txtSoTien.Text);

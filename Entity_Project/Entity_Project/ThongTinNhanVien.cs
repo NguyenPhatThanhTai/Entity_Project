@@ -16,6 +16,7 @@ namespace Entity_Project
     {
         Data_NV DNV;
         string Sex, PhongBan, Role, Name, Id;
+        bool loi;
 
         public ThongTinNhanVien()
         {
@@ -181,19 +182,60 @@ namespace Entity_Project
                 if (txtSDT.Text.All(char.IsDigit) == false || txtSDT.TextLength < 9 || txtSDT.TextLength > 13)
                 {
                     errorProvider1.SetError(txtSDT, "Chỉ cho phép số và số điện thoại tối thiểu phải lớn hơn 9 và bé hơn 13 kí tự số");
-                    btnThem.Enabled = false;
+                if (loi)
+                {
                     btnUpdate.Enabled = false;
                 }
                 else
                 {
+                    btnThem.Enabled = false;
+                }
+            }
+                else
+                {
                     errorProvider1.Clear();
-                    btnThem.Enabled = true;
+                if (loi)
+                {
                     btnUpdate.Enabled = true;
+                }
+                else
+                {
+                    btnThem.Enabled = true;
+                }
+            }
+        }
+
+        private void txtDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (txtDate.Value > DateTime.Now.Date)
+            {
+                errorProvider1.SetError(txtDate, "Ngày sinh phải bé hơn ngày hiện hành");
+                if (loi)
+                {
+                    btnUpdate.Enabled = false;
+                }
+                else
+                {
+                    btnThem.Enabled = false;
+                }
+            }
+            else
+            {
+                errorProvider1.Clear();
+                if (loi)
+                {
+                    btnUpdate.Enabled = true;
+                }
+                else
+                {
+                    btnThem.Enabled = true;
+                }
             }
         }
 
         private void Data_Click(object sender, EventArgs e)
         {
+            loi = true;
             openButton(false);
             if (Data.Rows.Count == 0)
             {
@@ -236,6 +278,7 @@ namespace Entity_Project
             Data_NV DNV = new Data_NV();
             Load_NV(DNV.Inf_Staff());
             Clear();
+            loi = false;
         }
 
         private void openButton(bool a)

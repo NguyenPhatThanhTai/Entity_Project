@@ -361,6 +361,18 @@ namespace Entity_Project
 
         }
 
+        private void BaoCaoTongSoKhachHang_Click(object sender, EventArgs e)
+        {
+            BaoCaoTongSoKhachHang frm = new BaoCaoTongSoKhachHang();
+            viewForm(frm);
+        }
+
+        private void BaoCaoTongSoNhanVien_Click(object sender, EventArgs e)
+        {
+            BaoCaoTongSoNhanVien frm = new BaoCaoTongSoNhanVien();
+            viewForm(frm);
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             txtTime.Caption = "Giờ: ".ToUpper() + DateTime.Now.ToString("hh:mm:ss");

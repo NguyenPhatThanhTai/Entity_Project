@@ -21,8 +21,11 @@ namespace Entity_Project
             InitializeComponent();
         }
 
+        Data data;
+
         private void BaoCaoHangTonKho_Load(object sender, EventArgs e)
         {
+            data  = new Data();
             CreateReport(dt1.Text);
         }
 

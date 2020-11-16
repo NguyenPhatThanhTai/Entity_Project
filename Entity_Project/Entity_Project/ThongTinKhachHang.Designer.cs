@@ -313,6 +313,7 @@
             this.txtBirth.Size = new System.Drawing.Size(216, 23);
             this.txtBirth.TabIndex = 78;
             this.txtBirth.Value = new System.DateTime(2020, 3, 3, 0, 0, 0, 0);
+            this.txtBirth.ValueChanged += new System.EventHandler(this.txtBirth_ValueChanged);
             // 
             // HoTen
             // 

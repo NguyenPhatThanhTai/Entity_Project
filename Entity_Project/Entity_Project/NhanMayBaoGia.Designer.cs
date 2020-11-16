@@ -325,6 +325,7 @@
             this.txtDateHen.Name = "txtDateHen";
             this.txtDateHen.Size = new System.Drawing.Size(216, 23);
             this.txtDateHen.TabIndex = 89;
+            this.txtDateHen.ValueChanged += new System.EventHandler(this.txtDateHen_ValueChanged);
             // 
             // txtCanSua
             // 

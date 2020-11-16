@@ -18,6 +18,7 @@ namespace Entity_Project
 
         Data_KH DKH;
         string Sex;
+        bool loi;
 
         public ThongTinKhachHang()
         {
@@ -70,6 +71,7 @@ namespace Entity_Project
             Data_KH DKH = new Data_KH();
             Load_KH(DKH.Inf_KH());
             Clear();
+            loi = false;
         }
 
         private void Clear()
@@ -94,6 +96,7 @@ namespace Entity_Project
 
         private void Data_Click(object sender, EventArgs e)
         {
+            loi = true;
             if (Data.Rows.Count == 0)
             {
                 MessageBox.Show("Hiện tại chưa có khách hàng nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -202,14 +205,26 @@ namespace Entity_Project
             if(txtSDT.Text.All(char.IsDigit) == false || txtSDT.TextLength < 9 || txtSDT.TextLength > 13)
             {
                 errorProvider1.SetError(txtSDT, "Chỉ cho phép số và số điện thoại tối thiểu phải lớn hơn 9 và bé hơn 13 kí tự số");
-                btnThem.Enabled = false;
-                btnUpdate.Enabled = false;
+                if (loi)
+                {
+                    btnUpdate.Enabled = false;
+                }
+                else
+                {
+                    btnThem.Enabled = false;
+                }
             }
             else
             {
                 errorProvider1.Clear();
-                btnUpdate.Enabled = true;
-                btnThem.Enabled = true;
+                if (loi)
+                {
+                    btnUpdate.Enabled = true;
+                }
+                else
+                {
+                    btnThem.Enabled = true;
+                }
             }
         }
 
@@ -242,14 +257,26 @@ namespace Entity_Project
             if (checkEmail(txtEmail.Text) == false)
             {
                 errorProvider1.SetError(txtEmail, "Định dạng chưa đúng");
-                btnThem.Enabled = false;
-                btnUpdate.Enabled = false;
+                if (loi)
+                {
+                    btnUpdate.Enabled = false;
+                }
+                else
+                {
+                    btnThem.Enabled = false;
+                }
             }
             else
             {
                 errorProvider1.Clear();
-                btnUpdate.Enabled = true;
-                btnThem.Enabled = true;
+                if (loi)
+                {
+                    btnUpdate.Enabled = true;
+                }
+                else
+                {
+                    btnThem.Enabled = true;
+                }
             }
         }
 
@@ -257,6 +284,34 @@ namespace Entity_Project
         {
             DKH = new Data_KH();
             Load_KH(DKH.Inf_KH());
+        }
+
+        private void txtBirth_ValueChanged(object sender, EventArgs e)
+        {
+            if (txtBirth.Value > DateTime.Now.Date)
+            {
+                errorProvider1.SetError(txtBirth, "Ngày sinh phải bé hơn ngày hiện hành");
+                if (loi)
+                {
+                    btnUpdate.Enabled = false;
+                }
+                else
+                {
+                    btnThem.Enabled = false;
+                }
+            }
+            else
+            {
+                errorProvider1.Clear();
+                if (loi)
+                {
+                    btnUpdate.Enabled = true;
+                }
+                else
+                {
+                    btnThem.Enabled = true;
+                }
+            }
         }
     }
 }

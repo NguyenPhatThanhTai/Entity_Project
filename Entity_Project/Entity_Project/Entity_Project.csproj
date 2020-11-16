@@ -129,6 +129,18 @@
     <Compile Include="BaoCaoHangTonKho.Designer.cs">
       <DependentUpon>BaoCaoHangTonKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCaoTongSoKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoTongSoKhachHang.Designer.cs">
+      <DependentUpon>BaoCaoTongSoKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoTongSoNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoTongSoNhanVien.Designer.cs">
+      <DependentUpon>BaoCaoTongSoNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,13 +193,22 @@
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Report\dstInf_Customers.cs">
-      <DependentUpon>dstInf_Customers.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Report\dstInf_Customers.Designer.cs">
+    <Compile Include="Report\CrystalReport3.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dstInf_Customers.xsd</DependentUpon>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReport4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="SaoLuuSQL.cs">
       <SubType>Form</SubType>
@@ -274,6 +295,12 @@
     <EmbeddedResource Include="BaoCaoHangTonKho.resx">
       <DependentUpon>BaoCaoHangTonKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoTongSoKhachHang.resx">
+      <DependentUpon>BaoCaoTongSoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoTongSoNhanVien.resx">
+      <DependentUpon>BaoCaoTongSoNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +323,14 @@
     <EmbeddedResource Include="Report\CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReport4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport4.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SaoLuuSQL.resx">
       <DependentUpon>SaoLuuSQL.cs</DependentUpon>
@@ -358,16 +393,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Report\dstInf_Customers.xsc">
-      <DependentUpon>dstInf_Customers.xsd</DependentUpon>
+    <None Include="Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="Report\dstInf_Customers.xsd">
+    <None Include="Report\DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dstInf_Customers.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Report\dstInf_Customers.xss">
-      <DependentUpon>dstInf_Customers.xsd</DependentUpon>
+    <None Include="Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Resources\email.png" />
   </ItemGroup>
