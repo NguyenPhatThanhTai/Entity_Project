@@ -54,8 +54,9 @@ namespace Entity_Project
                 Data.Rows[index].Cells[2].Value = item.Inf_Customers.Customer_Name;
                 Data.Rows[index].Cells[3].Value = item.Detail_Inf_Repair.Repair_Note;
                 Data.Rows[index].Cells[4].Value = date1.ToString("dd/MM/yyyy");
-                Data.Rows[index].Cells[5].Value = status;
-                Data.Rows[index].Cells[6].Value = item.Staff_Id;
+                Data.Rows[index].Cells[5].Value = item.Detail_Inf_Repair.Repair_Money;
+                Data.Rows[index].Cells[6].Value = status;
+                Data.Rows[index].Cells[7].Value = item.Staff_Id;
                 i++;
             }
             Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -71,6 +72,9 @@ namespace Entity_Project
                 {
                     if (DRP.Done_RP(item.Repair_Id))
                     {
+                        HoaDon hoaDon = new HoaDon();
+                        hoaDon.CreateReport(id);
+                        hoaDon.Show();
                         DRP.Delete_KH(item.Customer_Id);
                         DRP = new Data_RP();
                         Load_TinhTrang(DRP.Inf_Repair());
@@ -94,7 +98,7 @@ namespace Entity_Project
             {
                 id = Data.SelectedRows[0].Cells[1].Value.ToString();
                 note = Data.SelectedRows[0].Cells[3].Value.ToString();
-                if (Data.SelectedRows[0].Cells[6].Value.ToString() != "Chưa biết" && Data.SelectedRows[0].Cells[5].Value.ToString() != "Chưa hoàn thành sửa")
+                if (Data.SelectedRows[0].Cells[7].Value.ToString() != "Chưa biết" && Data.SelectedRows[0].Cells[6].Value.ToString() != "Chưa hoàn thành sửa")
                 {
                     btnHoanThanh.Enabled = true;
                     btnHoanThanhSua.Enabled = true;
@@ -104,7 +108,7 @@ namespace Entity_Project
                     btnHoanThanhSua.Enabled = false;
                     btnHoanThanh.Enabled = false;
                 }
-                if (Data.SelectedRows[0].Cells[6].Value.ToString() != "Chưa biết")
+                if (Data.SelectedRows[0].Cells[7].Value.ToString() != "Chưa biết")
                 {
                     btnHoanThanhSua.Enabled = true;
                 }
@@ -121,6 +125,37 @@ namespace Entity_Project
         {
             Data_RP DRP = new Data_RP();
             Load_TinhTrang(DRP.Inf_Repair());
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            string tlk = txtMaRp.Text.ToLower();
+
+            if (tlk == "" || tlk.Length != 8)
+            {
+                MessageBox.Show("Mã sửa chữa phải là 8 kí tự bao gồm 'RP' trước và dãy số theo sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
+                {
+                    foreach (DataGridViewRow row in Data.Rows)
+                    {
+                        if (row.Cells[1].Value.ToString().ToLower().Equals(tlk))
+                        {
+                            Data.ClearSelection();
+                            row.Selected = true;
+                            Data.FirstDisplayedScrollingRowIndex = row.Index;
+                            break;
+                        }
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
         }
 
         private async void btnHoanThanhSua_Click(object sender, EventArgs e)

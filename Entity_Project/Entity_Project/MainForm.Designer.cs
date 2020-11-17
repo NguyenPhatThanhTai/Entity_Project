@@ -327,7 +327,6 @@
             this.BaoCaoTongSoKhachHang,
             this.BaoCaoTongSoNhanVien,
             this.accordionControlElement3});
-            this.accordionControlElement9.Expanded = true;
             this.accordionControlElement9.Name = "accordionControlElement9";
             this.accordionControlElement9.Text = "Báo cáo - thống kê";
             // 

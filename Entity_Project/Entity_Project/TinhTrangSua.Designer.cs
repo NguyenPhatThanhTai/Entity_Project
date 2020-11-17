@@ -42,8 +42,13 @@
             this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HenSua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HenNhanMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Repair_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhanVienTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMaRp = new System.Windows.Forms.TextBox();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.l1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.d1)).BeginInit();
@@ -60,17 +65,18 @@
             this.TenKhachHang,
             this.HenSua,
             this.HenNhanMay,
+            this.SoTien,
             this.Repair_Status,
             this.NhanVienTiepNhan});
             this.Data.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Data.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Data.Location = new System.Drawing.Point(0, 105);
+            this.Data.Location = new System.Drawing.Point(0, 168);
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
             this.Data.RowHeadersWidth = 51;
             this.Data.RowTemplate.Height = 24;
             this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Data.Size = new System.Drawing.Size(1245, 599);
+            this.Data.Size = new System.Drawing.Size(1245, 536);
             this.Data.TabIndex = 3;
             this.Data.Click += new System.EventHandler(this.Data_Click);
             // 
@@ -78,7 +84,7 @@
             // 
             this.btnHoanThanh.Enabled = false;
             this.btnHoanThanh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHoanThanh.ImageOptions.SvgImage")));
-            this.btnHoanThanh.Location = new System.Drawing.Point(391, 30);
+            this.btnHoanThanh.Location = new System.Drawing.Point(456, 97);
             this.btnHoanThanh.Name = "btnHoanThanh";
             this.btnHoanThanh.Size = new System.Drawing.Size(182, 46);
             this.btnHoanThanh.TabIndex = 4;
@@ -88,7 +94,7 @@
             // btnRefresh
             // 
             this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefresh.ImageOptions.SvgImage")));
-            this.btnRefresh.Location = new System.Drawing.Point(29, 30);
+            this.btnRefresh.Location = new System.Drawing.Point(94, 97);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(168, 46);
             this.btnRefresh.TabIndex = 5;
@@ -99,7 +105,7 @@
             // 
             this.l2.AutoSize = true;
             this.l2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l2.Location = new System.Drawing.Point(907, 42);
+            this.l2.Location = new System.Drawing.Point(995, 73);
             this.l2.Name = "l2";
             this.l2.Size = new System.Drawing.Size(224, 20);
             this.l2.TabIndex = 78;
@@ -108,7 +114,7 @@
             // l1
             // 
             this.l1.Image = global::Entity_Project.Properties.Resources.loaddonegif;
-            this.l1.Location = new System.Drawing.Point(808, 23);
+            this.l1.Location = new System.Drawing.Point(896, 54);
             this.l1.Name = "l1";
             this.l1.Size = new System.Drawing.Size(97, 50);
             this.l1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +125,7 @@
             // 
             this.d2.AutoSize = true;
             this.d2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.d2.Location = new System.Drawing.Point(911, 42);
+            this.d2.Location = new System.Drawing.Point(999, 73);
             this.d2.Name = "d2";
             this.d2.Size = new System.Drawing.Size(159, 20);
             this.d2.TabIndex = 78;
@@ -128,7 +134,7 @@
             // d1
             // 
             this.d1.Image = global::Entity_Project.Properties.Resources.check;
-            this.d1.Location = new System.Drawing.Point(808, 23);
+            this.d1.Location = new System.Drawing.Point(896, 54);
             this.d1.Name = "d1";
             this.d1.Size = new System.Drawing.Size(97, 50);
             this.d1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -138,8 +144,8 @@
             // btnHoanThanhSua
             // 
             this.btnHoanThanhSua.Enabled = false;
-            this.btnHoanThanhSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnHoanThanhSua.Location = new System.Drawing.Point(203, 30);
+            this.btnHoanThanhSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanThanhSua.ImageOptions.Image")));
+            this.btnHoanThanhSua.Location = new System.Drawing.Point(268, 97);
             this.btnHoanThanhSua.Name = "btnHoanThanhSua";
             this.btnHoanThanhSua.Size = new System.Drawing.Size(182, 46);
             this.btnHoanThanhSua.TabIndex = 79;
@@ -186,6 +192,14 @@
             this.HenNhanMay.ReadOnly = true;
             this.HenNhanMay.Width = 150;
             // 
+            // SoTien
+            // 
+            this.SoTien.HeaderText = "Số tiền";
+            this.SoTien.MinimumWidth = 6;
+            this.SoTien.Name = "SoTien";
+            this.SoTien.ReadOnly = true;
+            this.SoTien.Width = 125;
+            // 
             // Repair_Status
             // 
             this.Repair_Status.HeaderText = "Tình trạng đơn";
@@ -202,11 +216,57 @@
             this.NhanVienTiepNhan.ReadOnly = true;
             this.NhanVienTiepNhan.Width = 125;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(154, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 17);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "Tìm theo mã sữa chữa";
+            // 
+            // txtMaRp
+            // 
+            this.txtMaRp.Location = new System.Drawing.Point(307, 46);
+            this.txtMaRp.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaRp.Name = "txtMaRp";
+            this.txtMaRp.Size = new System.Drawing.Size(184, 23);
+            this.txtMaRp.TabIndex = 82;
+            // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.Color.White;
+            this.btnFind.Location = new System.Drawing.Point(498, 40);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 33);
+            this.btnFind.TabIndex = 81;
+            this.btnFind.Text = "Tìm";
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(303, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 21);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Tìm kiếm";
+            // 
             // TinhTrangSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 704);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtMaRp);
+            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHoanThanhSua);
             this.Controls.Add(this.d2);
             this.Controls.Add(this.d1);
@@ -236,13 +296,18 @@
         private System.Windows.Forms.PictureBox l1;
         private System.Windows.Forms.Label d2;
         private System.Windows.Forms.PictureBox d1;
+        private DevExpress.XtraEditors.SimpleButton btnHoanThanhSua;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSuaChua;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn HenSua;
         private System.Windows.Forms.DataGridViewTextBoxColumn HenNhanMay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn Repair_Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhanVienTiepNhan;
-        private DevExpress.XtraEditors.SimpleButton btnHoanThanhSua;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtMaRp;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Label label1;
     }
 }

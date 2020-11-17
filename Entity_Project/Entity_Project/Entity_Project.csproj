@@ -163,6 +163,12 @@
     <Compile Include="Entity\Inf_Staff.cs" />
     <Compile Include="Entity\Inf_WareHouse.cs" />
     <Compile Include="Entity\Salary_Staff.cs" />
+    <Compile Include="HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDon.Designer.cs">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loadding.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReport5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport5.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\DataSet1.Designer.cs">
@@ -307,6 +319,9 @@
     <EmbeddedResource Include="DanhSachKhoHang.resx">
       <DependentUpon>DanhSachKhoHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HoaDon.resx">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loadding.resx">
       <DependentUpon>Loadding.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +346,10 @@
     <EmbeddedResource Include="Report\CrystalReport4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReport5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport5.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SaoLuuSQL.resx">
       <DependentUpon>SaoLuuSQL.cs</DependentUpon>

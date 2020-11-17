@@ -48,7 +48,6 @@ D:\Entity_Project\Entity_Project\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resource
 D:\Entity_Project\Entity_Project\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
 D:\Entity_Project\Entity_Project\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
 D:\Entity_Project\Entity_Project\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.csprojAssemblyReference.cache
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.Properties.Resources.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.csproj.GenerateResource.cache
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.csproj.CoreCompileInputs.cache
@@ -240,3 +239,5 @@ D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.SaoLuuSQL.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.YeuCauTroGiup.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.BaoCaoTongSoKhachHang.resources
 D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.BaoCaoTongSoNhanVien.resources
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.csprojAssemblyReference.cache
+D:\Entity_Project\Entity_Project\obj\Debug\Entity_Project.HoaDon.resources

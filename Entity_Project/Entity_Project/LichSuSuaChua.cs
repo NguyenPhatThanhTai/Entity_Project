@@ -86,5 +86,38 @@ namespace Entity_Project
             Data_RP DRP = new Data_RP();
             load_LS(DRP.LichSu());
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            DRP = new Data_RP();
+            load_LS(DRP.LichSu());
+            string tlk = txtMaRp.Text.ToLower();
+
+            if (tlk == "" || tlk.Length != 8)
+            {
+                MessageBox.Show("Mã sửa chữa phải là 8 kí tự bao gồm 'RP' trước và dãy số theo sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
+                {
+                    foreach (DataGridViewRow row in Data.Rows)
+                    {
+                        if (row.Cells[8].Value.ToString().ToLower().Equals(tlk))
+                        {
+                            Data.ClearSelection();
+                            row.Selected = true;
+                            Data.FirstDisplayedScrollingRowIndex = row.Index;
+                            break;
+                        }
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
+        }
     }
 }

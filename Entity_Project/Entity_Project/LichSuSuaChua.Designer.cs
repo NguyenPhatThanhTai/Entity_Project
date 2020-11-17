@@ -48,6 +48,10 @@
             this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.txtMaRp = new System.Windows.Forms.TextBox();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,11 +235,57 @@
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // txtMaRp
+            // 
+            this.txtMaRp.Location = new System.Drawing.Point(973, 71);
+            this.txtMaRp.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaRp.Name = "txtMaRp";
+            this.txtMaRp.Size = new System.Drawing.Size(184, 23);
+            this.txtMaRp.TabIndex = 30;
+            // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.Color.White;
+            this.btnFind.Location = new System.Drawing.Point(1164, 65);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 33);
+            this.btnFind.TabIndex = 28;
+            this.btnFind.Text = "Tìm";
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(969, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 21);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Tìm kiếm";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(820, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 17);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Tìm theo mã sữa chữa";
+            // 
             // LichSuSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 704);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtMaRp);
+            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.Data);
             this.Name = "LichSuSuaChua";
@@ -244,6 +294,7 @@
             this.Enter += new System.EventHandler(this.LichSuSuaChua_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -268,5 +319,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn KetThuc;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private System.Windows.Forms.TextBox txtMaRp;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
