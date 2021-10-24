@@ -34,14 +34,14 @@ namespace Entity_Project
                 string sql = "Alter Database ProjectOne SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
                 sql += "Restore Database ProjectOne FROM DISK ='" + openFileDialog1.FileName + "' WITH REPLACE;";
 
-                SqlConnection con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+                SqlConnection con = new SqlConnection("Data Source=MAESTRO\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
                 SqlCommand command = new SqlCommand(sql, con);
 
                 con.Open();
                 command.ExecuteNonQuery();
 
                 string sql2 = "Alter Database ProjectOne SET MULTI_USER WITH ROLLBACK IMMEDIATE;";
-                con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+                con = new SqlConnection("Data Source=MAESTRO\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
                 command = new SqlCommand(sql2, con);
 
                 con.Close();
@@ -84,14 +84,14 @@ namespace Entity_Project
                         string sql = "Alter Database ProjectOne SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
                         sql += "Restore Database ProjectOne FROM DISK ='" + fileList.First() + "' WITH REPLACE;";
 
-                        SqlConnection con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+                        SqlConnection con = new SqlConnection("Data Source=MAESTRO\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
                         SqlCommand command = new SqlCommand(sql, con);
 
                         con.Open();
                         command.ExecuteNonQuery();
 
                         string sql2 = "Alter Database ProjectOne SET MULTI_USER WITH ROLLBACK IMMEDIATE;";
-                        con = new SqlConnection("Data Source=TAEITAEI\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+                        con = new SqlConnection("Data Source=MAESTRO\\SQLEXPRESS;initial catalog=master;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
                         command = new SqlCommand(sql2, con);
 
                         con.Close();
